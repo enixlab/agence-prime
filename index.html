@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Service Google Ads</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Geometric squares background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Subtle grain overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 60px;
+  }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .service-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .service-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 60px;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #111;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+  }
+  .section-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+  }
+  .section-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 24px;
+  }
+
+  /* Category label */
+  .category {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    padding: 20px 0 8px;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    text-align: left;
+    padding: 14px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  td {
+    padding: 14px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:hover td {
+    background: #fafafa;
+  }
+  td:nth-child(2) {
+    color: #888;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  td:nth-child(3), td:nth-child(4) {
+    padding-left: 20px;
+    font-size: 13px;
+  }
+
+  .auto {
+    color: #111;
+    font-weight: 600;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+  }
+  .manuel {
+    color: #888;
+    font-weight: 500;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 60px 0;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-size: 12px;
+    color: #ccc;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    .section-header { flex-direction: column; gap: 4px; }
+    td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
+    td:nth-child(3), td:nth-child(4) { padding-left: 10px; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Google <em>Ads</em></div>
+  </div>
+
+  <!-- SETUP -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Setup</div>
+      <div class="section-price">1 500€</div>
+    </div>
+    <div class="section-time">Livraison en ~65 minutes</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Audit marché</div></td></tr>
+        <tr>
+          <td>Audit complet (volumes, CPC, concurrents, difficulté)</td>
+          <td>SemRush via Playwright</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Identification opportunités (mots-clés fort volume, faible difficulté non exploités par les concurrents)</td>
+          <td>SemRush via Playwright</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Structure campagne</div></td></tr>
+        <tr>
+          <td>Campagnes structurées par intention (transactionnel, brand, concurrent, informationnel)</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Groupes d'annonces thématiques (5-15 mots-clés par groupe, même sujet)</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Mots-clés sélectionnés en correspondance exacte et phrase selon données SemRush</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Mots-clés négatifs complets installés dès le jour 1</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Annonces</div></td></tr>
+        <tr>
+          <td>Annonces responsive par groupe (15 titres + 4 descriptions, épinglés aux bonnes positions)</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Extensions d'annonces (liens annexes, accroches, extraits)</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Budget</div></td></tr>
+        <tr>
+          <td>Répartition budget par campagne selon le marché du client</td>
+          <td>Node.js → CSV</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Import</div></td></tr>
+        <tr>
+          <td>Import campagne complète dans Google Ads</td>
+          <td>Google Ads Editor</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Tracking</div></td></tr>
+        <tr>
+          <td>Configuration pixel Google Ads</td>
+          <td>Google Ads</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Configuration conversions (1 action primaire)</td>
+          <td>Google Ads</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Liaison Google Analytics 4 + auto-tagging activé</td>
+          <td>GA4</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Activation Enhanced Conversions</td>
+          <td>Google Ads</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Vérification tracking</td>
+          <td>Tag Assistant</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Scripts d'automation (installés une seule fois)</div></td></tr>
+        <tr>
+          <td>Script pause mots-clés faibles</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script alerte budget (130% du quotidien)</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script ajustement enchères auto</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script rapport hebdomadaire</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script négatifs automatiques</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script dayparting</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script détection anomalies géo</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script détection changements non-autorisés</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script N-Gram</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+        <tr>
+          <td>Script Quality Score</td>
+          <td>Google Ads Scripts</td>
+          <td><span class="manuel">Manuel (une fois)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- GESTION MENSUELLE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Gestion mensuelle</div>
+      <div class="section-price">2 000€/mois</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tâche</th>
+          <th>Outil</th>
+          <th>Fréquence</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pause mots-clés qui dépensent au-delà du seuil sans convertir</td>
+          <td>Script</td>
+          <td>Toutes les heures</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Alerte si budget dépasse 130% du quotidien prévu</td>
+          <td>Script</td>
+          <td>Toutes les heures</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Ajustement enchères selon coût par conversion cible (monte si bon, baisse si mauvais)</td>
+          <td>Script</td>
+          <td>Tous les jours 6h</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Blocage termes de recherche qui dépensent sans convertir</td>
+          <td>Script</td>
+          <td>Chaque nuit</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Ajustement enchères par heure et par jour selon les performances</td>
+          <td>Script dayparting</td>
+          <td>Quotidien</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Détection zones géographiques qui dépensent sans convertir</td>
+          <td>Script</td>
+          <td>Chaque matin</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Alerte si quelqu'un modifie le compte sans autorisation</td>
+          <td>Script</td>
+          <td>Tous les jours 9h</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Analyse des mots toxiques dans les recherches (décomposition N-Gram)</td>
+          <td>Script</td>
+          <td>Chaque lundi</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Surveillance Quality Score de chaque mot-clé</td>
+          <td>Script</td>
+          <td>Continu</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Détection budget gaspillé sur Performance Max (termes hors-sujet)</td>
+          <td>Script</td>
+          <td>Chaque lundi</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Export données Performance Max dans Google Sheet</td>
+          <td>Script</td>
+          <td>Chaque lundi</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Rapport hebdomadaire envoyé au client (impressions, clics, taux de clic, coût par clic, conversions, coût par conversion, top mots-clés, mots-clés coupés, recommandations)</td>
+          <td>Script</td>
+          <td>Chaque lundi</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Call mensuel stratégique pour faire le point sur les résultats</td>
+          <td>Nous</td>
+          <td>1x/mois</td>
+          <td><span class="manuel">Manuel</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TEMPS DE CRÉATION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Temps de création</div>
+      <div class="section-price">~65 min</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Temps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audit SemRush</td>
+          <td>Playwright</td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>Analyse et structuration mots-clés par intention</td>
+          <td>Node.js</td>
+          <td>15 min</td>
+        </tr>
+        <tr>
+          <td>Génération CSV complet</td>
+          <td>Node.js</td>
+          <td>2 min</td>
+        </tr>
+        <tr>
+          <td>Import + vérification</td>
+          <td>Google Ads Editor</td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>Publication campagne</td>
+          <td>Google Ads Editor</td>
+          <td>3 min</td>
+        </tr>
+        <tr>
+          <td>Configuration tracking</td>
+          <td>Google Ads + GA4</td>
+          <td>20 min</td>
+        </tr>
+        <tr>
+          <td>Installation des 10 scripts</td>
+          <td>Google Ads Scripts</td>
+          <td>15 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+
+</div>
+
+</body>
+</html>
