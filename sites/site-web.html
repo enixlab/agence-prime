@@ -18,7 +18,7 @@
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
   .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
-  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; }
+  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
   .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
@@ -31,8 +31,8 @@
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
   .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
   .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
-  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 8px; }
-  .upsell-box strong { color: #111; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
   .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
   @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
 </style>
@@ -47,58 +47,33 @@
 
   <div class="divider"></div>
 
-  <!-- TARIFS -->
+  <!-- TARIFS WORDPRESS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Tarifs</div>
+      <div class="section-title">Tarifs WordPress</div>
     </div>
+    <div class="section-sub">Le prix dépend du nombre de pages parce que le temps de travail est pas le même.</div>
 
     <table>
       <thead>
         <tr>
-          <th>Plateforme</th>
           <th>Pages</th>
           <th>Prix</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="3"><div class="category">WordPress</div></td></tr>
-        <tr><td>WordPress</td><td>1-5 pages</td><td><strong>1 000€</strong></td></tr>
-        <tr><td>WordPress</td><td>6-10 pages</td><td><strong>2 000€</strong></td></tr>
-        <tr><td>WordPress</td><td>11-20 pages</td><td><strong>3 500€</strong></td></tr>
-        <tr><td>WordPress</td><td>Page supplémentaire</td><td>150€/page</td></tr>
-        <tr><td>WordPress</td><td>Maintenance mensuelle</td><td>150€/mois</td></tr>
-
-        <tr><td colspan="3"><div class="category">Framer</div></td></tr>
-        <tr><td>Framer</td><td>1-5 pages</td><td><strong>700€</strong></td></tr>
-        <tr><td>Framer</td><td>6-10 pages</td><td><strong>1 500€</strong></td></tr>
-        <tr><td>Framer</td><td>11-20 pages</td><td><strong>2 500€</strong></td></tr>
-        <tr><td>Framer</td><td>Page supplémentaire</td><td>100€/page</td></tr>
-        <tr><td>Framer</td><td>Maintenance mensuelle</td><td>80€/mois</td></tr>
-
-        <tr><td colspan="3"><div class="category">Dora</div></td></tr>
-        <tr><td>Dora</td><td>1-5 pages</td><td><strong>700€</strong></td></tr>
-        <tr><td>Dora</td><td>6-10 pages</td><td><strong>1 500€</strong></td></tr>
-        <tr><td>Dora</td><td>11-20 pages</td><td><strong>2 500€</strong></td></tr>
-        <tr><td>Dora</td><td>Page supplémentaire</td><td>100€/page</td></tr>
-        <tr><td>Dora</td><td>Maintenance mensuelle</td><td>80€/mois</td></tr>
-
-        <tr><td colspan="3"><div class="category">Figma (maquette UI/UX uniquement)</div></td></tr>
-        <tr><td>Figma</td><td>1-5 pages</td><td><strong>500€</strong></td></tr>
-        <tr><td>Figma</td><td>6-10 pages</td><td><strong>1 000€</strong></td></tr>
-        <tr><td>Figma</td><td>11-20 pages</td><td><strong>1 800€</strong></td></tr>
-        <tr><td>Figma</td><td>Page supplémentaire</td><td>80€/page</td></tr>
-        <tr><td>Figma</td><td>Maintenance</td><td>Pas de maintenance (livrable)</td></tr>
-
-        <tr><td colspan="3"><div class="category">Sans IA</div></td></tr>
-        <tr><td colspan="2">Tous les tarifs ci-dessus +30% (100% fait main, plus de temps de travail)</td><td><strong>+30%</strong></td></tr>
+        <tr><td>1-5 pages</td><td><strong>800€</strong></td></tr>
+        <tr><td>6-10 pages</td><td><strong>1 200€</strong></td></tr>
+        <tr><td>11-20 pages</td><td><strong>1 800€</strong></td></tr>
+        <tr><td>Page supplémentaire</td><td>100€/page</td></tr>
+        <tr><td>Maintenance mensuelle</td><td>100€/mois</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- SETUP : CE QUE LE CLIENT REÇOIT -->
+  <!-- SETUP -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Setup — Ce que le client reçoit</div>
@@ -116,16 +91,16 @@
         <tr><td colspan="3"><div class="category">Design</div></td></tr>
         <tr>
           <td>Maquette complète du site (structure, layout, couleurs, typographies)</td>
-          <td>Claude IA + Figma</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Design responsive (adapté mobile, tablette, desktop)</td>
           <td>Claude IA</td>
           <td><span class="auto">Auto</span></td>
         </tr>
         <tr>
-          <td>Intégration du branding client (logo, couleurs, police)</td>
+          <td>Design responsive (mobile, tablette, desktop)</td>
+          <td>Claude IA</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Intégration branding client (logo, couleurs, police)</td>
           <td>Claude IA</td>
           <td><span class="auto">Auto</span></td>
         </tr>
@@ -137,7 +112,7 @@
           <td><span class="auto">Auto</span></td>
         </tr>
         <tr>
-          <td>Code optimisé (chargement rapide, pas de bloat, structure propre)</td>
+          <td>Code optimisé (chargement rapide, structure propre, pas de bloat)</td>
           <td>Claude IA</td>
           <td><span class="auto">Auto</span></td>
         </tr>
@@ -157,19 +132,14 @@
           <td><span class="auto">Auto</span></td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Transfert & mise en ligne</div></td></tr>
+        <tr><td colspan="3"><div class="category">Mise en ligne</div></td></tr>
         <tr>
-          <td>Transfert du site sur WordPress (thème custom, import contenu)</td>
+          <td>Transfert du site sur WordPress</td>
           <td>WordPress</td>
           <td><span class="manuel">Manuel</span></td>
         </tr>
         <tr>
-          <td>Configuration hébergement + domaine</td>
-          <td>Hébergeur client</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Installation SSL (HTTPS)</td>
+          <td>Configuration hébergement + domaine + SSL</td>
           <td>Hébergeur</td>
           <td><span class="manuel">Manuel</span></td>
         </tr>
@@ -180,7 +150,7 @@
         </tr>
         <tr>
           <td>Mise en ligne</td>
-          <td>WordPress / Framer / Dora</td>
+          <td>WordPress</td>
           <td><span class="manuel">Manuel</span></td>
         </tr>
       </tbody>
@@ -189,28 +159,28 @@
 
   <div class="divider"></div>
 
-  <!-- MAINTENANCE MENSUELLE -->
+  <!-- MAINTENANCE -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Maintenance mensuelle</div>
-      <div class="section-price">80-150€/mois</div>
+      <div class="section-price">100€/mois</div>
     </div>
 
     <table>
       <thead>
         <tr>
           <th>Tâche</th>
-          <th>Plateforme</th>
           <th>Fréquence</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Mises à jour WordPress + plugins + sécurité</td><td>WordPress</td><td>Mensuel</td></tr>
-        <tr><td>Sauvegardes automatiques du site</td><td>WordPress</td><td>Hebdomadaire</td></tr>
-        <tr><td>Monitoring uptime (le site est en ligne 24/7)</td><td>Toutes</td><td>Continu</td></tr>
-        <tr><td>Vérification vitesse de chargement</td><td>Toutes</td><td>Mensuel</td></tr>
-        <tr><td>Correction bugs si nécessaire</td><td>Toutes</td><td>Sur demande</td></tr>
-        <tr><td>Support client</td><td>Toutes</td><td>Sur demande</td></tr>
+        <tr><td>Mises à jour WordPress + plugins</td><td>Mensuel</td></tr>
+        <tr><td>Sécurité (patches, failles, surveillance)</td><td>Mensuel</td></tr>
+        <tr><td>Sauvegardes du site</td><td>Hebdomadaire</td></tr>
+        <tr><td>Hébergement inclus</td><td>Continu</td></tr>
+        <tr><td>Monitoring uptime</td><td>Continu</td></tr>
+        <tr><td>Vérification vitesse de chargement</td><td>Mensuel</td></tr>
+        <tr><td>Correction bugs si nécessaire</td><td>Sur demande</td></tr>
       </tbody>
     </table>
   </div>
@@ -224,18 +194,18 @@
     </div>
 
     <div class="upsell-box">
-      <h4>Upsell — Optimisation mensuelle → 200€/mois</h4>
-      <p>En plus de la maintenance, on améliore le site chaque mois : ajustement des textes, amélioration des pages pour convertir plus de visiteurs en contacts, ajout de nouvelles sections si besoin. Le site évolue et s'améliore dans le temps au lieu de rester figé.</p>
+      <h4>Upsell — Optimisation mensuelle → 150€/mois (en plus de la maintenance)</h4>
+      <p>Amélioration continue des pages, des textes et des visuels pour que le site convertisse mieux dans le temps. Le site évolue et s'améliore chaque mois au lieu de rester figé.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
-      <h4>Cross-sell — Campagne Google Ads → 600€ setup + 850€/mois</h4>
-      <p>Le site est en ligne mais sans trafic il sert à rien. On lance une campagne Google Ads pour envoyer des visiteurs qualifiés sur le site. Les gens qui cherchent le service du client sur Google tombent directement sur son site.</p>
+      <h4>Cross-sell — Campagne Google Ads → 600€ setup</h4>
+      <p>Le site est en ligne mais sans trafic il sert à rien. On lance une campagne Google Ads pour envoyer des visiteurs qualifiés directement sur le site.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
       <h4>Cross-sell — Google My Business → 300€ + 200€/mois</h4>
-      <p>On crée et alimente la fiche Google du client (publications, photos, offres, réponses aux avis). Il est visible en payant avec Google Ads ET en local gratuitement avec sa fiche. Il couvre les deux.</p>
+      <p>On crée et alimente la fiche Google du client avec des publications, photos, offres et réponses aux avis. Il est visible en payant avec Google Ads ET en local gratuitement. Il couvre les deux.</p>
     </div>
   </div>
 
@@ -250,30 +220,19 @@
     <table>
       <thead>
         <tr>
-          <th>Type de site</th>
+          <th>Pages</th>
           <th>Temps</th>
           <th>Détail</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="3"><div class="category">WordPress</div></td></tr>
         <tr><td>1-5 pages</td><td><strong>3-4h</strong></td><td>Génération IA ~1h + transfert WordPress ~1h + config hébergement/domaine/SSL ~30min + tests ~30min</td></tr>
         <tr><td>6-10 pages</td><td><strong>5-7h</strong></td><td>Génération IA ~2h + transfert ~2h + config ~1h + tests ~1h</td></tr>
         <tr><td>11-20 pages</td><td><strong>8-12h</strong></td><td>Génération IA ~4h + transfert ~3h + config ~1h + tests ~1h</td></tr>
-
-        <tr><td colspan="3"><div class="category">Framer / Dora</div></td></tr>
-        <tr><td>1-5 pages</td><td><strong>2-3h</strong></td><td>Génération IA ~1h + import Framer/Dora ~30min + config domaine ~15min + tests ~15min</td></tr>
-        <tr><td>6-10 pages</td><td><strong>4-5h</strong></td><td>Génération IA ~2h + import ~1h + config ~30min + tests ~30min</td></tr>
-        <tr><td>11-20 pages</td><td><strong>6-8h</strong></td><td>Génération IA ~3h + import ~2h + config ~30min + tests ~30min</td></tr>
-
-        <tr><td colspan="3"><div class="category">Figma</div></td></tr>
-        <tr><td>1-5 pages</td><td><strong>2-3h</strong></td><td>Maquette complète livrée</td></tr>
-        <tr><td>6-10 pages</td><td><strong>4-5h</strong></td><td>Maquette complète livrée</td></tr>
-        <tr><td>11-20 pages</td><td><strong>6-8h</strong></td><td>Maquette complète livrée</td></tr>
       </tbody>
     </table>
 
-    <div class="section-sub" style="margin-top: 16px;">Un freelance qui fait ça manuellement : 5 à 15 jours. Le code généré par IA est optimisé dès le départ (chargement rapide, SEO technique intégré, responsive natif, code propre sans bloat).</div>
+    <div class="note" style="margin-top: 16px;">Le code généré par IA est optimisé dès le départ : chargement rapide, SEO technique intégré, responsive natif, code propre sans bloat.</div>
   </div>
 
   <div class="footer">© 2026 Prime Agence</div>

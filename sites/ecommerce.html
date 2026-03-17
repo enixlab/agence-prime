@@ -18,7 +18,7 @@
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
   .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
-  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; }
+  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
   .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
@@ -31,7 +31,7 @@
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
   .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
   .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
-  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 8px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
   .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
   .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
   @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
@@ -57,19 +57,17 @@
       <thead>
         <tr>
           <th>Type</th>
-          <th>Produits</th>
           <th>Prix</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Mono produit (dropshipping)</td><td>1 produit</td><td><strong>297€</strong></td></tr>
-        <tr><td>Petite boutique</td><td>2-10 produits</td><td><strong>450€</strong></td></tr>
-        <tr><td>Boutique standard</td><td>11-30 produits</td><td><strong>800€</strong></td></tr>
-        <tr><td>Catalogue moyen</td><td>31-100 produits</td><td><strong>1 800€</strong></td></tr>
-        <tr><td>Gros catalogue</td><td>100+ produits</td><td>Sur devis</td></tr>
-        <tr><td>Produit supplémentaire (ajout simple)</td><td>—</td><td>5€/produit</td></tr>
-        <tr><td>Produit supplémentaire (fiche rédigée + SEO)</td><td>—</td><td>15€/produit</td></tr>
-        <tr><td>Maintenance mensuelle</td><td>—</td><td>100€/mois</td></tr>
+        <tr><td>Mono produit (dropshipping)</td><td><strong>297€</strong></td></tr>
+        <tr><td>2-10 produits</td><td><strong>600€</strong></td></tr>
+        <tr><td>11-30 produits</td><td><strong>1 000€</strong></td></tr>
+        <tr><td>31-100 produits</td><td><strong>1 500€</strong></td></tr>
+        <tr><td>100+ produits</td><td>Sur devis</td></tr>
+        <tr><td>Produit supplémentaire hors forfait</td><td>15€/produit</td></tr>
+        <tr><td>Maintenance mensuelle</td><td>100€/mois</td></tr>
       </tbody>
     </table>
   </div>
@@ -81,34 +79,32 @@
     <div class="section-header">
       <div class="section-title">Tarifs WordPress / WooCommerce</div>
     </div>
-    <div class="section-sub">WooCommerce est 30-50% plus cher que Shopify : installation serveur, configuration plugins (paiement, livraison, sécurité ~700€ de plugins), SSL manuel. Par contre le client paie 0% de commission sur ses ventes (Shopify prend 0,5-2% par transaction).</div>
+    <div class="section-sub">WooCommerce est plus cher que Shopify : installation serveur, configuration plugins (paiement, livraison, sécurité), SSL manuel. Par contre le client paie 0% de commission sur ses ventes (Shopify prend 0,5-2% par transaction).</div>
 
     <table>
       <thead>
         <tr>
           <th>Type</th>
-          <th>Produits</th>
           <th>Prix</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Petite boutique</td><td>2-10 produits</td><td><strong>600€</strong></td></tr>
-        <tr><td>Boutique standard</td><td>11-30 produits</td><td><strong>1 100€</strong></td></tr>
-        <tr><td>Catalogue moyen</td><td>31-100 produits</td><td><strong>2 500€</strong></td></tr>
-        <tr><td>Gros catalogue</td><td>100+ produits</td><td>Sur devis</td></tr>
-        <tr><td>Produit supplémentaire (ajout simple)</td><td>—</td><td>8€/produit</td></tr>
-        <tr><td>Produit supplémentaire (fiche rédigée + SEO)</td><td>—</td><td>20€/produit</td></tr>
-        <tr><td>Maintenance mensuelle</td><td>—</td><td>150€/mois</td></tr>
+        <tr><td>2-10 produits</td><td><strong>800€</strong></td></tr>
+        <tr><td>11-30 produits</td><td><strong>1 300€</strong></td></tr>
+        <tr><td>31-100 produits</td><td><strong>1 800€</strong></td></tr>
+        <tr><td>100+ produits</td><td>Sur devis</td></tr>
+        <tr><td>Produit supplémentaire hors forfait</td><td>20€/produit</td></tr>
+        <tr><td>Maintenance mensuelle</td><td>130€/mois</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- SETUP : CE QUE LE CLIENT REÇOIT -->
+  <!-- SETUP SHOPIFY -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Setup — Ce que le client reçoit</div>
+      <div class="section-title">Setup Shopify — Ce que le client reçoit</div>
     </div>
 
     <table>
@@ -121,118 +117,65 @@
       </thead>
       <tbody>
         <tr><td colspan="3"><div class="category">Design & structure</div></td></tr>
-        <tr>
-          <td>Design complet de la boutique (accueil, pages produits, panier, checkout)</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Design responsive (mobile, tablette, desktop)</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Intégration branding client (logo, couleurs, police)</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
+        <tr><td>Design complet de la boutique (accueil, pages produits, panier, checkout)</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Design responsive (mobile, tablette, desktop)</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Intégration branding client (logo, couleurs, police)</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
 
         <tr><td colspan="3"><div class="category">Produits</div></td></tr>
-        <tr>
-          <td>Fiches produits (titre, description, photos, prix, variantes)</td>
-          <td>Claude IA + AutoDS</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Import produits en masse (CSV)</td>
-          <td>AutoDS Business</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Organisation collections / catégories</td>
-          <td>Shopify / WooCommerce</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
+        <tr><td>Fiches produits (titre, description, photos, prix, variantes)</td><td>Claude IA + AutoDS</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Import produits en masse (CSV)</td><td>AutoDS Business</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Organisation collections / catégories</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
 
         <tr><td colspan="3"><div class="category">Tunnel de vente</div></td></tr>
-        <tr>
-          <td>Configuration paiement (Stripe, PayPal, Shopify Payments)</td>
-          <td>Shopify / WooCommerce</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Configuration livraison (zones, tarifs, transporteurs)</td>
-          <td>Shopify / WooCommerce</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Pages légales (mentions légales, CGV, politique de retour, confidentialité)</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Emails transactionnels (confirmation commande, expédition, suivi)</td>
-          <td>Shopify / WooCommerce</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
+        <tr><td>Configuration paiement (Stripe, PayPal, Shopify Payments)</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Configuration livraison (zones, tarifs, transporteurs)</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Pages légales (mentions légales, CGV, politique de retour, confidentialité)</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Emails transactionnels (confirmation commande, expédition)</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
 
         <tr><td colspan="3"><div class="category">SEO & performance</div></td></tr>
-        <tr>
-          <td>SEO technique (balises meta, titres, descriptions, sitemap)</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Optimisation vitesse de chargement</td>
-          <td>Claude IA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
+        <tr><td>SEO technique (balises meta, titres, descriptions, sitemap)</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Optimisation vitesse de chargement</td><td>Claude IA</td><td><span class="auto">Auto</span></td></tr>
 
-        <tr><td colspan="3"><div class="category">Apps & plugins essentiels</div></td></tr>
-        <tr>
-          <td>Installation apps/plugins (avis, upsell, tracking, urgence)</td>
-          <td>Shopify / WooCommerce</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
+        <tr><td colspan="3"><div class="category">Apps essentielles</div></td></tr>
+        <tr><td>Installation apps (avis, upsell, tracking, urgence)</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
 
         <tr><td colspan="3"><div class="category">Tracking</div></td></tr>
-        <tr>
-          <td>Pixel Facebook / Meta installé</td>
-          <td>Meta Business</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Pixel Google Ads / GA4 installé</td>
-          <td>Google Ads / GA4</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Pixel TikTok installé (si applicable)</td>
-          <td>TikTok Business</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
+        <tr><td>Pixel Facebook / Meta installé</td><td>Meta Business</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Pixel Google Ads / GA4 installé</td><td>Google Ads / GA4</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Pixel TikTok installé (si applicable)</td><td>TikTok Business</td><td><span class="manuel">Manuel</span></td></tr>
 
         <tr><td colspan="3"><div class="category">Mise en ligne</div></td></tr>
+        <tr><td>Transfert sur Shopify</td><td>Shopify Partner</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Configuration domaine + SSL</td><td>Shopify</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Tests complets (tunnel d'achat, paiement, mobile, vitesse)</td><td>Navigateur / PageSpeed</td><td><span class="manuel">Manuel</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SETUP WOOCOMMERCE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Setup WooCommerce — Étapes supplémentaires</div>
+    </div>
+    <div class="section-sub">En plus de tout ce qui est listé ci-dessus pour Shopify, WooCommerce nécessite ces étapes techniques supplémentaires :</div>
+
+    <table>
+      <thead>
         <tr>
-          <td>Transfert sur Shopify ou WordPress</td>
-          <td>Shopify Partner / WordPress</td>
-          <td><span class="manuel">Manuel</span></td>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Mode</th>
         </tr>
-        <tr>
-          <td>Configuration domaine + SSL</td>
-          <td>Hébergeur / Shopify</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Tests complets (tunnel d'achat, paiement, mobile, vitesse)</td>
-          <td>PageSpeed / navigateur</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Mise en ligne</td>
-          <td>Shopify / WordPress</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Installation WordPress sur serveur</td><td>Hébergeur</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Installation + configuration WooCommerce</td><td>WordPress</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Installation plugins paiement (Stripe / PayPal)</td><td>WooCommerce</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Installation plugin livraison</td><td>WooCommerce</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Configuration SSL + sécurité</td><td>Hébergeur</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Installation plugins premium (~700€ de plugins)</td><td>WooCommerce</td><td><span class="manuel">Manuel</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -243,19 +186,18 @@
   <div class="section">
     <div class="section-header">
       <div class="section-title">Maintenance mensuelle</div>
-      <div class="section-price">100-150€/mois</div>
     </div>
 
     <table>
       <thead>
         <tr>
           <th>Tâche</th>
-          <th>Shopify</th>
-          <th>WooCommerce</th>
+          <th>Shopify — 100€/mois</th>
+          <th>WooCommerce — 130€/mois</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Mises à jour thème + apps/plugins</td><td>Inclus</td><td>Manuel mensuel</td></tr>
+        <tr><td>Mises à jour thème + apps/plugins</td><td>Inclus Shopify</td><td>Manuel mensuel</td></tr>
         <tr><td>Sécurité (SSL, patches, failles)</td><td>Géré par Shopify</td><td>Manuel mensuel</td></tr>
         <tr><td>Sauvegardes</td><td>Géré par Shopify</td><td>Hebdomadaire</td></tr>
         <tr><td>Vérification tunnel d'achat + paiements</td><td>Mensuel</td><td>Mensuel</td></tr>
@@ -264,7 +206,7 @@
       </tbody>
     </table>
 
-    <div class="note">WooCommerce coûte 150€/mois au lieu de 100€/mois parce qu'il y a plus de maintenance technique : plugins à mettre à jour, serveur à surveiller, sécurité à gérer manuellement. Shopify gère tout ça automatiquement.</div>
+    <div class="note">WooCommerce coûte 130€/mois parce qu'il y a plus de maintenance technique : plugins, compatibilité, mises à jour serveur, sécurité. Shopify gère tout ça automatiquement.</div>
   </div>
 
   <div class="divider"></div>
@@ -277,12 +219,12 @@
 
     <div class="upsell-box">
       <h4>Upsell — Gestion e-com mensuelle → 400€/mois (Shopify) / 500€/mois (WooCommerce)</h4>
-      <p>On gère le store au quotidien : ajout de nouveaux produits, mise à jour des fiches, gestion des promos, optimisation des pages. Le client n'a rien à toucher, son store évolue et s'améliore chaque mois.</p>
+      <p>On gère le store au quotidien : ajout de nouveaux produits, mise à jour des fiches, gestion des promos, optimisation des pages. Le client n'a rien à toucher.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
       <h4>Cross-sell — Recherche de produits gagnants → 300€/mois</h4>
-      <p>On analyse le marché avec Minea/AdSpy et on livre chaque mois des produits testés et validés qui se vendent en ce moment. Le store est alimenté en continu avec des produits frais.</p>
+      <p>On analyse le marché avec Minea/AdSpy et on livre chaque mois des produits testés et validés. Le store est alimenté en continu avec des produits frais qui se vendent.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
@@ -292,7 +234,7 @@
 
     <div class="upsell-box" style="margin-top: 16px;">
       <h4>Cross-sell — Google My Business → 300€ + 200€/mois (si client local)</h4>
-      <p>On crée et alimente la fiche Google du client avec des publications, photos, offres et réponses aux avis. Il est visible en local gratuitement en plus de la pub payante.</p>
+      <p>On crée et alimente la fiche Google du client avec des publications, photos, offres et réponses aux avis. Visibilité locale gratuite en plus de la pub payante.</p>
     </div>
   </div>
 
@@ -314,19 +256,19 @@
       </thead>
       <tbody>
         <tr><td colspan="3"><div class="category">Shopify</div></td></tr>
-        <tr><td>Mono produit</td><td><strong>1-2h</strong></td><td>Génération IA ~30min + transfert Shopify ~30min + paiement/livraison ~15min + tests ~15min</td></tr>
+        <tr><td>Mono produit</td><td><strong>1-2h</strong></td><td>Génération IA ~30min + transfert Shopify ~30min + config paiement/livraison ~15min + tests ~15min</td></tr>
         <tr><td>2-10 produits</td><td><strong>3-4h</strong></td><td>Génération IA ~1h + import produits AutoDS ~30min + transfert ~1h + config ~30min + tests ~30min</td></tr>
         <tr><td>11-30 produits</td><td><strong>5-7h</strong></td><td>Génération IA ~2h + import produits ~1h + transfert ~1h + collections ~1h + config ~30min + tests ~30min</td></tr>
         <tr><td>31-100 produits</td><td><strong>8-12h</strong></td><td>Génération IA ~3h + import produits ~2h + transfert ~2h + collections/filtres ~2h + config ~1h + tests ~1h</td></tr>
 
         <tr><td colspan="3"><div class="category">WordPress / WooCommerce</div></td></tr>
-        <tr><td>2-10 produits</td><td><strong>5-6h</strong></td><td>Génération IA ~1h + install WordPress/WooCommerce/plugins ~1h30 + import produits ~30min + transfert ~1h + config paiement/livraison ~30min + SSL/sécurité ~15min + tests ~30min</td></tr>
+        <tr><td>2-10 produits</td><td><strong>5-6h</strong></td><td>Génération IA ~1h + install WordPress/WooCommerce/plugins ~1h30 + import produits ~30min + transfert ~1h + config ~30min + SSL ~15min + tests ~30min</td></tr>
         <tr><td>11-30 produits</td><td><strong>7-10h</strong></td><td>Génération IA ~2h + install ~1h30 + import produits ~1h + transfert ~2h + collections ~1h + config ~1h + tests ~1h</td></tr>
         <tr><td>31-100 produits</td><td><strong>12-16h</strong></td><td>Génération IA ~3h + install ~1h30 + import produits ~2h + transfert ~3h + collections/filtres ~2h + config ~1h + tests ~1h</td></tr>
       </tbody>
     </table>
 
-    <div class="note" style="margin-top: 16px;">Un freelance qui fait ça manuellement : 3 à 20 jours selon le volume de produits. L'import automatisé via AutoDS + le code généré par IA permettent de diviser le temps par 5. Les fiches produits sont optimisées SEO dès le départ, le design est responsive natif, le code est propre sans bloat.</div>
+    <div class="note" style="margin-top: 16px;">L'import automatisé via AutoDS + le code généré par IA permettent de diviser le temps par 5 par rapport à un freelance qui fait tout manuellement. Les fiches produits sont optimisées SEO dès le départ, le design est responsive natif, le code est propre.</div>
   </div>
 
   <div class="footer">© 2026 Prime Agence</div>
