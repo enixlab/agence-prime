@@ -74,7 +74,7 @@
     font-size: 16px;
     color: #888;
     line-height: 1.6;
-    max-width: 700px;
+    max-width: 750px;
     margin-top: 16px;
   }
 
@@ -94,18 +94,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #111;
-  }
-  .section-price {
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: #111;
-  }
-  .section-time {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: #999;
-    margin-bottom: 24px;
   }
 
   .category {
@@ -140,27 +128,7 @@
   }
   tr:hover td { background: #fafafa; }
   td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
-  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
-
-  .auto {
-    color: #111;
-    font-weight: 600;
-    background: #f0f0f0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-  }
-  .manuel {
-    color: #888;
-    font-weight: 500;
-    background: #fafafa;
-    border: 1px solid #e0e0e0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-  }
+  td:nth-child(3) { padding-left: 20px; font-size: 13px; }
 
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
 
@@ -200,6 +168,12 @@
     gap: 24px;
     margin-top: 24px;
   }
+  .pack-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
   .pack-card {
     background: #fafafa;
     border: 1px solid #eee;
@@ -227,7 +201,7 @@
   }
   .pack-card h3 {
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -242,9 +216,15 @@
     margin-bottom: 4px;
   }
   .pack-card .pack-price span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #888;
+  }
+  .pack-card .pack-volume {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 16px;
   }
   .pack-card .pack-desc {
     font-size: 13px;
@@ -257,9 +237,9 @@
     padding: 0;
   }
   .pack-card ul li {
-    font-size: 14px;
+    font-size: 13px;
     color: #333;
-    padding: 8px 0;
+    padding: 7px 0;
     border-bottom: 1px solid #f0f0f0;
     line-height: 1.5;
   }
@@ -268,6 +248,43 @@
     content: '—';
     color: #ccc;
     margin-right: 10px;
+  }
+
+  .combo-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .combo-card.featured {
+    border: 2px solid #111;
+    background: #fff;
+  }
+  .combo-info h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .combo-info p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+  }
+  .combo-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+    white-space: nowrap;
+    margin-left: 40px;
   }
 
   .upsell-box {
@@ -305,10 +322,12 @@
     .container { padding: 30px 20px; }
     .section-header { flex-direction: column; gap: 4px; }
     td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
-    td:nth-child(3), td:nth-child(4) { padding-left: 10px; }
+    td:nth-child(3) { padding-left: 10px; }
     table { font-size: 13px; }
     .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .pack-grid { grid-template-columns: 1fr; }
+    .pack-grid, .pack-grid-3 { grid-template-columns: 1fr; }
+    .combo-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .combo-price { margin-left: 0; }
   }
 </style>
 </head>
@@ -332,7 +351,7 @@
   <div class="header">
     <div class="logo">Prime Agence</div>
     <div class="service-title">Campagnes SMS & <em>Mailing</em></div>
-    <div class="service-subtitle">Campagnes email et SMS haute performance. Infrastructure d'envoi premium, délivrabilité optimisée, copywriting IA, reporting complet.</div>
+    <div class="service-subtitle">Campagnes one-shot clé-en-main. On rédige, on design, on configure la délivrabilité, on envoie, on vous livre le rapport. Vous n'avez rien à faire.</div>
   </div>
 
   <!-- KPIs -->
@@ -347,54 +366,82 @@
         <span class="label">Taux d'ouverture moyen</span>
       </div>
       <div class="kpi-card">
-        <span class="number">5-12%</span>
-        <span class="label">Taux de clic moyen</span>
+        <span class="number">IP dédiée</span>
+        <span class="label">Pas de spam, pas de blocage</span>
       </div>
       <div class="kpi-card">
-        <span class="number">IP dédiée</span>
-        <span class="label">Réputation protégée</span>
+        <span class="number">One-shot</span>
+        <span class="label">Pas d'abonnement</span>
       </div>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- PACKS TARIFS -->
+  <!-- PACKS EMAIL -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Formules</div>
+      <div class="section-title">Packs campagne Email</div>
     </div>
 
     <div class="pack-grid">
       <div class="pack-card">
-        <h3>Email</h3>
-        <div class="pack-price">1 500€ <span>setup</span></div>
-        <div class="pack-desc">Configuration complète de votre canal email + 3 templates sur-mesure</div>
+        <h3>Essential</h3>
+        <div class="pack-price">1 500€</div>
+        <div class="pack-volume">Jusqu'à 10 000 emails</div>
         <ul>
-          <li>Audit et nettoyage de votre base contacts</li>
-          <li>Configuration infrastructure d'envoi + IP dédiée</li>
-          <li>Authentification domaine (SPF, DKIM, DMARC)</li>
-          <li>Warm-up IP progressif sur 14 jours</li>
-          <li>Création de 3 templates HTML responsive</li>
-          <li>Segmentation initiale de la base</li>
-          <li>Mise en place du tracking (ouvertures, clics, conversions)</li>
-          <li>Gestion automatique des désabonnements (RGPD)</li>
-          <li>Tests de délivrabilité multi-boîtes (Gmail, Outlook, Yahoo)</li>
+          <li>Copywriting email complet (objet + corps + CTA)</li>
+          <li>Design HTML responsive sur-mesure</li>
+          <li>Configuration délivrabilité (SPF, DKIM, DMARC)</li>
+          <li>Nettoyage et validation de votre base contacts</li>
+          <li>Segmentation de la base</li>
+          <li>Envoi via infrastructure premium (IP dédiée)</li>
+          <li>Gestion des désabonnements (RGPD)</li>
+          <li>Rapport de performance (ouvertures, clics, conversions)</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Business</h3>
+        <div class="pack-price">3 500€</div>
+        <div class="pack-volume">Jusqu'à 50 000 emails</div>
+        <ul>
+          <li>Tout le pack Essential +</li>
+          <li>Warm-up IP progressif (garantie inbox)</li>
+          <li>A/B test sur l'objet (2 variantes)</li>
+          <li>Segmentation avancée (comportement, valeur client)</li>
+          <li>Monitoring délivrabilité temps réel</li>
+          <li>Vérification blacklists avant envoi</li>
+          <li>Rapport détaillé + recommandations stratégiques</li>
         </ul>
       </div>
 
       <div class="pack-card">
-        <h3>SMS</h3>
-        <div class="pack-price">800€ <span>setup</span></div>
-        <div class="pack-desc">Activation du canal SMS avec segmentation et automation</div>
+        <h3>Premium</h3>
+        <div class="pack-price">5 500€</div>
+        <div class="pack-volume">Jusqu'à 100 000 emails</div>
         <ul>
-          <li>Création et configuration du compte d'envoi</li>
-          <li>Expéditeur personnalisé (nom de votre entreprise)</li>
-          <li>Import et nettoyage de la base contacts</li>
-          <li>Segmentation (zone géo, type client, fréquence achat)</li>
-          <li>Workflow d'envoi automatisé via API</li>
-          <li>Gestion STOP SMS automatique (conformité RGPD)</li>
-          <li>Tracking des clics et conversions</li>
+          <li>Tout le pack Business +</li>
+          <li>2 variantes créatives (design + copy)</li>
+          <li>IP dédiée exclusive à votre domaine</li>
+          <li>Segmentation multi-critères avancée</li>
+          <li>Envoi échelonné intelligent (éviter les filtres)</li>
+          <li>Rapport ROI complet (revenus attribués)</li>
+          <li>Call stratégique post-campagne (30 min)</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Sur mesure</h3>
+        <div class="pack-price">Sur devis</div>
+        <div class="pack-volume">100 000+ emails</div>
+        <ul>
+          <li>Volume illimité</li>
+          <li>Stratégie d'envoi sur-mesure</li>
+          <li>Multi-IP, multi-domaine si nécessaire</li>
+          <li>Accompagnement dédié</li>
+          <li>Tout personnalisé selon vos besoins</li>
         </ul>
       </div>
     </div>
@@ -402,256 +449,201 @@
 
   <div class="divider"></div>
 
-  <!-- GESTION MENSUELLE EMAIL -->
+  <!-- PACKS SMS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Gestion mensuelle — Email</div>
-      <div class="section-price">900€/mois</div>
+      <div class="section-title">Packs campagne SMS</div>
     </div>
-    <div class="section-time">2 à 4 campagnes par mois — Rapport chaque lundi</div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Tâche</th>
-          <th>Détail</th>
-          <th>Fréquence</th>
-          <th>Mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="4"><div class="category">Création des campagnes</div></td></tr>
-        <tr>
-          <td>Stratégie et planning éditorial du mois</td>
-          <td>Thèmes, offres, temps forts</td>
-          <td>Mensuel</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Rédaction copywriting</td>
-          <td>Objet, preview text, corps, CTA — optimisé conversion</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Design HTML responsive</td>
-          <td>Adapté au contenu, cohérent avec votre branding</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>A/B test objets</td>
-          <td>2 variantes testées sur 10% de la base, le meilleur envoyé au reste</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Starter</h3>
+        <div class="pack-price">350€</div>
+        <div class="pack-volume">1 000 SMS</div>
+        <ul>
+          <li>Rédaction SMS percutant (160 car.)</li>
+          <li>Segmentation de votre base</li>
+          <li>Lien court tracké</li>
+          <li>Envoi optimisé (timing adapté au secteur)</li>
+          <li>Conformité RGPD (STOP SMS)</li>
+          <li>Rapport de livraison et clics</li>
+        </ul>
+      </div>
 
-        <tr><td colspan="4"><div class="category">Segmentation & ciblage</div></td></tr>
-        <tr>
-          <td>Segmentation dynamique</td>
-          <td>Ciblage selon l'engagement, l'historique d'achat, le comportement</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Nettoyage automatique de la base</td>
-          <td>Suppression bounces, inactifs 90 jours, doublons</td>
-          <td>Après chaque envoi</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Business</h3>
+        <div class="pack-price">1 200€</div>
+        <div class="pack-volume">5 000 SMS</div>
+        <ul>
+          <li>Tout le pack Starter +</li>
+          <li>Ciblage géolocalisé</li>
+          <li>A/B test message (2 variantes)</li>
+          <li>Timing optimisé par segment</li>
+          <li>Rapport détaillé conversions</li>
+        </ul>
+      </div>
 
-        <tr><td colspan="4"><div class="category">Envoi & délivrabilité</div></td></tr>
-        <tr>
-          <td>Planification et envoi optimisé</td>
-          <td>Timing calculé selon le secteur et les données d'ouverture</td>
-          <td>Selon planning</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Monitoring délivrabilité</td>
-          <td>Taux inbox, spam score, vérification blacklists</td>
-          <td>Hebdomadaire</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Rotation et maintenance IP</td>
-          <td>Surveillance réputation, ajustements si nécessaire</td>
-          <td>Continu</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
+      <div class="pack-card">
+        <h3>Premium</h3>
+        <div class="pack-price">2 000€</div>
+        <div class="pack-volume">10 000 SMS</div>
+        <ul>
+          <li>Tout le pack Business +</li>
+          <li>Segmentation avancée multi-critères</li>
+          <li>Rapport conversion avec attribution</li>
+          <li>Recommandations post-campagne</li>
+        </ul>
+      </div>
 
-        <tr><td colspan="4"><div class="category">Reporting</div></td></tr>
-        <tr>
-          <td>Rapport hebdomadaire</td>
-          <td>Ouvertures, clics, conversions, revenus générés, tendances</td>
-          <td>Chaque lundi</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Call stratégique</td>
-          <td>Bilan du mois, ajustements, recommandations</td>
-          <td>1x/mois</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="pack-card">
+        <h3>Enterprise</h3>
+        <div class="pack-price">5 500€</div>
+        <div class="pack-volume">50 000 SMS</div>
+        <ul>
+          <li>Tout le pack Premium +</li>
+          <li>Stratégie complète d'envoi</li>
+          <li>Envoi échelonné multi-vagues</li>
+          <li>Call stratégique post-campagne</li>
+          <li>Rapport ROI complet</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- GESTION MENSUELLE SMS -->
+  <!-- PACKS SMS + BASE PROSPECTS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Gestion mensuelle — SMS</div>
-      <div class="section-price">500€/mois</div>
+      <div class="section-title">SMS Prospection — avec location de base</div>
     </div>
-    <div class="section-time">Campagnes ciblées + 0,07€/SMS envoyé (facturé en sus)</div>
+    <p class="note" style="margin-top:0;margin-bottom:24px;">Vous n'avez pas de base contacts ? On loue un fichier ciblé opt-in pour vous. Campagne complète clé-en-main.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Tâche</th>
-          <th>Détail</th>
-          <th>Fréquence</th>
-          <th>Mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Rédaction SMS</td>
-          <td>160 caractères max, message percutant, CTA clair, lien court trackable</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Segmentation ciblée</td>
-          <td>Géolocalisation, comportement d'achat, panier moyen, récence</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Envoi optimisé</td>
-          <td>Timing adapté au secteur (ex: resto le mardi 11h, retail le jeudi 18h)</td>
-          <td>Selon planning</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Tracking conversions</td>
-          <td>Clics sur lien, visites site, achats attribués au SMS</td>
-          <td>Chaque campagne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Rapport performance</td>
-          <td>Taux de livraison, clics, conversions, coût par conversion</td>
-          <td>Chaque lundi</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Prospection 10K</h3>
+        <div class="pack-price">3 500€</div>
+        <div class="pack-volume">10 000 SMS + base prospects louée</div>
+        <ul>
+          <li>Location fichier opt-in géolocalisé</li>
+          <li>Ciblage par secteur, zone, profil</li>
+          <li>Rédaction SMS + lien tracké</li>
+          <li>Envoi + rapport complet</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Prospection 50K</h3>
+        <div class="pack-price">12 000€</div>
+        <div class="pack-volume">50 000 SMS + base prospects louée</div>
+        <ul>
+          <li>Location fichier massif ciblé</li>
+          <li>Segmentation multi-zones</li>
+          <li>Envoi échelonné multi-vagues</li>
+          <li>A/B test + rapport ROI détaillé</li>
+          <li>Call stratégique post-campagne</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- BENCHMARK MARCHÉ -->
+  <!-- COMBOS EMAIL + SMS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Benchmark marché</div>
+      <div class="section-title">Combos Email + SMS</div>
     </div>
-    <div class="section-time">Ce que facturent les agences qui utilisent Klaviyo, Brevo ou Mailchimp pour le même service</div>
+    <p class="note" style="margin-top:0;margin-bottom:24px;">Touchez vos contacts sur les deux canaux. L'email pour le détail, le SMS pour l'urgence. Impact maximal.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Prestation</th>
-          <th>Prix marché agences</th>
-          <th>Prime</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Setup email complet</td>
-          <td>2 000 — 4 000€</td>
-          <td><strong>1 500€</strong></td>
-        </tr>
-        <tr>
-          <td>Setup SMS</td>
-          <td>1 000 — 2 000€</td>
-          <td><strong>800€</strong></td>
-        </tr>
-        <tr>
-          <td>Gestion mensuelle email (2-4 campagnes)</td>
-          <td>1 200 — 2 500€/mois</td>
-          <td><strong>900€/mois</strong></td>
-        </tr>
-        <tr>
-          <td>Gestion mensuelle SMS</td>
-          <td>800 — 1 500€/mois</td>
-          <td><strong>500€/mois</strong></td>
-        </tr>
-        <tr>
-          <td>Licence plateforme (Klaviyo 50K contacts)</td>
-          <td>700€/mois facturé au client en plus</td>
-          <td><strong>Inclus dans nos tarifs</strong></td>
-        </tr>
-        <tr>
-          <td>Séquence automatisée (setup)</td>
-          <td>500 — 1 500€</td>
-          <td><strong>400€</strong></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="combo-card">
+      <div class="combo-info">
+        <h4>Duo Essential</h4>
+        <p>10 000 emails + 1 000 SMS — Copy, design, segmentation, envoi et rapport sur les deux canaux</p>
+      </div>
+      <div class="combo-price">1 700€</div>
+    </div>
 
-    <p class="note">Les agences classiques facturent la licence plateforme en supplément. Chez Prime, notre infrastructure propriétaire est incluse — pas de frais cachés, pas de licence en plus.</p>
+    <div class="combo-card featured">
+      <div class="combo-info">
+        <h4>Duo Business</h4>
+        <p>50 000 emails + 5 000 SMS — A/B test, segmentation avancée, monitoring délivrabilité, rapport détaillé</p>
+      </div>
+      <div class="combo-price">4 200€</div>
+    </div>
+
+    <div class="combo-card">
+      <div class="combo-info">
+        <h4>Duo Premium</h4>
+        <p>100 000 emails + 10 000 SMS — IP dédiée, 2 variantes créatives, envoi échelonné, rapport ROI, call stratégique</p>
+      </div>
+      <div class="combo-price">6 900€</div>
+    </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- CE QUE LE CLIENT REÇOIT -->
+  <!-- CE QUI EST INCLUS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Ce que le client reçoit</div>
+      <div class="section-title">Ce qui est inclus dans chaque campagne</div>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th>Livrable</th>
+          <th>Étape</th>
           <th>Détail</th>
         </tr>
       </thead>
       <tbody>
+        <tr><td colspan="2"><div class="category">Préparation</div></td></tr>
         <tr>
-          <td>Infrastructure d'envoi configurée</td>
-          <td>IP dédiée, authentification domaine complète, warm-up effectué, délivrabilité inbox vérifiée</td>
+          <td><strong>Nettoyage de la base contacts</strong></td>
+          <td>Dédoublonnage, suppression des invalides, vérification des adresses — votre base est propre avant l'envoi</td>
         </tr>
         <tr>
-          <td>3 templates email sur-mesure</td>
-          <td>Promo, newsletter, relance — responsive, testés sur Gmail/Outlook/Apple Mail</td>
+          <td><strong>Segmentation</strong></td>
+          <td>Découpage de la base par profil, comportement, géo, valeur client — chaque segment reçoit le bon message</td>
+        </tr>
+
+        <tr><td colspan="2"><div class="category">Création</div></td></tr>
+        <tr>
+          <td><strong>Copywriting</strong></td>
+          <td>Rédaction complète : objet, preview text, corps, CTA — optimisé pour la conversion, pas du spam</td>
         </tr>
         <tr>
-          <td>Base contacts nettoyée et segmentée</td>
-          <td>Dédoublonnage, validation emails, segmentation par comportement et valeur client</td>
+          <td><strong>Design HTML responsive</strong></td>
+          <td>Email sur-mesure qui s'affiche parfaitement sur mobile, Gmail, Outlook, Apple Mail</td>
+        </tr>
+
+        <tr><td colspan="2"><div class="category">Délivrabilité</div></td></tr>
+        <tr>
+          <td><strong>Configuration technique</strong></td>
+          <td>SPF, DKIM, DMARC configurés sur votre domaine — vos mails arrivent en boîte de réception, pas en spam</td>
         </tr>
         <tr>
-          <td>Canal SMS opérationnel</td>
-          <td>Expéditeur personnalisé, base importée, STOP SMS conforme RGPD</td>
+          <td><strong>IP dédiée + warm-up</strong></td>
+          <td>Votre propre adresse IP d'envoi avec montée en puissance progressive — aucun voisinage toxique</td>
         </tr>
         <tr>
-          <td>Campagnes mensuelles clé-en-main</td>
-          <td>Copywriting, design, segmentation, envoi, A/B test — tout est géré</td>
+          <td><strong>Tests pré-envoi</strong></td>
+          <td>Vérification spam score, test multi-boîtes (Gmail, Outlook, Yahoo), vérification blacklists</td>
+        </tr>
+
+        <tr><td colspan="2"><div class="category">Envoi & suivi</div></td></tr>
+        <tr>
+          <td><strong>Envoi optimisé</strong></td>
+          <td>Timing calculé selon votre secteur et les données de votre audience</td>
         </tr>
         <tr>
-          <td>Dashboard de reporting</td>
-          <td>Ouvertures, clics, conversions, revenus — accessible à tout moment</td>
+          <td><strong>Conformité RGPD</strong></td>
+          <td>Lien de désabonnement, STOP SMS, gestion automatique des opt-out</td>
         </tr>
         <tr>
-          <td>Rapport hebdomadaire</td>
-          <td>Synthèse performance + recommandations envoyée chaque lundi</td>
-        </tr>
-        <tr>
-          <td>Call stratégique mensuel</td>
-          <td>30 min — bilan, ajustements, planning du mois suivant</td>
+          <td><strong>Rapport de performance</strong></td>
+          <td>Ouvertures, clics, conversions, bounces, taux de livraison — livré sous 48h après la campagne</td>
         </tr>
       </tbody>
     </table>
@@ -659,7 +651,7 @@
 
   <div class="divider"></div>
 
-  <!-- UPSELL & CROSS-SELL -->
+  <!-- OPTIONS -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Options & Extensions</div>
@@ -667,23 +659,69 @@
 
     <div class="upsell-box">
       <h4>Séquences email automatisées</h4>
-      <p><strong>400€ setup + 150€/mois</strong> — Bienvenue, relance panier abandonné, post-achat, réactivation inactifs. Les séquences tournent 24/7 et génèrent du revenu en automatique.</p>
+      <p><strong>2 500€ setup</strong> — Bienvenue, relance panier abandonné, post-achat, réactivation inactifs. Les séquences tournent 24/7 et génèrent du revenu en automatique. Configuration complète + 5 séquences.</p>
     </div>
 
     <div class="upsell-box">
-      <h4>Volume Premium</h4>
-      <p><strong>+500€/mois</strong> — Passage à 8+ campagnes/mois avec segmentation avancée, tests A/B systématiques sur chaque envoi et personnalisation dynamique du contenu.</p>
+      <h4>Campagne récurrente</h4>
+      <p><strong>Sur devis</strong> — Vous voulez envoyer régulièrement ? On construit un planning et on gère tout chaque mois. Tarif dégressif selon la fréquence.</p>
     </div>
 
     <div class="upsell-box">
-      <h4>Génération de leads pour alimenter les campagnes</h4>
-      <p>Plus de contacts qualifiés = plus de revenus par campagne. On alimente votre base via Google Ads, Meta Ads ou landing pages optimisées.</p>
+      <h4>Landing page de capture</h4>
+      <p><strong>500€/page</strong> — Page optimisée pour collecter des emails ou des numéros. Design conversion-first, formulaire intégré, A/B testé.</p>
     </div>
 
     <div class="upsell-box">
-      <h4>Landing pages de capture</h4>
-      <p><strong>500€/page</strong> — Pages optimisées pour maximiser les inscriptions newsletter et opt-in SMS. Design conversion-first, A/B testé.</p>
+      <h4>Génération de leads</h4>
+      <p>Plus de contacts qualifiés = plus de revenus par campagne. On alimente votre base via Google Ads, Meta Ads ou scraping ciblé.</p>
     </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Comment ça marche</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Détail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Vous choisissez votre pack</strong></td>
+          <td>Email, SMS ou combo — selon votre volume et vos objectifs</td>
+        </tr>
+        <tr>
+          <td><strong>2. Vous nous envoyez votre base</strong></td>
+          <td>Fichier Excel/CSV avec les contacts. Pas de base ? On peut en louer une ciblée pour vous</td>
+        </tr>
+        <tr>
+          <td><strong>3. On prépare tout</strong></td>
+          <td>Nettoyage base, copywriting, design, configuration technique, tests délivrabilité</td>
+        </tr>
+        <tr>
+          <td><strong>4. Validation</strong></td>
+          <td>Vous validez l'email/SMS avant envoi. Rien ne part sans votre accord</td>
+        </tr>
+        <tr>
+          <td><strong>5. Envoi</strong></td>
+          <td>Campagne envoyée au timing optimal. Monitoring en temps réel</td>
+        </tr>
+        <tr>
+          <td><strong>6. Rapport</strong></td>
+          <td>Rapport complet livré sous 48h — ouvertures, clics, conversions, recommandations</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">Délai moyen : 3 à 7 jours ouvrés entre la réception de votre base et l'envoi de la campagne (warm-up IP inclus si nécessaire).</p>
   </div>
 
   <div class="footer">© 2026 Prime Agence</div>
