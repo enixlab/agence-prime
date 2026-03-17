@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Chatbot IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
+  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
+  .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
+  .auto { color: #111; font-weight: 600; background: #f0f0f0; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+  .manuel { color: #888; font-weight: 500; background: #fafafa; border: 1px solid #e0e0e0; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+  .no { color: #cc0000; font-weight: 500; background: #fff5f5; border: 1px solid #ffdddd; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Chatbot <em>IA</em></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CE QUE LE CHATBOT FAIT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce que le chatbot fait</div>
+    </div>
+    <div class="section-sub">Un vendeur IA entraîné sur le catalogue du client qui tourne 24/7. Pas un chatbot FAQ avec des réponses génériques pré-enregistrées.</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fonctionnalité</th>
+          <th>Détail</th>
+          <th>Chatbot gratuit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Connaît chaque produit du catalogue</td><td>Nom, description, prix, variantes, tailles, couleurs, matières, stock</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Recommande le bon produit selon la demande</td><td>"Je cherche un cadeau à moins de 50€" → il propose le bon produit</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Répond aux questions spécifiques sur un produit</td><td>"Ce t-shirt taille grand ?", "C'est quoi la composition ?"</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Pousse les promos en cours naturellement</td><td>"D'ailleurs en ce moment on a -20% sur cette gamme"</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Traite les objections d'achat</td><td>"C'est cher" → propose un produit moins cher ou met en avant la qualité/garantie</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Propose des produits complémentaires</td><td>"Vous avez pris le pantalon, on a aussi la ceinture qui va avec"</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Connaît les conditions de livraison</td><td>Délais, zones, frais, suivi</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Connaît la politique de retour et garanties</td><td>Conditions, délais, remboursement</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Collecte l'email du visiteur</td><td>"Je vous envoie un rappel quand le produit sera en promo" → email sauvegardé</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Envoie le visiteur vers le produit / panier</td><td>Lien cliquable directement vers la page produit ou le checkout</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Multilingue</td><td>Français, anglais, arabe, espagnol, etc. automatiquement</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Ton adapté au branding du client</td><td>Formel, décontracté, luxe, streetwear — paramétré à la création</td><td><span class="no">Non</span></td></tr>
+        <tr><td>Disponible 24/7</td><td>Nuit, week-end, jours fériés</td><td><span class="auto">Oui</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LIMITATIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce que le chatbot ne peut pas faire</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Limitation</th>
+          <th>Raison</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Passer une commande à la place du visiteur</td><td>Shopify et WooCommerce ne permettent pas de finaliser un achat via un chatbot externe</td></tr>
+        <tr><td>Accéder à l'historique de commandes d'un client connecté</td><td>Nécessite une Shopify App privée avec des permissions spécifiques (dev supplémentaire)</td></tr>
+        <tr><td>Traiter les paiements dans le chat</td><td>Restriction des plateformes de paiement</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RÉSULTAT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Résultat pour le client</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Résultat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Les visiteurs qui hésitent et qui seraient partis sans acheter sont guidés vers le bon produit et convertis</td></tr>
+        <tr><td>Les questions posées à 23h un dimanche soir reçoivent une réponse immédiate au lieu de rester sans réponse</td></tr>
+        <tr><td>Le client ne rate plus aucune vente par manque de réactivité</td></tr>
+        <tr><td>Les emails des visiteurs intéressés sont collectés automatiquement pour relance ultérieure</td></tr>
+        <tr><td>Le panier moyen augmente grâce aux recommandations de produits complémentaires</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TARIFS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Tarifs</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Shopify</th>
+          <th>WordPress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Setup</strong></td><td><strong>100€</strong></td><td><strong>150€</strong></td></tr>
+        <tr><td><strong>Abonnement mensuel</strong></td><td><strong>30€/mois</strong></td><td><strong>30€/mois</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">WordPress est plus cher en setup parce que l'intégration nécessite plus de configuration côté serveur et API WooCommerce. L'abonnement mensuel est le même : le chatbot tourne sur la même infrastructure.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COÛT RÉEL POUR PRIME -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Coût réel pour Prime</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Poste</th>
+          <th>Coût</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>App tierce</td><td>0€</td></tr>
+        <tr><td>Hébergement backend (Vercel serverless)</td><td>0€ (plan gratuit)</td></tr>
+        <tr><td>Claude API Haiku (~1 000 conversations/mois)</td><td>~10€/mois par client</td></tr>
+        <tr><td>Claude API Haiku (~10 000 conversations/mois)</td><td>~100€/mois par client</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MARGE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Marge</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Setup</th>
+          <th>Mensuel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Prix client Shopify</td><td>100€</td><td>30€/mois</td></tr>
+        <tr><td>Coût réel</td><td>~0€</td><td>~10€/mois (API)</td></tr>
+        <tr><td>Marge</td><td>100€</td><td>20€/mois</td></tr>
+        <tr><td>Prix client WordPress</td><td>150€</td><td>30€/mois</td></tr>
+        <tr><td>Coût réel</td><td>~0€</td><td>~10€/mois (API)</td></tr>
+        <tr><td>Marge</td><td>150€</td><td>20€/mois</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">50 clients avec chatbot = 1 500€/mois de recurring pour ~500€/mois de coût API = 1 000€/mois de marge nette.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ARCHITECTURE TECHNIQUE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Setup — Comment on intègre</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Création du chatbot</div></td></tr>
+        <tr><td>Création du widget chat (bulle flottante, interface de conversation)</td><td>Vanilla JS</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Création du backend (reçoit les questions, appelle Claude API, renvoie les réponses)</td><td>Vercel Serverless</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Configuration du prompt système (catalogue produits, conditions livraison, retours, ton de la marque)</td><td>Claude API</td><td><span class="manuel">Manuel</span></td></tr>
+
+        <tr><td colspan="3"><div class="category">Connexion au catalogue</div></td></tr>
+        <tr><td>Chargement du catalogue produits (noms, prix, stocks, variantes, descriptions)</td><td>API Storefront Shopify / API REST WooCommerce</td><td><span class="auto">Auto</span></td></tr>
+        <tr><td>Mise à jour automatique quand les produits changent</td><td>API Storefront / REST</td><td><span class="auto">Auto</span></td></tr>
+
+        <tr><td colspan="3"><div class="category">Intégration Shopify</div></td></tr>
+        <tr><td>Création du snippet Liquid (chatbot-widget.liquid)</td><td>Shopify Theme Editor</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Injection dans theme.liquid (1 ligne de code)</td><td>Shopify Theme Editor</td><td><span class="manuel">Manuel</span></td></tr>
+
+        <tr><td colspan="3"><div class="category">Intégration WordPress</div></td></tr>
+        <tr><td>Ajout du script via functions.php ou plugin custom</td><td>WordPress</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Configuration API REST WooCommerce (clés API, permissions)</td><td>WooCommerce</td><td><span class="manuel">Manuel</span></td></tr>
+
+        <tr><td colspan="3"><div class="category">Tests</div></td></tr>
+        <tr><td>Test des réponses sur les produits du client</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Test mobile + desktop</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
+        <tr><td>Test multilingue</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TEMPS DE CRÉATION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Temps de création</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Shopify</th>
+          <th>WordPress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Création widget chat + backend</td><td>2h</td><td>2h</td></tr>
+        <tr><td>Configuration prompt système + catalogue</td><td>30min</td><td>30min</td></tr>
+        <tr><td>Intégration dans le store</td><td>30min</td><td>1h</td></tr>
+        <tr><td>Tests</td><td>30min</td><td>30min</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>3h30</strong></td><td><strong>4h</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UPSELL & CROSS-SELL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Upsell & Cross-sell</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Upsell — Séquences email automatisées</h4>
+      <p><strong>Shopify :</strong> 200€ setup + 50€/mois — Relance panier abandonné, email bienvenue, post-achat, demande d'avis. Les paniers abandonnés sont relancés automatiquement, les clients existants sont poussés à racheter.</p>
+      <p style="margin-top: 8px;"><strong>WordPress :</strong> 250€ setup + 70€/mois — Même chose mais configuration plus technique (Mailchimp/AutomateWoo au lieu de Shopify Email gratuit).</p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — Campagne Ads</h4>
+      <p>Le chatbot convertit les visiteurs qui sont déjà sur le store. Mais pour avoir des visiteurs, il faut du trafic. Campagne Meta Ads → 500€ setup / TikTok Ads → 300€ setup / Snapchat Ads → 300€ setup.</p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — QR Intelligent Avis Google (si client local)</h4>
+      <p>Le chatbot gère la conversion en ligne, le QR Intelligent gère la réputation locale. 630€ setup + 50€/mois.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+</body>
+</html>
