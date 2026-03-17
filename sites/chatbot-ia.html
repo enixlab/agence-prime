@@ -17,7 +17,6 @@
   .section { margin-bottom: 60px; }
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
-  .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
   .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
@@ -122,14 +121,39 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Setup</strong></td><td><strong>100€</strong></td><td><strong>150€</strong></td></tr>
-        <tr><td><strong>Standard (jusqu'à 1 000 conversations/mois)</strong></td><td><strong>50€/mois</strong></td><td><strong>50€/mois</strong></td></tr>
-        <tr><td><strong>Pro (jusqu'à 5 000 conversations/mois)</strong></td><td><strong>100€/mois</strong></td><td><strong>100€/mois</strong></td></tr>
-        <tr><td><strong>Sur mesure (5 000+)</strong></td><td>À partir de 150€/mois</td><td>À partir de 150€/mois</td></tr>
+        <tr><td><strong>Setup</strong></td><td><strong>500€</strong></td><td><strong>700€</strong></td></tr>
+        <tr><td><strong>Standard (jusqu'à 1 000 conversations/mois)</strong></td><td><strong>100€/mois</strong></td><td><strong>100€/mois</strong></td></tr>
+        <tr><td><strong>Pro (jusqu'à 5 000 conversations/mois)</strong></td><td><strong>200€/mois</strong></td><td><strong>200€/mois</strong></td></tr>
+        <tr><td><strong>Sur mesure (5 000+)</strong></td><td>À partir de 300€/mois</td><td>À partir de 300€/mois</td></tr>
       </tbody>
     </table>
 
     <div class="note">WordPress est plus cher en setup : l'intégration nécessite plus de configuration côté serveur et API WooCommerce.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMMENT ÇA FONCTIONNE : LE COÛT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Comment fonctionne le coût</div>
+    </div>
+    <div class="section-sub">Une conversation = un visiteur qui ouvre le chatbot et discute avec lui (pose une ou plusieurs questions, reçoit une ou plusieurs réponses). Plus la conversation est longue, plus elle consomme.</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type de conversation</th>
+          <th>Échanges</th>
+          <th>Coût pour nous</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Courte</td><td>2-3 questions/réponses</td><td>~0.5 centime</td></tr>
+        <tr><td>Moyenne</td><td>5 questions/réponses</td><td>~1 centime</td></tr>
+        <tr><td>Longue</td><td>10 questions/réponses</td><td>~2 centimes</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="divider"></div>
@@ -139,7 +163,6 @@
     <div class="section-header">
       <div class="section-title">Coût réel pour Prime</div>
     </div>
-    <div class="section-sub">Basé sur Claude API Haiku 3.5 : $0.80/MTok input + $4.00/MTok output. Une conversation moyenne = ~12 000 tokens input + 1 500 tokens output = ~$0.016 par conversation. Avec prompt caching (system prompt en cache après la 1ère requête) : ~$0.008 par conversation.</div>
 
     <table>
       <thead>
@@ -149,11 +172,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>App tierce</td><td>0€</td></tr>
-        <tr><td>Hébergement backend (Vercel serverless)</td><td>0€ (plan gratuit)</td></tr>
-        <tr><td>Claude API Haiku — Standard (~1 000 conv/mois)</td><td>~10€/mois par client</td></tr>
-        <tr><td>Claude API Haiku — Pro (~5 000 conv/mois)</td><td>~50€/mois par client</td></tr>
-        <tr><td>Claude API Haiku — Sur mesure (5 000+)</td><td>Variable</td></tr>
+        <tr><td>Outil / app tierce</td><td>0€</td></tr>
+        <tr><td>Hébergement backend</td><td>0€</td></tr>
+        <tr><td>API — 1 000 conversations/mois</td><td>~10€/mois</td></tr>
+        <tr><td>API — 5 000 conversations/mois</td><td>~50€/mois</td></tr>
       </tbody>
     </table>
   </div>
@@ -169,22 +191,21 @@
     <table>
       <thead>
         <tr>
-          <th></th>
-          <th>Setup</th>
-          <th>Mensuel</th>
+          <th>Forfait</th>
+          <th>Prix client</th>
+          <th>Coût nous</th>
+          <th>Marge</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Standard — Prix client</td><td>100-150€</td><td>50€/mois</td></tr>
-        <tr><td>Standard — Coût réel</td><td>~0€</td><td>~10€/mois</td></tr>
-        <tr><td>Standard — Marge</td><td>100-150€</td><td>40€/mois</td></tr>
-        <tr><td>Pro — Prix client</td><td>100-150€</td><td>100€/mois</td></tr>
-        <tr><td>Pro — Coût réel</td><td>~0€</td><td>~50€/mois</td></tr>
-        <tr><td>Pro — Marge</td><td>100-150€</td><td>50€/mois</td></tr>
+        <tr><td>Setup Shopify</td><td>500€</td><td>~0€</td><td>500€</td></tr>
+        <tr><td>Setup WordPress</td><td>700€</td><td>~0€</td><td>700€</td></tr>
+        <tr><td>Standard</td><td>100€/mois</td><td>~10€</td><td>90€/mois</td></tr>
+        <tr><td>Pro</td><td>200€/mois</td><td>~50€</td><td>150€/mois</td></tr>
       </tbody>
     </table>
 
-    <div class="note">50 clients Standard = 2 500€/mois de recurring pour ~500€/mois de coût API = 2 000€/mois de marge nette.</div>
+    <div class="note">50 clients Standard = 5 000€/mois de recurring pour ~500€ de coût API = 4 500€/mois de marge nette.</div>
   </div>
 
   <div class="divider"></div>
