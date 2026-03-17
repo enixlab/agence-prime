@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Backing Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Accueil</a>
+    <a href="/sites/google-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Google Ads</a>
+    <a href="/sites/site-web.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Site Web</a>
+    <a href="/sites/ecommerce.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Chatbot IA</a>
+    <a href="/sites/meta-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">TikTok & Snapchat</a>
+    <a href="/sites/backing-media.html" style="text-decoration:none;color:#111;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border:1px solid #111;border-radius:9999px;transition:all .2s;">Backing Media</a>
+    <a href="/sites/automatisations.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Automatisations</a>
+    <a href="/sites/sms-mailing.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">SMS & Mailing</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Backing <em>Media</em></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DESCRIPTION -->
+  <div class="section">
+    <div class="section-sub" style="font-size:15px;color:#555;">On publie des articles sur les plus grands médias français (BFM, Le Monde, Le Parisien, CNEWS, Le Figaro, L'Express) avec un lien vers le site du client. Le client gagne en crédibilité et en référencement.</div>
+  </div>
+
+  <!-- TARIFS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Tarifs</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Média</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Article BFM Business</td><td><strong>3 500€</strong></td></tr>
+        <tr><td>Article Le Figaro</td><td><strong>3 000€</strong></td></tr>
+        <tr><td>Article Le Parisien</td><td><strong>2 000€</strong></td></tr>
+        <tr><td>Article CNEWS</td><td><strong>2 000€</strong></td></tr>
+        <tr><td>Article L'Express / Le Point</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Pack 3 médias premium</strong></td><td><strong>7 000€</strong></td></tr>
+        <tr><td><strong>Pack 5 médias premium</strong></td><td><strong>10 000€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RÉSULTAT POUR LE CLIENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Résultat pour le client</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Résultat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Le client apparaît sur des médias nationaux reconnus, sa crédibilité explose</td></tr>
+        <tr><td>Le lien vers son site depuis ces médias booste son référencement Google (backlink de haute autorité)</td></tr>
+        <tr><td>Il peut afficher "Vu sur BFM, Le Figaro, Le Parisien" sur son site et ses supports de communication</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COÛT RÉEL POUR PRIME -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Coût réel pour Prime</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Poste</th>
+          <th>Coût</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Achat article via Getfluence/plateformes</td><td>1 500-3 500€ par article selon le média</td></tr>
+        <tr><td>Marge par article</td><td>500-2 000€</td></tr>
+        <tr><td>Marge sur pack 5 médias</td><td>3 000-5 000€</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UPSELL & CROSS-SELL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Upsell & Cross-sell</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Upsell — Campagne récurrente</h4>
+      <p><strong>2 000€/mois</strong> — 1 article/mois sur un média différent.</p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — Campagne Google Ads</h4>
+      <p><strong>1 500€ setup + 2 000€/mois</strong></p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — SEO</h4>
+      <p>Les backlinks médias boostent le référencement, on complète avec du SEO mensuel.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — SMS & Mailing</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Accueil</a>
+    <a href="/sites/google-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Google Ads</a>
+    <a href="/sites/site-web.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Site Web</a>
+    <a href="/sites/ecommerce.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Chatbot IA</a>
+    <a href="/sites/meta-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">TikTok & Snapchat</a>
+    <a href="/sites/backing-media.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Backing Media</a>
+    <a href="/sites/automatisations.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Automatisations</a>
+    <a href="/sites/sms-mailing.html" style="text-decoration:none;color:#111;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border:1px solid #111;border-radius:9999px;transition:all .2s;">SMS & Mailing</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Campagnes SMS & <em>Mailing</em></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TARIFS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Tarifs</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Prestation</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Setup mailing (templates + configuration plateforme + segmentation)</td><td><strong>500€</strong></td></tr>
+        <tr><td>Setup SMS (configuration plateforme + import base)</td><td><strong>300€</strong></td></tr>
+        <tr><td>Gestion mailing mensuelle (2-4 campagnes/mois)</td><td><strong>400€/mois</strong></td></tr>
+        <tr><td>Gestion SMS mensuelle</td><td><strong>300€/mois</strong></td></tr>
+        <tr><td>Coût SMS</td><td><strong>0,05€/SMS envoyé</strong> (facturé en plus au client)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CE QUE LE CLIENT REÇOIT — MAILING -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce que le client reçoit — Mailing</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Création templates email HTML responsive</td><td>Claude IA</td><td>Auto</td></tr>
+        <tr><td>Rédaction des emails (copywriting)</td><td>Claude IA</td><td>Auto</td></tr>
+        <tr><td>Segmentation de la base contacts</td><td>Brevo/Mailchimp</td><td>Manuel</td></tr>
+        <tr><td>Planification et envoi des campagnes</td><td>Brevo/Mailchimp</td><td>Manuel</td></tr>
+        <tr><td>Analyse des résultats (taux d'ouverture, clics, conversions)</td><td>Brevo/Mailchimp</td><td>Auto</td></tr>
+        <tr><td>Rapport au client</td><td></td><td>Chaque lundi</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CE QUE LE CLIENT REÇOIT — SMS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce que le client reçoit — SMS</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Outil</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Rédaction des SMS (160 caractères, percutants)</td><td>Claude IA</td><td>Auto</td></tr>
+        <tr><td>Import et segmentation base contacts</td><td>AllMySMS/Brevo</td><td>Manuel</td></tr>
+        <tr><td>Planification et envoi</td><td>AllMySMS/Brevo</td><td>Manuel</td></tr>
+        <tr><td>Analyse des résultats (taux de livraison, clics)</td><td>AllMySMS/Brevo</td><td>Auto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COÛT RÉEL POUR PRIME -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Coût réel pour Prime</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Poste</th>
+          <th>Coût</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Brevo</td><td>19€/mois (email)</td></tr>
+        <tr><td>AllMySMS</td><td>0,045€/SMS envoyé</td></tr>
+        <tr><td>Temps de création campagne</td><td>~2h (rédaction + design + envoi)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UPSELL & CROSS-SELL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Upsell & Cross-sell</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Upsell — Séquences email automatisées</h4>
+      <p><strong>200-250€ setup + 50-70€/mois</strong> — Relance, bienvenue, post-achat.</p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — Génération de leads qualifiés</h4>
+      <p>Pour alimenter les campagnes avec de nouveaux contacts.</p>
+    </div>
+
+    <div class="upsell-box" style="margin-top: 16px;">
+      <h4>Cross-sell — Campagne Ads</h4>
+      <p>Pour augmenter la base de contacts.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+</body>
+</html>
