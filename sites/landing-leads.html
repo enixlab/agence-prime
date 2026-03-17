@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Landing Pages & Génération de Leads</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header { margin-bottom: 60px; }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .service-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .service-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .service-subtitle {
+    font-size: 16px;
+    color: #888;
+    line-height: 1.6;
+    max-width: 750px;
+    margin-top: 16px;
+  }
+
+  .section { margin-bottom: 60px; }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #111;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    text-align: left;
+    padding: 14px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  td {
+    padding: 14px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3) { padding-left: 20px; font-size: 13px; }
+
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+
+  .pack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .pack-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+  }
+  .pack-card.featured {
+    border: 2px solid #111;
+    background: #fff;
+  }
+  .pack-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: #111;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 20px;
+  }
+  .pack-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .pack-card .pack-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .pack-card .pack-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+  }
+  .pack-card .pack-volume {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .pack-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .pack-card ul li {
+    font-size: 13px;
+    color: #333;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5;
+  }
+  .pack-card ul li:last-child { border-bottom: none; }
+  .pack-card ul li::before {
+    content: '—';
+    color: #ccc;
+    margin-right: 10px;
+  }
+
+  .upsell-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .upsell-box:first-of-type { margin-top: 24px; }
+  .upsell-box h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 12px;
+  }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+
+  .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
+
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-size: 12px;
+    color: #ccc;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    .section-header { flex-direction: column; gap: 4px; }
+    td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
+    td:nth-child(3) { padding-left: 10px; }
+    table { font-size: 13px; }
+    .pack-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-active">Landing & Leads</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Landing Pages & <em>Génération de Leads</em></div>
+    <div class="service-subtitle">Des pages de capture qui convertissent et des campagnes qui remplissent votre base de contacts qualifiés. Plus de leads, plus de clients, plus de chiffre d'affaires.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS LANDING PAGE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Packs Landing Page</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Essential</h3>
+        <div class="pack-price">500€ <span>/ page</span></div>
+        <div class="pack-volume">1 landing page optimisée</div>
+        <ul>
+          <li>Design conversion-first sur-mesure</li>
+          <li>Copywriting persuasif (titre, bénéfices, CTA)</li>
+          <li>Formulaire de capture intégré (email ou téléphone)</li>
+          <li>Responsive mobile / tablette / desktop</li>
+          <li>Hébergement inclus (Vercel)</li>
+          <li>Pixel tracking (Meta, Google) configuré</li>
+          <li>Livraison en 5 jours ouvrés</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Conversion</h3>
+        <div class="pack-price">1 200€ <span>/ page</span></div>
+        <div class="pack-volume">1 landing page haute performance</div>
+        <ul>
+          <li>Tout le pack Essential +</li>
+          <li>Recherche marché et angle d'attaque</li>
+          <li>Copywriting avancé (storytelling, objections, preuves sociales)</li>
+          <li>Design premium avec animations subtiles</li>
+          <li>Section témoignages / logos clients</li>
+          <li>Pop-up exit-intent</li>
+          <li>A/B test (2 variantes de titre ou CTA)</li>
+          <li>Intégration CRM / email automation</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Funnel</h3>
+        <div class="pack-price">2 500€</div>
+        <div class="pack-volume">3 pages (capture + merci + relance)</div>
+        <ul>
+          <li>Page de capture principale</li>
+          <li>Page de remerciement avec offre complémentaire</li>
+          <li>Page de relance (retargeting)</li>
+          <li>Tout le pack Conversion sur chaque page</li>
+          <li>Séquence email de bienvenue (3 emails)</li>
+          <li>Tracking complet du funnel</li>
+          <li>Rapport de performance à J+14</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Sur mesure</h3>
+        <div class="pack-price">Sur devis</div>
+        <div class="pack-volume">Projet multi-pages complexe</div>
+        <ul>
+          <li>Nombre de pages illimité</li>
+          <li>Stratégie de conversion personnalisée</li>
+          <li>Intégrations spécifiques (paiement, booking, quiz...)</li>
+          <li>Design 100% custom</li>
+          <li>Accompagnement dédié</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS GÉNÉRATION DE LEADS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Packs Génération de Leads</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Starter</h3>
+        <div class="pack-price">1 500€ <span>/mois</span></div>
+        <div class="pack-volume">Google Ads ou Meta Ads</div>
+        <ul>
+          <li>1 canal publicitaire au choix</li>
+          <li>Création de la campagne complète</li>
+          <li>1 landing page de capture incluse</li>
+          <li>Ciblage audience optimisé</li>
+          <li>Gestion et optimisation quotidienne</li>
+          <li>Rapport hebdomadaire (leads, coût/lead, conversions)</li>
+          <li>Budget ads non inclus — recommandé : 500-1 000€/mois</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Growth</h3>
+        <div class="pack-price">2 500€ <span>/mois</span></div>
+        <div class="pack-volume">Google Ads + Meta Ads</div>
+        <ul>
+          <li>2 canaux publicitaires combinés</li>
+          <li>Création campagnes sur chaque plateforme</li>
+          <li>2 landing pages de capture incluses</li>
+          <li>Retargeting cross-canal</li>
+          <li>A/B test créatifs et audiences</li>
+          <li>Optimisation quotidienne des enchères</li>
+          <li>Intégration CRM / notifications en temps réel</li>
+          <li>Rapport hebdomadaire détaillé</li>
+          <li>Budget ads non inclus — recommandé : 1 000-3 000€/mois</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Scraping ciblé</h3>
+        <div class="pack-price">800€</div>
+        <div class="pack-volume">Base de données sur mesure</div>
+        <ul>
+          <li>Extraction de contacts ciblés (Google Maps, LinkedIn, annuaires)</li>
+          <li>Nettoyage et dédoublonnage</li>
+          <li>Validation des emails / téléphones</li>
+          <li>Segmentation par secteur, zone, taille d'entreprise</li>
+          <li>Livraison fichier CSV / Excel propre</li>
+          <li>Jusqu'à 5 000 contacts qualifiés</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Scraping massif</h3>
+        <div class="pack-price">2 000€</div>
+        <div class="pack-volume">Base de données volume</div>
+        <ul>
+          <li>Tout le pack Scraping ciblé +</li>
+          <li>Jusqu'à 25 000 contacts qualifiés</li>
+          <li>Multi-sources (Maps + annuaires + web)</li>
+          <li>Enrichissement données (site web, email, téléphone, CA)</li>
+          <li>Segmentation avancée multi-critères</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CE QUE LE CLIENT OBTIENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce que vous obtenez</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Livrable</th>
+          <th>Détail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Landing page qui convertit</strong></td>
+          <td>Pas un site vitrine — une page construite pour un seul objectif : capturer le contact. Design, copywriting et formulaire optimisés pour la conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Campagnes Ads configurées</strong></td>
+          <td>Google Ads et/ou Meta Ads créées de A à Z — ciblage, créatifs, enchères, tracking. Tout est prêt à générer des leads dès le premier jour</td>
+        </tr>
+        <tr>
+          <td><strong>Base de contacts qualifiés</strong></td>
+          <td>Contacts extraits, nettoyés, validés et segmentés. Prêts à être contactés par email, SMS ou téléphone</td>
+        </tr>
+        <tr>
+          <td><strong>Tracking complet</strong></td>
+          <td>Pixel Meta, Google Ads, Google Analytics configurés. Chaque lead est tracé de la publicité jusqu'à la conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Rapports de performance</strong></td>
+          <td>Nombre de leads, coût par lead, taux de conversion, sources de trafic — chaque semaine, en clair</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- OPTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Options & Extensions</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Campagne SMS sur les leads collectés</h4>
+      <p>Les leads capturés via votre landing page reçoivent automatiquement un SMS de relance. Taux de conversion boosté.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Séquence email automatisée</h4>
+      <p><strong>500€</strong> — 5 emails automatiques envoyés aux leads après inscription. Bienvenue, valeur, offre, relance, dernière chance.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Chatbot IA sur la landing page</h4>
+      <p><strong>300€</strong> — Un chatbot qui engage les visiteurs hésitants, répond aux questions et capture le contact en temps réel.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Maintenance et optimisation continue</h4>
+      <p><strong>300€/mois</strong> — A/B tests continus, mise à jour du design, optimisation du taux de conversion chaque mois.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+
+</body>
+</html>
