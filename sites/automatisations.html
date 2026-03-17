@@ -3,186 +3,893 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agence Prime — Automatisations</title>
+<title>Agence Prime — Automatisations Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
-  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
-  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
-  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
-  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
-  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header { margin-bottom: 60px; }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .service-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .service-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .service-subtitle {
+    font-size: 16px;
+    color: #888;
+    line-height: 1.6;
+    max-width: 750px;
+    margin-top: 16px;
+  }
+
   .section { margin-bottom: 60px; }
-  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
-  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
-  .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #111;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+  }
+  .section-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+  }
+  .section-time {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 24px;
+    margin-top: -16px;
+  }
+
   table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
-  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  th {
+    text-align: left;
+    padding: 14px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  td {
+    padding: 14px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.5;
+  }
   tr:hover td { background: #fafafa; }
   td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
   td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
+
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
-  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
-  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+
+  .category {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    padding: 20px 0 8px;
+  }
+
+  .auto {
+    color: #111;
+    font-weight: 600;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+  }
+  .manuel {
+    color: #888;
+    font-weight: 500;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .benefit-item {
+    padding: 24px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fafafa;
+  }
+  .benefit-item strong {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .benefit-item span { font-size: 13px; color: #666; line-height: 1.6; }
+
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .pack-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+  }
+  .pack-card.featured {
+    border: 2px solid #111;
+    background: #fff;
+  }
+  .pack-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: #111;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 20px;
+  }
+  .pack-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .pack-card .pack-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .pack-card .pack-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+  }
+  .pack-card .pack-volume {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .pack-card .pack-desc {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .pack-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .pack-card ul li {
+    font-size: 13px;
+    color: #333;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5;
+  }
+  .pack-card ul li:last-child { border-bottom: none; }
+  .pack-card ul li::before {
+    content: '—';
+    color: #ccc;
+    margin-right: 10px;
+  }
+
+  .upsell-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .upsell-box:first-of-type { margin-top: 24px; }
+  .upsell-box h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 12px;
+  }
   .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
-  .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
-  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
-  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+
+  .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
+
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-size: 12px;
+    color: #ccc;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    .section-header { flex-direction: column; gap: 4px; }
+    td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
+    td:nth-child(3), td:nth-child(4) { padding-left: 10px; }
+    table { font-size: 13px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .pack-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
+
 <div class="container">
 
-  <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
-    <a href="/" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Accueil</a>
-    <a href="/sites/google-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Google Ads</a>
-    <a href="/sites/site-web.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Site Web</a>
-    <a href="/sites/ecommerce.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">E-commerce</a>
-    <a href="/sites/chatbot-ia.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Chatbot IA</a>
-    <a href="/sites/meta-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Meta Ads</a>
-    <a href="/sites/tiktok-snapchat.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">TikTok & Snapchat</a>
-    <a href="/sites/backing-media.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Backing Media</a>
-    <a href="/sites/automatisations.html" style="text-decoration:none;color:#111;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border:1px solid #111;border-radius:9999px;transition:all .2s;">Automatisations</a>
-    <a href="/sites/sms-mailing.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">SMS & Mailing</a>
-    <a href="/sites/landing-leads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Landing & Leads</a>
-    <a href="/sites/avis-intelligent.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Avis Intelligent</a>
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-active">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-link">Landing & Leads</a>
+    <a href="/sites/avis-intelligent.html" class="nav-link">Avis Intelligent</a>
   </nav>
 
   <div class="header">
     <div class="logo">Prime Agence</div>
-    <div class="service-title"><em>Automatisations</em></div>
+    <div class="service-title">Marketing <em>Automation</em></div>
+    <div class="service-subtitle">Vos tâches répétitives tournent en pilote automatique. Lead nurturing, prospection, relances, reporting, CRM — on connecte vos outils et on automatise tout ce qui peut l'être. Vous vous concentrez sur le business, les machines font le reste.</div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- DESCRIPTION -->
-  <div class="section">
-    <div class="section-sub" style="font-size:15px;color:#555;">On automatise les tâches répétitives du client pour qu'il gagne du temps et réduise ses erreurs.</div>
-  </div>
-
-  <!-- TARIFS -->
+  <!-- POURQUOI -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Tarifs</div>
+      <div class="section-title">Pourquoi automatiser</div>
     </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <strong>+760% de revenus avec la segmentation automatisée</strong>
+        <span>Les entreprises qui automatisent la segmentation de leurs campagnes email génèrent jusqu'à 760% de revenus en plus vs l'envoi en masse. Source : Campaign Monitor.</span>
+      </div>
+      <div class="benefit-item">
+        <strong>80% de leads en plus, 77% de conversions en plus</strong>
+        <span>Le marketing automation génère en moyenne 80% de leads qualifiés supplémentaires et augmente les conversions de 77%. Source : VB Insight.</span>
+      </div>
+      <div class="benefit-item">
+        <strong>ROI moyen : 5,44€ pour chaque 1€ investi</strong>
+        <span>Sur 3 ans, le retour sur investissement moyen du marketing automation est de 544%. 76% des entreprises voient un ROI positif dès la première année.</span>
+      </div>
+      <div class="benefit-item">
+        <strong>12h/semaine économisées par votre équipe</strong>
+        <span>Les tâches manuelles (relances, reporting, saisie CRM, envoi de devis) prennent un temps fou. L'automation libère vos équipes pour vendre et créer de la valeur.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CATALOGUE D'AUTOMATIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Catalogue d'automations</div>
+    </div>
+    <div class="section-time">Toutes les automations que nous déployons pour nos clients — par catégorie</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Automation</th>
+          <th>Ce que ça fait</th>
+          <th>Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Acquisition & Prospection</div></td></tr>
+        <tr>
+          <td><strong>Prospection multicanal B2B</strong></td>
+          <td>Séquence automatique email + LinkedIn + WhatsApp. Enrichissement de leads, personnalisation IA, relances programmées</td>
+          <td>Volume leads x3 à x5</td>
+        </tr>
+        <tr>
+          <td><strong>Scraping & enrichissement de leads</strong></td>
+          <td>Extraction automatique de prospects qualifiés depuis Google Maps, LinkedIn, annuaires pros. Enrichissement email + téléphone + données entreprise</td>
+          <td>Base qualifiée sans effort</td>
+        </tr>
+        <tr>
+          <td><strong>Formulaire intelligent + qualification IA</strong></td>
+          <td>Chaque formulaire rempli est analysé par l'IA : scoring du lead, assignation au bon commercial, notification instantanée</td>
+          <td>Réponse en &lt;5 min au lieu de 24h</td>
+        </tr>
+        <tr>
+          <td><strong>Détection d'intention d'achat</strong></td>
+          <td>Surveillance automatique des signaux d'achat : visite page prix, téléchargement brochure, ouverture email x3 → alerte commerciale</td>
+          <td>Timing parfait pour closer</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Lead Nurturing & Séquences Email</div></td></tr>
+        <tr>
+          <td><strong>Séquence de bienvenue</strong></td>
+          <td>5 emails automatiques sur 14 jours après inscription. Présentation, valeur ajoutée, étude de cas, offre — le prospect se réchauffe tout seul</td>
+          <td>58% de taux de conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Nurturing par segment</strong></td>
+          <td>Séquences différentes selon le profil (secteur, taille entreprise, besoin identifié). Contenu personnalisé, timing adapté</td>
+          <td>+760% de revenus</td>
+        </tr>
+        <tr>
+          <td><strong>Relance prospects inactifs</strong></td>
+          <td>Après 30, 60, 90 jours sans activité — relance automatique avec nouveau contenu, offre spéciale ou sondage de satisfaction</td>
+          <td>15-25% de réactivation</td>
+        </tr>
+        <tr>
+          <td><strong>Séquence post-devis</strong></td>
+          <td>Devis envoyé → J+1 : email de rappel, J+3 : étude de cas similaire, J+7 : appel planifié automatiquement si pas de réponse</td>
+          <td>+35% de devis signés</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">E-commerce & Ventes</div></td></tr>
+        <tr>
+          <td><strong>Relance panier abandonné</strong></td>
+          <td>Email + SMS automatique dans l'heure après abandon du panier. Rappel du produit, urgence, code promo si nécessaire</td>
+          <td>10-15% de paniers récupérés</td>
+        </tr>
+        <tr>
+          <td><strong>Séquence post-achat</strong></td>
+          <td>Confirmation, suivi livraison, demande d'avis, cross-sell produit complémentaire, programme fidélité — tout automatisé</td>
+          <td>+25% de réachat</td>
+        </tr>
+        <tr>
+          <td><strong>Alerte réapprovisionnement</strong></td>
+          <td>Pour les produits consommables : rappel automatique quand le client devrait racheter (30, 60, 90 jours selon le produit)</td>
+          <td>Revenus récurrents</td>
+        </tr>
+        <tr>
+          <td><strong>Relance clients VIP</strong></td>
+          <td>Identification automatique des meilleurs clients (panier moyen, fréquence). Offres exclusives, accès early, traitement prioritaire</td>
+          <td>Fidélisation top clients</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">CRM & Pipeline Commercial</div></td></tr>
+        <tr>
+          <td><strong>Synchronisation CRM automatique</strong></td>
+          <td>Chaque nouveau lead (formulaire, appel, email, chat) est automatiquement ajouté au CRM avec toutes ses données enrichies</td>
+          <td>Zéro saisie manuelle</td>
+        </tr>
+        <tr>
+          <td><strong>Lead scoring automatisé</strong></td>
+          <td>Score calculé en temps réel selon : pages visitées, emails ouverts, formulaires remplis, ancienneté, taille entreprise. Les leads chauds remontent en priorité</td>
+          <td>Commerciaux focalisés sur les bons leads</td>
+        </tr>
+        <tr>
+          <td><strong>Pipeline & tâches commerciales</strong></td>
+          <td>Quand un deal change d'étape → création automatique de la tâche suivante, notification Slack, mise à jour du forecast</td>
+          <td>Rien ne tombe entre les mailles</td>
+        </tr>
+        <tr>
+          <td><strong>Rapport commercial hebdomadaire</strong></td>
+          <td>Tous les lundis : synthèse automatique du pipeline, deals en cours, taux de conversion, prévision de CA. Envoyé par email au dirigeant</td>
+          <td>Visibilité totale sans effort</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Réseaux Sociaux & Contenu</div></td></tr>
+        <tr>
+          <td><strong>Publication multi-plateforme</strong></td>
+          <td>Un seul contenu → publié automatiquement sur Instagram, Facebook, LinkedIn, Twitter, Google My Business. Adapté au format de chaque plateforme</td>
+          <td>Présence partout, effort minimal</td>
+        </tr>
+        <tr>
+          <td><strong>Recyclage de contenu IA</strong></td>
+          <td>Un article de blog → 10 posts LinkedIn + 5 carrousels Instagram + 3 threads Twitter + 1 newsletter. Généré automatiquement par IA</td>
+          <td>x10 de contenu sans rédaction</td>
+        </tr>
+        <tr>
+          <td><strong>Veille concurrentielle automatique</strong></td>
+          <td>Surveillance automatique des concurrents : nouveaux contenus, changements de prix, nouvelles offres, avis clients. Rapport hebdomadaire</td>
+          <td>Toujours un coup d'avance</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Reporting & Analytics</div></td></tr>
+        <tr>
+          <td><strong>Dashboard marketing unifié</strong></td>
+          <td>Toutes vos données au même endroit : Google Ads, Meta, email, CRM, CA — mis à jour en temps réel, accessible depuis votre navigateur</td>
+          <td>Décisions basées sur les données</td>
+        </tr>
+        <tr>
+          <td><strong>Rapport client automatique</strong></td>
+          <td>Rapport PDF ou email généré et envoyé automatiquement chaque semaine/mois au client ou au dirigeant. KPIs, graphiques, recommandations</td>
+          <td>Gain de temps massif</td>
+        </tr>
+        <tr>
+          <td><strong>Alertes performance</strong></td>
+          <td>Si un KPI dépasse un seuil (coût/lead trop élevé, taux de conversion en baisse, budget dépassé) → alerte instantanée Slack/email/SMS</td>
+          <td>Réactivité immédiate</td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Opérationnel & Admin</div></td></tr>
+        <tr>
+          <td><strong>Devis & facturation automatique</strong></td>
+          <td>Nouveau deal validé → devis PDF généré automatiquement, envoyé au client, signature électronique, puis facture créée à la validation</td>
+          <td>-90% de temps admin</td>
+        </tr>
+        <tr>
+          <td><strong>Prise de rendez-vous intelligente</strong></td>
+          <td>Le prospect choisit un créneau → confirmation SMS + email + ajout calendrier + rappel J-1 + rappel H-1 + brief préparé pour le commercial</td>
+          <td>Zéro no-show</td>
+        </tr>
+        <tr>
+          <td><strong>Onboarding client automatisé</strong></td>
+          <td>Nouveau client signé → création dossier, envoi des docs à remplir, planification du kick-off, accès outils, séquence de bienvenue</td>
+          <td>Expérience client pro dès J1</td>
+        </tr>
+        <tr>
+          <td><strong>Gestion des avis automatisée</strong></td>
+          <td>Nouvel avis Google → notification + réponse IA personnalisée (positif ou négatif). Synthèse mensuelle de l'e-réputation</td>
+          <td>Réputation gérée en autopilot</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">Ce catalogue n'est pas exhaustif — si vous avez un processus répétitif, on peut probablement l'automatiser. Chaque automation est construite sur-mesure pour votre stack et vos outils existants.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Formules</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Essentiel</h3>
+        <div class="pack-price">2 000€ <span>setup</span></div>
+        <div class="pack-volume">+ 300€/mois maintenance</div>
+        <div class="pack-desc">Pour les entreprises qui veulent automatiser les fondamentaux</div>
+        <ul>
+          <li>Audit de vos processus actuels</li>
+          <li>3 à 5 workflows automatisés</li>
+          <li>Synchronisation CRM</li>
+          <li>1 séquence email (bienvenue ou relance)</li>
+          <li>Prise de rendez-vous automatisée</li>
+          <li>Notifications temps réel (Slack, email, SMS)</li>
+          <li>Dashboard de suivi basique</li>
+          <li>Support technique</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Pro</h3>
+        <div class="pack-price">5 000€ <span>setup</span></div>
+        <div class="pack-volume">+ 800€/mois maintenance</div>
+        <div class="pack-desc">Automation complète — acquisition, nurturing, CRM, reporting</div>
+        <ul>
+          <li>Tout le pack Essentiel</li>
+          <li>8 à 15 workflows automatisés</li>
+          <li>Prospection multicanal B2B</li>
+          <li>Lead scoring automatisé</li>
+          <li>3 séquences email (bienvenue, nurturing, post-devis)</li>
+          <li>Relance panier abandonné (e-commerce)</li>
+          <li>Publication réseaux sociaux multi-plateforme</li>
+          <li>Rapport hebdomadaire automatique</li>
+          <li>Dashboard marketing unifié</li>
+          <li>Alertes performance en temps réel</li>
+          <li>1 call stratégique/mois</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Scale</h3>
+        <div class="pack-price">10 000€ <span>setup</span></div>
+        <div class="pack-volume">+ 1 500€/mois maintenance</div>
+        <div class="pack-desc">Système complet — chaque processus marketing et commercial tourne en automatique</div>
+        <ul>
+          <li>Tout le pack Pro</li>
+          <li>20+ workflows automatisés</li>
+          <li>IA intégrée (qualification, copywriting, analyse)</li>
+          <li>Scraping & enrichissement de leads</li>
+          <li>Veille concurrentielle automatique</li>
+          <li>Recyclage de contenu IA (1 contenu → 10+ formats)</li>
+          <li>Devis & facturation automatique</li>
+          <li>Onboarding client automatisé</li>
+          <li>Pipeline commercial complet</li>
+          <li>Reporting avancé multi-canal</li>
+          <li>2 calls stratégiques/mois</li>
+          <li>Account manager dédié</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SETUP DÉTAILLÉ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Ce qui est livré au setup</div>
+    </div>
+    <div class="section-time">Déploiement en 2 à 4 semaines selon le pack</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Livrable</th>
+          <th>Détail</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Audit & Stratégie</div></td></tr>
+        <tr>
+          <td>Audit complet des processus</td>
+          <td>Cartographie de tous les flux manuels : acquisition, vente, admin, support. Identification des quick wins et des gros gains</td>
+          <td><span class="manuel">Manuel</span></td>
+        </tr>
+        <tr>
+          <td>Plan d'automation sur-mesure</td>
+          <td>Roadmap priorisée : quels workflows automatiser en premier, dans quel ordre, avec quel impact attendu</td>
+          <td><span class="manuel">Manuel</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Infrastructure</div></td></tr>
+        <tr>
+          <td>Plateforme d'automation configurée</td>
+          <td>Infrastructure d'orchestration dédiée, hébergée, sécurisée. Pas de licence tierce à payer — tout est inclus</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Connexion à vos outils</td>
+          <td>CRM, email, agenda, facturation, e-commerce, réseaux sociaux — tous vos outils connectés entre eux via API</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Base de données centralisée</td>
+          <td>Toutes vos données leads, clients, interactions au même endroit. Plus de silos, plus de copier-coller entre outils</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Workflows</div></td></tr>
+        <tr>
+          <td>Workflows construits et testés</td>
+          <td>Chaque automation est développée, testée en conditions réelles, puis validée avec vous avant mise en production</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Séquences email rédigées</td>
+          <td>Copywriting professionnel pour chaque séquence : objets optimisés, contenu personnalisé, CTA testés</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Logique conditionnelle</td>
+          <td>Branchements intelligents : si le lead ouvre l'email → chemin A, si non → chemin B. Chaque scénario est couvert</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Reporting & Dashboard</div></td></tr>
+        <tr>
+          <td>Dashboard de pilotage</td>
+          <td>Interface visuelle avec vos KPIs en temps réel : leads générés, emails envoyés, taux de conversion, pipeline, CA</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+        <tr>
+          <td>Rapports automatiques configurés</td>
+          <td>Envoi hebdomadaire ou mensuel par email — format PDF ou dashboard en ligne</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Formation & Passation</div></td></tr>
+        <tr>
+          <td>Formation équipe</td>
+          <td>Session de 1h avec votre équipe : comment lire le dashboard, comprendre les workflows, où intervenir si besoin</td>
+          <td><span class="manuel">Manuel</span></td>
+        </tr>
+        <tr>
+          <td>Documentation technique</td>
+          <td>Document de référence : chaque workflow expliqué, chaque déclencheur détaillé, procédure de modification</td>
+          <td><span class="auto">Auto</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- GESTION MENSUELLE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Maintenance mensuelle</div>
+    </div>
+    <div class="section-time">Incluse dans chaque pack — vos automations restent performantes dans le temps</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Détail</th>
+          <th>Fréquence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Monitoring 24/7</strong></td>
+          <td>Surveillance de tous les workflows en temps réel. Si une automation échoue → alerte immédiate + correction</td>
+          <td>Continu</td>
+        </tr>
+        <tr>
+          <td><strong>Optimisation des workflows</strong></td>
+          <td>Analyse des performances, ajustement des séquences, amélioration des taux de conversion</td>
+          <td>Hebdomadaire</td>
+        </tr>
+        <tr>
+          <td><strong>Mise à jour des connexions</strong></td>
+          <td>Les API évoluent, les outils changent — on maintient toutes les connexions fonctionnelles</td>
+          <td>Continu</td>
+        </tr>
+        <tr>
+          <td><strong>Nouveaux workflows mineurs</strong></td>
+          <td>Ajout de petites automations complémentaires (notifications, conditions supplémentaires, nouveaux déclencheurs)</td>
+          <td>Sur demande</td>
+        </tr>
+        <tr>
+          <td><strong>Rapport de performance</strong></td>
+          <td>Synthèse mensuelle : workflows actifs, exécutions, erreurs, résultats business, recommandations</td>
+          <td>Mensuel</td>
+        </tr>
+        <tr>
+          <td><strong>Call stratégique</strong></td>
+          <td>Bilan des automations, identification de nouvelles opportunités, roadmap du mois suivant</td>
+          <td>1 à 2x/mois selon pack</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BENCHMARK MARCHÉ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Benchmark marché</div>
+    </div>
+    <div class="section-time">Ce que facturent les agences de marketing automation en France</div>
 
     <table>
       <thead>
         <tr>
           <th>Prestation</th>
-          <th>Prix</th>
+          <th>Agences classiques (HubSpot, Pardot)</th>
+          <th>Prime</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Workflow simple (1 déclencheur, 2-3 actions)</td><td><strong>300€</strong></td></tr>
-        <tr><td>Workflow moyen (multi-étapes, conditions)</td><td><strong>800€</strong></td></tr>
-        <tr><td>Workflow complexe (API, IA, multi-outils)</td><td><strong>2 000€</strong></td></tr>
-        <tr><td>Maintenance mensuelle</td><td><strong>100€/mois</strong></td></tr>
+        <tr>
+          <td>Setup automation (3-5 workflows)</td>
+          <td>5 000 — 10 000€</td>
+          <td><strong>2 000€</strong></td>
+        </tr>
+        <tr>
+          <td>Setup complet (8-15 workflows)</td>
+          <td>10 000 — 25 000€</td>
+          <td><strong>5 000€</strong></td>
+        </tr>
+        <tr>
+          <td>Setup avancé (20+ workflows + IA)</td>
+          <td>20 000 — 50 000€</td>
+          <td><strong>10 000€</strong></td>
+        </tr>
+        <tr>
+          <td>Gestion mensuelle (basique)</td>
+          <td>1 000 — 2 000€/mois</td>
+          <td><strong>300€/mois</strong></td>
+        </tr>
+        <tr>
+          <td>Gestion mensuelle (complète)</td>
+          <td>2 000 — 6 000€/mois</td>
+          <td><strong>800€/mois</strong></td>
+        </tr>
+        <tr>
+          <td>Licence plateforme (HubSpot Pro)</td>
+          <td>792€/mois facturé en plus au client</td>
+          <td><strong>Inclus dans nos tarifs</strong></td>
+        </tr>
+        <tr>
+          <td>Prospection B2B automatisée</td>
+          <td>890 — 1 690€/mois</td>
+          <td><strong>Inclus dans Pack Pro & Scale</strong></td>
+        </tr>
       </tbody>
     </table>
+
+    <p class="note">Les agences classiques imposent des licences logicielles coûteuses (HubSpot Pro : 792€/mois, Enterprise : 3 300€/mois) en plus de leurs frais. Chez Prime, notre infrastructure propriétaire est incluse — pas de licence en supplément, pas de frais cachés.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- EXEMPLES DE WORKFLOWS -->
+  <!-- EXEMPLES PAR SECTEUR -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Exemples de workflows</div>
+      <div class="section-title">Exemples par secteur</div>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th>Workflow</th>
-          <th>Ce que ça fait</th>
+          <th>Secteur</th>
+          <th>Automations typiques</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Nouveau lead</td><td>Notification Slack + ajout CRM + email de bienvenue automatique</td></tr>
-        <tr><td>Commande reçue</td><td>Facture générée + email client + mise à jour stock</td></tr>
-        <tr><td>Formulaire rempli</td><td>Qualification IA + assignation au bon commercial + relance auto</td></tr>
-        <tr><td>Avis Google reçu</td><td>Notification + réponse automatique si positif</td></tr>
-        <tr><td>Nouveau RDV Calendly</td><td>Confirmation SMS + rappel J-1 + ajout Google Calendar</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- CE QU'ON UTILISE -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Ce qu'on utilise</div>
-    </div>
-
-    <table>
-      <thead>
         <tr>
-          <th>Outil</th>
-          <th>Usage</th>
+          <td><strong>E-commerce</strong></td>
+          <td>Relance panier abandonné, séquence post-achat, alerte réappro, segmentation RFM, cross-sell automatique, gestion des avis produits</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>n8n (self-hosted)</td><td>Orchestration des workflows</td></tr>
-        <tr><td>Claude API</td><td>Traitement IA (qualification, rédaction, analyse)</td></tr>
-        <tr><td>Supabase</td><td>Stockage données</td></tr>
-        <tr><td>Resend</td><td>Envoi emails</td></tr>
-        <tr><td>Webhooks</td><td>Connexion entre les outils du client</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- COÛT RÉEL POUR PRIME -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Coût réel pour Prime</div>
-    </div>
-
-    <table>
-      <thead>
         <tr>
-          <th>Poste</th>
-          <th>Coût</th>
+          <td><strong>B2B / Services</strong></td>
+          <td>Prospection multicanal, lead scoring, nurturing par segment, pipeline CRM, devis automatique, onboarding client, reporting commercial</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>n8n self-hosted</td><td>5-10€/mois (VPS)</td></tr>
-        <tr><td>Claude API</td><td>Variable selon usage</td></tr>
-        <tr><td>Temps de création</td><td>1-4h selon complexité</td></tr>
+        <tr>
+          <td><strong>SaaS</strong></td>
+          <td>Onboarding utilisateur, séquence trial-to-paid, détection de churn, upsell automatique, NPS automatisé, product-led growth workflows</td>
+        </tr>
+        <tr>
+          <td><strong>Immobilier</strong></td>
+          <td>Qualification de mandats, matching bien/acheteur, relance automatique, alertes nouveaux biens, suivi visites, pipeline commercial</td>
+        </tr>
+        <tr>
+          <td><strong>Restauration / Commerce local</strong></td>
+          <td>Programme fidélité automatisé, relance SMS jour d'anniversaire, collecte d'avis Google, publication réseaux sociaux, offres flash géolocalisées</td>
+        </tr>
+        <tr>
+          <td><strong>Santé / Bien-être</strong></td>
+          <td>Rappel de rendez-vous, suivi post-consultation, séquence d'éducation patient, gestion des avis, renouvellement automatique</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- UPSELL & CROSS-SELL -->
+  <!-- OPTIONS & EXTENSIONS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Upsell & Cross-sell</div>
+      <div class="section-title">Options & Extensions</div>
     </div>
 
     <div class="upsell-box">
-      <h4>Upsell — Nouveaux workflows</h4>
-      <p>Nouveaux workflows à automatiser au fil du temps.</p>
+      <h4>Workflow additionnel (hors pack)</h4>
+      <p><strong>500 — 2 000€ par workflow</strong> — Selon la complexité. Workflow simple (1 déclencheur, 2-3 actions) : 500€. Workflow complexe (multi-conditions, IA, multi-outils) : 1 500 — 2 000€. Développé, testé et mis en production sous 3-5 jours.</p>
     </div>
 
-    <div class="upsell-box" style="margin-top: 16px;">
-      <h4>Cross-sell — Chatbot IA</h4>
-      <p><strong>500€ setup + 150€/mois</strong></p>
+    <div class="upsell-box">
+      <h4>Intégration IA avancée</h4>
+      <p><strong>1 500€ setup + 200€/mois</strong> — Ajout d'intelligence artificielle dans vos workflows : qualification de leads par IA, génération de contenu automatique, réponses personnalisées, analyse de sentiment sur les avis, recommandations produit.</p>
     </div>
 
-    <div class="upsell-box" style="margin-top: 16px;">
-      <h4>Cross-sell — Campagne SMS & Mailing</h4>
-      <p>Automatiser l'envoi sur les leads générés.</p>
+    <div class="upsell-box">
+      <h4>WhatsApp Business Automation</h4>
+      <p><strong>800€ setup + 150€/mois</strong> — Canal WhatsApp professionnel connecté à vos automations : relance panier, envoi de devis, confirmation de rendez-vous, support client automatisé, notifications de livraison.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Formation équipe avancée</h4>
+      <p><strong>500€/session</strong> — Formation de 3h pour votre équipe : comment lire les dashboards, modifier les séquences email, ajouter des contacts, comprendre le lead scoring. Documentation vidéo incluse.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Chatbot IA connecté aux automations</h4>
+      <p>Le chatbot qualifie les leads en direct sur votre site → ils entrent automatiquement dans le pipeline commercial avec leur score. <strong>Voir notre offre Chatbot IA.</strong></p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Campagnes SMS & Email pour alimenter les automations</h4>
+      <p>Vos séquences automatisées ont besoin de leads. On génère le trafic en amont via campagnes email et SMS ciblées. <strong>Voir notre offre SMS & Mailing.</strong></p>
     </div>
   </div>
 
   <div class="footer">© 2026 Prime Agence</div>
 </div>
+
 </body>
 </html>
