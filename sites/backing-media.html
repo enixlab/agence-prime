@@ -14,6 +14,7 @@
   .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
   .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
   .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .service-subtitle { font-size: 18px; color: #555; line-height: 1.6; margin-bottom: 16px; max-width: 700px; }
   .section { margin-bottom: 60px; }
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
@@ -22,136 +23,301 @@
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
   td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
   tr:hover td { background: #fafafa; }
-  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
-  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+  .pack-card h4 { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #111; margin-bottom: 6px; }
+  .pack-card .pack-medias { font-size: 14px; color: #666; margin-bottom: 12px; }
+  .pack-card .pack-price { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: #111; }
+  .pack-card .pack-price small { font-size: 14px; font-weight: 400; color: #999; }
+  .pack-card .pack-save { font-size: 13px; color: #2a7d2e; margin-top: 4px; }
   .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
   .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
   .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
   .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
+  .badge { display: inline-block; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; background: #111; color: #fff; margin-right: 6px; }
+  .badge-light { background: #f0f0f0; color: #666; }
+  .highlight-row td { background: #fafafa; }
+  .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+  .benefit-item { padding: 20px; border: 1px solid #eee; border-radius: 10px; }
+  .benefit-item strong { display: block; font-family: 'Outfit', sans-serif; font-size: 14px; margin-bottom: 4px; }
+  .benefit-item span { font-size: 13px; color: #666; line-height: 1.5; }
   .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
-  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-link-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } .benefits-grid { grid-template-columns: 1fr; } .pack-card .pack-price { font-size: 24px; } }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
-    <a href="/" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Accueil</a>
-    <a href="/sites/google-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Google Ads</a>
-    <a href="/sites/site-web.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Site Web</a>
-    <a href="/sites/ecommerce.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">E-commerce</a>
-    <a href="/sites/chatbot-ia.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Chatbot IA</a>
-    <a href="/sites/meta-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Meta Ads</a>
-    <a href="/sites/tiktok-snapchat.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">TikTok & Snapchat</a>
-    <a href="/sites/backing-media.html" style="text-decoration:none;color:#111;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border:1px solid #111;border-radius:9999px;transition:all .2s;">Backing Media</a>
-    <a href="/sites/automatisations.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Automatisations</a>
-    <a href="/sites/sms-mailing.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">SMS & Mailing</a>
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok &amp; Snap</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS &amp; Mail</a>
+    <a href="/sites/backing-media.html" class="nav-link-active">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
   </nav>
 
   <div class="header">
     <div class="logo">Prime Agence</div>
     <div class="service-title">Backing <em>Media</em></div>
+    <p class="service-subtitle">On publie un article qui parle de vous sur les plus grands médias français. Vous gagnez en crédibilité, en visibilité et en référencement Google.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- DESCRIPTION -->
-  <div class="section">
-    <div class="section-sub" style="font-size:15px;color:#555;">On publie des articles sur les plus grands médias français (BFM, Le Monde, Le Parisien, CNEWS, Le Figaro, L'Express) avec un lien vers le site du client. Le client gagne en crédibilité et en référencement.</div>
-  </div>
-
-  <!-- TARIFS -->
+  <!-- CE QUE VOUS OBTENEZ -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Tarifs</div>
+      <div class="section-title">Ce que vous obtenez</div>
     </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <strong>Un article sur un vrai média</strong>
+        <span>Pas un blog, un vrai site de presse lu par des millions de personnes. BFM, Le Point, Challenges, Closer, La Tribune…</span>
+      </div>
+      <div class="benefit-item">
+        <strong>Un lien vers votre site</strong>
+        <span>Google voit qu'un média puissant pointe vers vous. Votre référencement monte mécaniquement.</span>
+      </div>
+      <div class="benefit-item">
+        <strong>"Vu sur BFM, Le Point…"</strong>
+        <span>Vous affichez les logos des médias sur votre site, vos réseaux, vos présentations. La crédibilité change de niveau.</span>
+      </div>
+      <div class="benefit-item">
+        <strong>Article clé-en-main</strong>
+        <span>On rédige, on publie, vous n'avez rien à faire. Livré sous 5 à 15 jours ouvrés selon le média.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MÉDIAS NATIONAUX -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Médias nationaux</div>
+    </div>
+    <div class="section-sub">Les plus gros sites de presse en France. Impact maximal sur votre image et votre SEO.</div>
 
     <table>
       <thead>
         <tr>
           <th>Média</th>
-          <th>Prix</th>
+          <th>Audience</th>
+          <th>Tarif</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Article BFM Business</td><td><strong>3 500€</strong></td></tr>
-        <tr><td>Article Le Figaro</td><td><strong>3 000€</strong></td></tr>
-        <tr><td>Article Le Parisien</td><td><strong>2 000€</strong></td></tr>
-        <tr><td>Article CNEWS</td><td><strong>2 000€</strong></td></tr>
-        <tr><td>Article L'Express / Le Point</td><td><strong>2 500€</strong></td></tr>
-        <tr><td><strong>Pack 3 médias premium</strong></td><td><strong>7 000€</strong></td></tr>
-        <tr><td><strong>Pack 5 médias premium</strong></td><td><strong>10 000€</strong></td></tr>
+        <tr><td><strong>BFM TV</strong></td><td>44 millions de visiteurs/mois</td><td><strong>3 600€</strong></td></tr>
+        <tr><td><strong>Journal du Net</strong></td><td>825 000 visiteurs/mois</td><td><strong>4 800€</strong></td></tr>
+        <tr><td><strong>Le Point</strong></td><td>4 millions de visiteurs/mois</td><td><strong>4 500€</strong></td></tr>
+        <tr><td><strong>actu.fr</strong></td><td>7 millions de visiteurs/mois</td><td><strong>3 100€</strong></td></tr>
+        <tr><td><strong>Challenges</strong></td><td>1 million de visiteurs/mois</td><td><strong>3 000€</strong></td></tr>
+        <tr><td><strong>La Tribune</strong></td><td>815 000 visiteurs/mois</td><td><strong>2 600€</strong></td></tr>
+        <tr><td><strong>L'Internaute</strong></td><td>7 millions de visiteurs/mois</td><td><strong>4 800€</strong></td></tr>
+        <tr><td><strong>CNEWS</strong></td><td>3 millions de visiteurs/mois</td><td><strong>2 000€</strong></td></tr>
+        <tr><td><strong>Valeurs Actuelles</strong></td><td>742 000 visiteurs/mois</td><td><strong>1 800€</strong></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- RÉSULTAT POUR LE CLIENT -->
+  <!-- MÉDIAS TECH & SCIENCE -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Résultat pour le client</div>
+      <div class="section-title">Tech & Science</div>
     </div>
+    <div class="section-sub">Idéal pour les entreprises tech, SaaS, startups, e-commerce.</div>
 
     <table>
       <thead>
         <tr>
-          <th>Résultat</th>
+          <th>Média</th>
+          <th>Audience</th>
+          <th>Tarif</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Le client apparaît sur des médias nationaux reconnus, sa crédibilité explose</td></tr>
-        <tr><td>Le lien vers son site depuis ces médias booste son référencement Google (backlink de haute autorité)</td></tr>
-        <tr><td>Il peut afficher "Vu sur BFM, Le Figaro, Le Parisien" sur son site et ses supports de communication</td></tr>
+        <tr><td><strong>Futura-Sciences</strong></td><td>2 millions de visiteurs/mois</td><td><strong>3 100€</strong></td></tr>
+        <tr><td><strong>Les Numériques</strong></td><td>6 millions de visiteurs/mois</td><td><strong>3 600€</strong></td></tr>
+        <tr><td><strong>Slate</strong></td><td>521 000 visiteurs/mois</td><td><strong>3 600€</strong></td></tr>
+        <tr><td><strong>Comment Ça Marche</strong></td><td>2 millions de visiteurs/mois</td><td><strong>4 800€</strong></td></tr>
+        <tr><td><strong>Numerama</strong></td><td>1 million de visiteurs/mois</td><td><strong>5 600€</strong></td></tr>
+        <tr><td><strong>CNET France</strong></td><td>956 000 visiteurs/mois</td><td><strong>4 000€</strong></td></tr>
+        <tr><td><strong>L'Usine Nouvelle</strong></td><td>891 000 visiteurs/mois</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Sciences et Avenir</strong></td><td>487 000 visiteurs/mois</td><td><strong>3 700€</strong></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- COÛT RÉEL POUR PRIME -->
+  <!-- MÉDIAS LIFESTYLE & PEOPLE -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Coût réel pour Prime</div>
+      <div class="section-title">Lifestyle & People</div>
     </div>
+    <div class="section-sub">Parfait pour la mode, la beauté, le bien-être, l'alimentation, le coaching.</div>
 
     <table>
       <thead>
         <tr>
-          <th>Poste</th>
-          <th>Coût</th>
+          <th>Média</th>
+          <th>Audience</th>
+          <th>Tarif</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Achat article via Getfluence/plateformes</td><td>1 500-3 500€ par article selon le média</td></tr>
-        <tr><td>Marge par article</td><td>500-2 000€</td></tr>
-        <tr><td>Marge sur pack 5 médias</td><td>3 000-5 000€</td></tr>
+        <tr><td><strong>Closer</strong></td><td>2 millions de visiteurs/mois</td><td><strong>2 700€</strong></td></tr>
+        <tr><td><strong>Public</strong></td><td>1 million de visiteurs/mois</td><td><strong>2 400€</strong></td></tr>
+        <tr><td><strong>Melty</strong></td><td>1 million de visiteurs/mois</td><td><strong>3 500€</strong></td></tr>
+        <tr><td><strong>Télé Star</strong></td><td>1 million de visiteurs/mois</td><td><strong>2 700€</strong></td></tr>
+        <tr><td><strong>Demotivateur</strong></td><td>903 000 visiteurs/mois</td><td><strong>2 100€</strong></td></tr>
+        <tr><td><strong>Psychologies</strong></td><td>484 000 visiteurs/mois</td><td><strong>3 500€</strong></td></tr>
+        <tr><td><strong>Pleine Vie</strong></td><td>472 000 visiteurs/mois</td><td><strong>2 700€</strong></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="divider"></div>
 
-  <!-- UPSELL & CROSS-SELL -->
+  <!-- PRESSE RÉGIONALE -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Upsell & Cross-sell</div>
+      <div class="section-title">Presse régionale</div>
+    </div>
+    <div class="section-sub">Idéal pour les entreprises locales ou les campagnes multi-régions. Le groupe EBRA couvre tout l'Est et le Sud-Est.</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Média</th>
+          <th>Audience</th>
+          <th>Tarif</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Le Dauphiné Libéré</strong></td><td>4 millions de visiteurs/mois</td><td><strong>2 800€</strong></td></tr>
+        <tr><td><strong>Le Progrès</strong></td><td>3 millions de visiteurs/mois</td><td><strong>2 800€</strong></td></tr>
+        <tr><td><strong>L'Alsace</strong></td><td>730 000 visiteurs/mois</td><td><strong>2 200€</strong></td></tr>
+        <tr><td><strong>Républicain Lorrain</strong></td><td>1 million de visiteurs/mois</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>La Provence</strong></td><td>2 millions de visiteurs/mois</td><td><strong>2 100€</strong></td></tr>
+        <tr><td><strong>L'Est Républicain</strong></td><td>2 millions de visiteurs/mois</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Bien Public</strong></td><td>1 million de visiteurs/mois</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Vosges Matin</strong></td><td>644 000 visiteurs/mois</td><td><strong>2 200€</strong></td></tr>
+        <tr><td><strong>DNA</strong></td><td>1 million de visiteurs/mois</td><td><strong>2 500€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MÉDIAS SPÉCIALISÉS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Médias spécialisés</div>
+    </div>
+    <div class="section-sub">Auto, sport, juridique, immobilier, bricolage… un média pour chaque secteur.</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Média</th>
+          <th>Secteur</th>
+          <th>Tarif</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Écran Large</strong></td><td>Cinéma / Séries</td><td><strong>2 400€</strong></td></tr>
+        <tr><td><strong>Caradisiac</strong></td><td>Automobile</td><td><strong>3 100€</strong></td></tr>
+        <tr><td><strong>Auto Plus</strong></td><td>Automobile</td><td><strong>2 700€</strong></td></tr>
+        <tr><td><strong>Gralon</strong></td><td>Annuaire / Généraliste</td><td><strong>1 800€</strong></td></tr>
+        <tr><td><strong>So Foot</strong></td><td>Sport / Football</td><td><strong>3 200€</strong></td></tr>
+        <tr><td><strong>Auto Journal</strong></td><td>Automobile</td><td><strong>2 600€</strong></td></tr>
+        <tr><td><strong>Automobile Propre</strong></td><td>Auto électrique</td><td><strong>3 700€</strong></td></tr>
+        <tr><td><strong>Rustica</strong></td><td>Jardin / Bricolage</td><td><strong>2 700€</strong></td></tr>
+        <tr><td><strong>JDS</strong></td><td>Sorties / Loisirs</td><td><strong>1 800€</strong></td></tr>
+        <tr><td><strong>Village de la Justice</strong></td><td>Juridique / Droit</td><td><strong>1 900€</strong></td></tr>
+        <tr><td><strong>Mes Infos</strong></td><td>Actualité locale</td><td><strong>1 900€</strong></td></tr>
+        <tr><td><strong>Le Temps</strong></td><td>Presse suisse</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Le JSL</strong></td><td>Presse régionale</td><td><strong>2 500€</strong></td></tr>
+        <tr><td><strong>Annuaire Mairie</strong></td><td>Services publics</td><td><strong>1 900€</strong></td></tr>
+        <tr><td><strong>Système D</strong></td><td>Bricolage / DIY</td><td><strong>2 700€</strong></td></tr>
+        <tr><td><strong>Flashscore</strong></td><td>Sport / Scores</td><td><strong>4 900€</strong></td></tr>
+        <tr><td><strong>Juste à Côté</strong></td><td>Local / Proximité</td><td><strong>1 800€</strong></td></tr>
+        <tr><td><strong>Pappers</strong></td><td>Business / Entreprises</td><td><strong>2 300€</strong></td></tr>
+        <tr><td><strong>118000.fr</strong></td><td>Annuaire</td><td><strong>2 000€</strong></td></tr>
+        <tr><td><strong>Supersoluce</strong></td><td>Jeux vidéo</td><td><strong>2 300€</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">+ de 50 médias disponibles. Vous ne trouvez pas votre secteur ? Contactez-nous, on a probablement un média adapté.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Packs</div>
+    </div>
+    <div class="section-sub">Achetez plusieurs articles en une fois — vous payez moins cher que l'achat à l'unité.</div>
+
+    <div class="pack-card">
+      <h4>Pack 3 médias premium</h4>
+      <div class="pack-medias">BFM TV + Le Point + CNEWS</div>
+      <div class="pack-price">8 500€ <small>au lieu de 10 100€</small></div>
+      <div class="pack-save">Vous économisez 1 600€</div>
+    </div>
+
+    <div class="pack-card">
+      <h4>Pack 5 médias premium</h4>
+      <div class="pack-medias">BFM TV + Le Point + CNEWS + Challenges + La Tribune</div>
+      <div class="pack-price">13 000€ <small>au lieu de 15 700€</small></div>
+      <div class="pack-save">Vous économisez 2 700€</div>
+    </div>
+
+    <div class="pack-card">
+      <h4>Pack presse régionale</h4>
+      <div class="pack-medias">Le Progrès + Le Dauphiné Libéré + L'Est Républicain</div>
+      <div class="pack-price">7 000€ <small>au lieu de 8 100€</small></div>
+      <div class="pack-save">Vous économisez 1 100€</div>
+    </div>
+
+    <div class="pack-card">
+      <h4>Pack tech</h4>
+      <div class="pack-medias">Futura-Sciences + Les Numériques + Numerama</div>
+      <div class="pack-price">11 000€ <small>au lieu de 12 300€</small></div>
+      <div class="pack-save">Vous économisez 1 300€</div>
+    </div>
+
+    <div class="note">Vous pouvez composer votre propre pack sur mesure. Contactez-nous pour un devis personnalisé.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ABONNEMENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Abonnement mensuel</div>
     </div>
 
     <div class="upsell-box">
-      <h4>Upsell — Campagne récurrente</h4>
-      <p><strong>2 000€/mois</strong> — 1 article/mois sur un média différent.</p>
+      <h4>Présence presse continue</h4>
+      <p><strong>2 500€/mois</strong> — 1 article par mois sur un média premium différent. En 6 mois, vous êtes publié sur 6 médias nationaux. L'effet cumulé sur votre SEO et votre image est massif.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
-      <h4>Cross-sell — Campagne Google Ads</h4>
-      <p><strong>1 500€ setup + 2 000€/mois</strong></p>
-    </div>
-
-    <div class="upsell-box" style="margin-top: 16px;">
-      <h4>Cross-sell — SEO</h4>
-      <p>Les backlinks médias boostent le référencement, on complète avec du SEO mensuel.</p>
+      <h4>Pack sectoriel sur mesure</h4>
+      <p><strong>Sur devis</strong> — On sélectionne les médias les plus pertinents pour votre secteur (auto, santé, tech, immobilier, sport…) et on construit un plan de publication adapté.</p>
     </div>
   </div>
 
