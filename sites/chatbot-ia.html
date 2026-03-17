@@ -19,16 +19,12 @@
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
   .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
   .section-sub { font-size: 13px; color: #999; margin-bottom: 24px; line-height: 1.6; }
-  .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
   td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
   tr:hover td { background: #fafafa; }
   td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
   td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
-  .auto { color: #111; font-weight: 600; background: #f0f0f0; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
-  .manuel { color: #888; font-weight: 500; background: #fafafa; border: 1px solid #e0e0e0; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
-  .no { color: #cc0000; font-weight: 500; background: #fff5f5; border: 1px solid #ffdddd; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
   .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 24px; }
   .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
@@ -60,53 +56,28 @@
     <div class="section-header">
       <div class="section-title">Ce que le chatbot fait</div>
     </div>
-    <div class="section-sub">Un vendeur IA entraîné sur le catalogue du client qui tourne 24/7. Pas un chatbot FAQ avec des réponses génériques pré-enregistrées.</div>
+    <div class="section-sub">Un vendeur IA entraîné sur le catalogue du client, disponible 24/7, entièrement personnalisé à l'image du site.</div>
 
     <table>
       <thead>
         <tr>
           <th>Fonctionnalité</th>
           <th>Détail</th>
-          <th>Chatbot gratuit</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Connaît chaque produit du catalogue</td><td>Nom, description, prix, variantes, tailles, couleurs, matières, stock</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Recommande le bon produit selon la demande</td><td>"Je cherche un cadeau à moins de 50€" → il propose le bon produit</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Répond aux questions spécifiques sur un produit</td><td>"Ce t-shirt taille grand ?", "C'est quoi la composition ?"</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Pousse les promos en cours naturellement</td><td>"D'ailleurs en ce moment on a -20% sur cette gamme"</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Traite les objections d'achat</td><td>"C'est cher" → propose un produit moins cher ou met en avant la qualité/garantie</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Propose des produits complémentaires</td><td>"Vous avez pris le pantalon, on a aussi la ceinture qui va avec"</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Connaît les conditions de livraison</td><td>Délais, zones, frais, suivi</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Connaît la politique de retour et garanties</td><td>Conditions, délais, remboursement</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Collecte l'email du visiteur</td><td>"Je vous envoie un rappel quand le produit sera en promo" → email sauvegardé</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Envoie le visiteur vers le produit / panier</td><td>Lien cliquable directement vers la page produit ou le checkout</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Multilingue</td><td>Français, anglais, arabe, espagnol, etc. automatiquement</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Ton adapté au branding du client</td><td>Formel, décontracté, luxe, streetwear — paramétré à la création</td><td><span class="no">Non</span></td></tr>
-        <tr><td>Disponible 24/7</td><td>Nuit, week-end, jours fériés</td><td><span class="auto">Oui</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- LIMITATIONS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Ce que le chatbot ne peut pas faire</div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Limitation</th>
-          <th>Raison</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Passer une commande à la place du visiteur</td><td>Shopify et WooCommerce ne permettent pas de finaliser un achat via un chatbot externe</td></tr>
-        <tr><td>Accéder à l'historique de commandes d'un client connecté</td><td>Nécessite une Shopify App privée avec des permissions spécifiques (dev supplémentaire)</td></tr>
-        <tr><td>Traiter les paiements dans le chat</td><td>Restriction des plateformes de paiement</td></tr>
+        <tr><td>Personnalisation complète</td><td>Design, couleurs, textes et ton adaptés au branding du site. Immersion totale, le chatbot fait partie du site.</td></tr>
+        <tr><td>Connaît chaque produit du catalogue</td><td>Nom, description, prix, variantes, tailles, couleurs, matières, stock</td></tr>
+        <tr><td>Recommande le bon produit selon la demande</td><td>"Je cherche un cadeau à moins de 50€" → il propose le bon produit</td></tr>
+        <tr><td>Répond aux questions spécifiques sur un produit</td><td>"Ce t-shirt taille grand ?", "C'est quoi la composition ?"</td></tr>
+        <tr><td>Pousse les promos en cours naturellement</td><td>"D'ailleurs en ce moment on a -20% sur cette gamme"</td></tr>
+        <tr><td>Traite les objections d'achat</td><td>"C'est cher" → propose une alternative ou met en avant la qualité/garantie</td></tr>
+        <tr><td>Propose des produits complémentaires</td><td>"Vous avez pris le pantalon, on a aussi la ceinture qui va avec"</td></tr>
+        <tr><td>Connaît les conditions de livraison et retours</td><td>Délais, frais, politique de retour, garanties</td></tr>
+        <tr><td>Collecte l'email du visiteur</td><td>"Je vous envoie un rappel quand le produit sera en promo" → email sauvegardé</td></tr>
+        <tr><td>Envoie le visiteur vers le produit / panier</td><td>Lien cliquable directement vers la page produit ou le checkout</td></tr>
+        <tr><td>Multilingue</td><td>Détecte la langue du visiteur et répond automatiquement dans sa langue</td></tr>
+        <tr><td>Disponible 24/7</td><td>Répond instantanément à n'importe quelle heure</td></tr>
       </tbody>
     </table>
   </div>
@@ -126,10 +97,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Les visiteurs qui hésitent et qui seraient partis sans acheter sont guidés vers le bon produit et convertis</td></tr>
-        <tr><td>Les questions posées à 23h un dimanche soir reçoivent une réponse immédiate au lieu de rester sans réponse</td></tr>
-        <tr><td>Le client ne rate plus aucune vente par manque de réactivité</td></tr>
-        <tr><td>Les emails des visiteurs intéressés sont collectés automatiquement pour relance ultérieure</td></tr>
+        <tr><td>Les visiteurs qui hésitent sont guidés vers le bon produit et convertis en acheteurs</td></tr>
+        <tr><td>Aucune question ne reste sans réponse, peu importe l'heure</td></tr>
+        <tr><td>Les emails des visiteurs intéressés sont collectés automatiquement</td></tr>
         <tr><td>Le panier moyen augmente grâce aux recommandations de produits complémentaires</td></tr>
       </tbody>
     </table>
@@ -157,7 +127,7 @@
       </tbody>
     </table>
 
-    <div class="note">WordPress est plus cher en setup parce que l'intégration nécessite plus de configuration côté serveur et API WooCommerce. L'abonnement mensuel est le même : le chatbot tourne sur la même infrastructure.</div>
+    <div class="note">WordPress est plus cher en setup : l'intégration nécessite plus de configuration côté serveur et API WooCommerce.</div>
   </div>
 
   <div class="divider"></div>
@@ -167,6 +137,7 @@
     <div class="section-header">
       <div class="section-title">Coût réel pour Prime</div>
     </div>
+    <div class="section-sub">Basé sur Claude API Haiku 3.5 : $0.80/MTok input + $4.00/MTok output. Une conversation moyenne = ~12 000 tokens input + 1 500 tokens output = ~$0.016 par conversation. Avec prompt caching (system prompt en cache après la 1ère requête) : ~$0.008 par conversation.</div>
 
     <table>
       <thead>
@@ -178,8 +149,8 @@
       <tbody>
         <tr><td>App tierce</td><td>0€</td></tr>
         <tr><td>Hébergement backend (Vercel serverless)</td><td>0€ (plan gratuit)</td></tr>
-        <tr><td>Claude API Haiku (~1 000 conversations/mois)</td><td>~10€/mois par client</td></tr>
-        <tr><td>Claude API Haiku (~10 000 conversations/mois)</td><td>~100€/mois par client</td></tr>
+        <tr><td>Claude API Haiku (~1 000 conversations/mois)</td><td>~15€/mois par client</td></tr>
+        <tr><td>Claude API Haiku (~10 000 conversations/mois)</td><td>~80-150€/mois par client</td></tr>
       </tbody>
     </table>
   </div>
@@ -202,57 +173,15 @@
       </thead>
       <tbody>
         <tr><td>Prix client Shopify</td><td>100€</td><td>30€/mois</td></tr>
-        <tr><td>Coût réel</td><td>~0€</td><td>~10€/mois (API)</td></tr>
-        <tr><td>Marge</td><td>100€</td><td>20€/mois</td></tr>
+        <tr><td>Coût réel</td><td>~0€</td><td>~15€/mois (API)</td></tr>
+        <tr><td>Marge</td><td>100€</td><td>15€/mois</td></tr>
         <tr><td>Prix client WordPress</td><td>150€</td><td>30€/mois</td></tr>
-        <tr><td>Coût réel</td><td>~0€</td><td>~10€/mois (API)</td></tr>
-        <tr><td>Marge</td><td>150€</td><td>20€/mois</td></tr>
+        <tr><td>Coût réel</td><td>~0€</td><td>~15€/mois (API)</td></tr>
+        <tr><td>Marge</td><td>150€</td><td>15€/mois</td></tr>
       </tbody>
     </table>
 
-    <div class="note">50 clients avec chatbot = 1 500€/mois de recurring pour ~500€/mois de coût API = 1 000€/mois de marge nette.</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- ARCHITECTURE TECHNIQUE -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Setup — Comment on intègre</div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Étape</th>
-          <th>Outil</th>
-          <th>Mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="3"><div class="category">Création du chatbot</div></td></tr>
-        <tr><td>Création du widget chat (bulle flottante, interface de conversation)</td><td>Vanilla JS</td><td><span class="auto">Auto</span></td></tr>
-        <tr><td>Création du backend (reçoit les questions, appelle Claude API, renvoie les réponses)</td><td>Vercel Serverless</td><td><span class="auto">Auto</span></td></tr>
-        <tr><td>Configuration du prompt système (catalogue produits, conditions livraison, retours, ton de la marque)</td><td>Claude API</td><td><span class="manuel">Manuel</span></td></tr>
-
-        <tr><td colspan="3"><div class="category">Connexion au catalogue</div></td></tr>
-        <tr><td>Chargement du catalogue produits (noms, prix, stocks, variantes, descriptions)</td><td>API Storefront Shopify / API REST WooCommerce</td><td><span class="auto">Auto</span></td></tr>
-        <tr><td>Mise à jour automatique quand les produits changent</td><td>API Storefront / REST</td><td><span class="auto">Auto</span></td></tr>
-
-        <tr><td colspan="3"><div class="category">Intégration Shopify</div></td></tr>
-        <tr><td>Création du snippet Liquid (chatbot-widget.liquid)</td><td>Shopify Theme Editor</td><td><span class="manuel">Manuel</span></td></tr>
-        <tr><td>Injection dans theme.liquid (1 ligne de code)</td><td>Shopify Theme Editor</td><td><span class="manuel">Manuel</span></td></tr>
-
-        <tr><td colspan="3"><div class="category">Intégration WordPress</div></td></tr>
-        <tr><td>Ajout du script via functions.php ou plugin custom</td><td>WordPress</td><td><span class="manuel">Manuel</span></td></tr>
-        <tr><td>Configuration API REST WooCommerce (clés API, permissions)</td><td>WooCommerce</td><td><span class="manuel">Manuel</span></td></tr>
-
-        <tr><td colspan="3"><div class="category">Tests</div></td></tr>
-        <tr><td>Test des réponses sur les produits du client</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
-        <tr><td>Test mobile + desktop</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
-        <tr><td>Test multilingue</td><td>Navigateur</td><td><span class="manuel">Manuel</span></td></tr>
-      </tbody>
-    </table>
+    <div class="note">50 clients avec chatbot = 1 500€/mois de recurring pour ~750€/mois de coût API = 750€/mois de marge nette.</div>
   </div>
 
   <div class="divider"></div>
@@ -273,10 +202,11 @@
       </thead>
       <tbody>
         <tr><td>Création widget chat + backend</td><td>2h</td><td>2h</td></tr>
-        <tr><td>Configuration prompt système + catalogue</td><td>30min</td><td>30min</td></tr>
+        <tr><td>Personnalisation design + branding client</td><td>30min</td><td>30min</td></tr>
+        <tr><td>Configuration catalogue + prompt</td><td>30min</td><td>30min</td></tr>
         <tr><td>Intégration dans le store</td><td>30min</td><td>1h</td></tr>
         <tr><td>Tests</td><td>30min</td><td>30min</td></tr>
-        <tr><td><strong>TOTAL</strong></td><td><strong>3h30</strong></td><td><strong>4h</strong></td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>4h</strong></td><td><strong>4h30</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -291,13 +221,13 @@
 
     <div class="upsell-box">
       <h4>Upsell — Séquences email automatisées</h4>
-      <p><strong>Shopify :</strong> 200€ setup + 50€/mois — Relance panier abandonné, email bienvenue, post-achat, demande d'avis. Les paniers abandonnés sont relancés automatiquement, les clients existants sont poussés à racheter.</p>
-      <p style="margin-top: 8px;"><strong>WordPress :</strong> 250€ setup + 70€/mois — Même chose mais configuration plus technique (Mailchimp/AutomateWoo au lieu de Shopify Email gratuit).</p>
+      <p><strong>Shopify :</strong> 200€ setup + 50€/mois — Relance panier abandonné, email bienvenue, post-achat, demande d'avis. Les ventes perdues sont récupérées automatiquement.</p>
+      <p style="margin-top: 8px;"><strong>WordPress :</strong> 250€ setup + 70€/mois — Même chose, config plus technique (Mailchimp/AutomateWoo).</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
       <h4>Cross-sell — Campagne Ads</h4>
-      <p>Le chatbot convertit les visiteurs qui sont déjà sur le store. Mais pour avoir des visiteurs, il faut du trafic. Campagne Meta Ads → 500€ setup / TikTok Ads → 300€ setup / Snapchat Ads → 300€ setup.</p>
+      <p>Meta Ads → 500€ setup / Google Ads → 1 500€ setup / TikTok Ads → 300€ setup / Snapchat Ads → 300€ setup.</p>
     </div>
 
     <div class="upsell-box" style="margin-top: 16px;">
