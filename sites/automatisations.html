@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agence Prime — Automatisations Marketing</title>
+<title>Agence Prime — Automatisations</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -144,47 +144,6 @@
     padding: 20px 0 8px;
   }
 
-  .auto {
-    color: #111;
-    font-weight: 600;
-    background: #f0f0f0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-  }
-  .manuel {
-    color: #888;
-    font-weight: 500;
-    background: #fafafa;
-    border: 1px solid #e0e0e0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 24px;
-  }
-  .benefit-item {
-    padding: 24px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background: #fafafa;
-  }
-  .benefit-item strong {
-    display: block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    margin-bottom: 6px;
-    color: #111;
-  }
-  .benefit-item span { font-size: 13px; color: #666; line-height: 1.6; }
-
   .pack-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -242,12 +201,6 @@
     color: #555;
     font-weight: 600;
     margin-bottom: 16px;
-  }
-  .pack-card .pack-desc {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 20px;
-    line-height: 1.5;
   }
   .pack-card ul {
     list-style: none;
@@ -308,7 +261,6 @@
     td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
     td:nth-child(3), td:nth-child(4) { padding-left: 10px; }
     table { font-size: 13px; }
-    .benefits-grid { grid-template-columns: 1fr; }
     .pack-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -334,203 +286,109 @@
 
   <div class="header">
     <div class="logo">Prime Agence</div>
-    <div class="service-title">Marketing <em>Automation</em></div>
-    <div class="service-subtitle">Vos tâches répétitives tournent en pilote automatique. Lead nurturing, prospection, relances, reporting, CRM — on connecte vos outils et on automatise tout ce qui peut l'être. Vous vous concentrez sur le business, les machines font le reste.</div>
+    <div class="service-title"><em>Automatisations</em></div>
+    <div class="service-subtitle">Vos tâches répétitives tournent toutes seules. Vous vous concentrez sur votre business, les machines font le reste.</div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- POURQUOI -->
+  <!-- CE QU'ON AUTOMATISE -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Pourquoi automatiser</div>
+      <div class="section-title">Ce qu'on automatise</div>
     </div>
-
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <strong>+760% de revenus avec la segmentation automatisée</strong>
-        <span>Les entreprises qui automatisent la segmentation de leurs campagnes email génèrent jusqu'à 760% de revenus en plus vs l'envoi en masse. Source : Campaign Monitor.</span>
-      </div>
-      <div class="benefit-item">
-        <strong>80% de leads en plus, 77% de conversions en plus</strong>
-        <span>Le marketing automation génère en moyenne 80% de leads qualifiés supplémentaires et augmente les conversions de 77%. Source : VB Insight.</span>
-      </div>
-      <div class="benefit-item">
-        <strong>ROI moyen : 5,44€ pour chaque 1€ investi</strong>
-        <span>Sur 3 ans, le retour sur investissement moyen du marketing automation est de 544%. 76% des entreprises voient un ROI positif dès la première année.</span>
-      </div>
-      <div class="benefit-item">
-        <strong>12h/semaine économisées par votre équipe</strong>
-        <span>Les tâches manuelles (relances, reporting, saisie CRM, envoi de devis) prennent un temps fou. L'automation libère vos équipes pour vendre et créer de la valeur.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- CATALOGUE D'AUTOMATIONS -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Catalogue d'automations</div>
-    </div>
-    <div class="section-time">Toutes les automations que nous déployons pour nos clients — par catégorie</div>
 
     <table>
       <thead>
         <tr>
-          <th>Automation</th>
-          <th>Ce que ça fait</th>
-          <th>Impact</th>
+          <th>Automatisation</th>
+          <th>Résultat</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="3"><div class="category">Acquisition & Prospection</div></td></tr>
+        <tr><td colspan="2"><div class="category">Réponse & Réactivité</div></td></tr>
         <tr>
-          <td><strong>Prospection multicanal B2B</strong></td>
-          <td>Séquence automatique email + LinkedIn + WhatsApp. Enrichissement de leads, personnalisation IA, relances programmées</td>
-          <td>Volume leads x3 à x5</td>
+          <td><strong>Formulaire rempli → WhatsApp en 30 secondes</strong></td>
+          <td>Le prospect reçoit un message personnalisé avant même d'avoir quitté votre site</td>
         </tr>
         <tr>
-          <td><strong>Scraping & enrichissement de leads</strong></td>
-          <td>Extraction automatique de prospects qualifiés depuis Google Maps, LinkedIn, annuaires pros. Enrichissement email + téléphone + données entreprise</td>
-          <td>Base qualifiée sans effort</td>
+          <td><strong>Réponse automatique aux avis Google</strong></td>
+          <td>Chaque avis (positif ou négatif) reçoit une réponse personnalisée en moins d'1 heure, sans intervention</td>
         </tr>
         <tr>
-          <td><strong>Formulaire intelligent + qualification IA</strong></td>
-          <td>Chaque formulaire rempli est analysé par l'IA : scoring du lead, assignation au bon commercial, notification instantanée</td>
-          <td>Réponse en &lt;5 min au lieu de 24h</td>
-        </tr>
-        <tr>
-          <td><strong>Détection d'intention d'achat</strong></td>
-          <td>Surveillance automatique des signaux d'achat : visite page prix, téléchargement brochure, ouverture email x3 → alerte commerciale</td>
-          <td>Timing parfait pour closer</td>
+          <td><strong>Chatbot WhatsApp & Instagram 24h/24</strong></td>
+          <td>Vos prospects obtiennent une réponse intelligente même à 3h du matin — tarifs, horaires, disponibilités</td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Lead Nurturing & Séquences Email</div></td></tr>
+        <tr><td colspan="2"><div class="category">Ventes & Relances</div></td></tr>
         <tr>
-          <td><strong>Séquence de bienvenue</strong></td>
-          <td>5 emails automatiques sur 14 jours après inscription. Présentation, valeur ajoutée, étude de cas, offre — le prospect se réchauffe tout seul</td>
-          <td>58% de taux de conversion</td>
+          <td><strong>Relance panier abandonné par WhatsApp</strong></td>
+          <td>Le client reçoit un message avec la photo du produit + un code promo qui expire en 24h. Récupère 5 à 15% de CA</td>
         </tr>
         <tr>
-          <td><strong>Nurturing par segment</strong></td>
-          <td>Séquences différentes selon le profil (secteur, taille entreprise, besoin identifié). Contenu personnalisé, timing adapté</td>
-          <td>+760% de revenus</td>
+          <td><strong>Devis non signé → relance automatique à J+3</strong></td>
+          <td>Email personnalisé qui reprend les points clés du devis et propose un créneau pour en discuter</td>
         </tr>
         <tr>
-          <td><strong>Relance prospects inactifs</strong></td>
-          <td>Après 30, 60, 90 jours sans activité — relance automatique avec nouveau contenu, offre spéciale ou sondage de satisfaction</td>
-          <td>15-25% de réactivation</td>
-        </tr>
-        <tr>
-          <td><strong>Séquence post-devis</strong></td>
-          <td>Devis envoyé → J+1 : email de rappel, J+3 : étude de cas similaire, J+7 : appel planifié automatiquement si pas de réponse</td>
-          <td>+35% de devis signés</td>
-        </tr>
-
-        <tr><td colspan="3"><div class="category">E-commerce & Ventes</div></td></tr>
-        <tr>
-          <td><strong>Relance panier abandonné</strong></td>
-          <td>Email + SMS automatique dans l'heure après abandon du panier. Rappel du produit, urgence, code promo si nécessaire</td>
-          <td>10-15% de paniers récupérés</td>
+          <td><strong>Relance factures impayées (J+7, J+15, J+30)</strong></td>
+          <td>Relances progressives automatiques. Réduit les impayés de 30 à 50%</td>
         </tr>
         <tr>
           <td><strong>Séquence post-achat</strong></td>
-          <td>Confirmation, suivi livraison, demande d'avis, cross-sell produit complémentaire, programme fidélité — tout automatisé</td>
-          <td>+25% de réachat</td>
-        </tr>
-        <tr>
-          <td><strong>Alerte réapprovisionnement</strong></td>
-          <td>Pour les produits consommables : rappel automatique quand le client devrait racheter (30, 60, 90 jours selon le produit)</td>
-          <td>Revenus récurrents</td>
-        </tr>
-        <tr>
-          <td><strong>Relance clients VIP</strong></td>
-          <td>Identification automatique des meilleurs clients (panier moyen, fréquence). Offres exclusives, accès early, traitement prioritaire</td>
-          <td>Fidélisation top clients</td>
+          <td>Confirmation, suivi livraison, demande d'avis, produit complémentaire — tout part automatiquement</td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">CRM & Pipeline Commercial</div></td></tr>
+        <tr><td colspan="2"><div class="category">Leads & CRM</div></td></tr>
         <tr>
-          <td><strong>Synchronisation CRM automatique</strong></td>
-          <td>Chaque nouveau lead (formulaire, appel, email, chat) est automatiquement ajouté au CRM avec toutes ses données enrichies</td>
-          <td>Zéro saisie manuelle</td>
+          <td><strong>Qualification IA des leads en temps réel</strong></td>
+          <td>Chaque lead est scoré automatiquement. Les leads chauds arrivent au commercial avec une alerte SMS</td>
         </tr>
         <tr>
-          <td><strong>Lead scoring automatisé</strong></td>
-          <td>Score calculé en temps réel selon : pages visitées, emails ouverts, formulaires remplis, ancienneté, taille entreprise. Les leads chauds remontent en priorité</td>
-          <td>Commerciaux focalisés sur les bons leads</td>
+          <td><strong>Nouveau lead → ajout CRM + enrichissement automatique</strong></td>
+          <td>Zéro saisie manuelle. Le contact est créé avec ses données enrichies (entreprise, poste, LinkedIn)</td>
         </tr>
         <tr>
-          <td><strong>Pipeline & tâches commerciales</strong></td>
-          <td>Quand un deal change d'étape → création automatique de la tâche suivante, notification Slack, mise à jour du forecast</td>
-          <td>Rien ne tombe entre les mailles</td>
-        </tr>
-        <tr>
-          <td><strong>Rapport commercial hebdomadaire</strong></td>
-          <td>Tous les lundis : synthèse automatique du pipeline, deals en cours, taux de conversion, prévision de CA. Envoyé par email au dirigeant</td>
-          <td>Visibilité totale sans effort</td>
+          <td><strong>Séquence de bienvenue (5 emails sur 14 jours)</strong></td>
+          <td>Le prospect se réchauffe tout seul : présentation, valeur, étude de cas, offre</td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Réseaux Sociaux & Contenu</div></td></tr>
+        <tr><td colspan="2"><div class="category">Reporting & Pilotage</div></td></tr>
         <tr>
-          <td><strong>Publication multi-plateforme</strong></td>
-          <td>Un seul contenu → publié automatiquement sur Instagram, Facebook, LinkedIn, Twitter, Google My Business. Adapté au format de chaque plateforme</td>
-          <td>Présence partout, effort minimal</td>
+          <td><strong>Rapport du lundi matin</strong></td>
+          <td>Chaque lundi à 8h, le patron reçoit un résumé : CA, leads, avis Google, campagnes — sans rien faire</td>
         </tr>
         <tr>
-          <td><strong>Recyclage de contenu IA</strong></td>
-          <td>Un article de blog → 10 posts LinkedIn + 5 carrousels Instagram + 3 threads Twitter + 1 newsletter. Généré automatiquement par IA</td>
-          <td>x10 de contenu sans rédaction</td>
-        </tr>
-        <tr>
-          <td><strong>Veille concurrentielle automatique</strong></td>
-          <td>Surveillance automatique des concurrents : nouveaux contenus, changements de prix, nouvelles offres, avis clients. Rapport hebdomadaire</td>
-          <td>Toujours un coup d'avance</td>
+          <td><strong>Alerte si un KPI dérape</strong></td>
+          <td>Coût/lead trop élevé, taux de conversion en chute, budget dépassé → notification immédiate</td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Reporting & Analytics</div></td></tr>
+        <tr><td colspan="2"><div class="category">Contenu & Réseaux sociaux</div></td></tr>
         <tr>
-          <td><strong>Dashboard marketing unifié</strong></td>
-          <td>Toutes vos données au même endroit : Google Ads, Meta, email, CRM, CA — mis à jour en temps réel, accessible depuis votre navigateur</td>
-          <td>Décisions basées sur les données</td>
+          <td><strong>1 contenu → 10 publications</strong></td>
+          <td>Un article → posts LinkedIn + carrousels Instagram + threads Twitter + newsletter. Généré par IA automatiquement</td>
         </tr>
         <tr>
-          <td><strong>Rapport client automatique</strong></td>
-          <td>Rapport PDF ou email généré et envoyé automatiquement chaque semaine/mois au client ou au dirigeant. KPIs, graphiques, recommandations</td>
-          <td>Gain de temps massif</td>
-        </tr>
-        <tr>
-          <td><strong>Alertes performance</strong></td>
-          <td>Si un KPI dépasse un seuil (coût/lead trop élevé, taux de conversion en baisse, budget dépassé) → alerte instantanée Slack/email/SMS</td>
-          <td>Réactivité immédiate</td>
+          <td><strong>Publication multi-plateforme en 1 clic</strong></td>
+          <td>Un seul post → publié partout (Instagram, Facebook, LinkedIn, Google Business) avec le bon format</td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Opérationnel & Admin</div></td></tr>
+        <tr><td colspan="2"><div class="category">Opérationnel</div></td></tr>
         <tr>
-          <td><strong>Devis & facturation automatique</strong></td>
-          <td>Nouveau deal validé → devis PDF généré automatiquement, envoyé au client, signature électronique, puis facture créée à la validation</td>
-          <td>-90% de temps admin</td>
+          <td><strong>Nouveau client → onboarding automatique</strong></td>
+          <td>Contrat signé → email de bienvenue, dossier créé, équipe notifiée, premier point planifié, acompte envoyé. En 10 secondes</td>
         </tr>
         <tr>
-          <td><strong>Prise de rendez-vous intelligente</strong></td>
-          <td>Le prospect choisit un créneau → confirmation SMS + email + ajout calendrier + rappel J-1 + rappel H-1 + brief préparé pour le commercial</td>
-          <td>Zéro no-show</td>
+          <td><strong>RDV pris → rappels SMS automatiques</strong></td>
+          <td>Confirmation + rappel J-1 + rappel H-1. Divise les no-shows par 3</td>
         </tr>
         <tr>
-          <td><strong>Onboarding client automatisé</strong></td>
-          <td>Nouveau client signé → création dossier, envoi des docs à remplir, planification du kick-off, accès outils, séquence de bienvenue</td>
-          <td>Expérience client pro dès J1</td>
-        </tr>
-        <tr>
-          <td><strong>Gestion des avis automatisée</strong></td>
-          <td>Nouvel avis Google → notification + réponse IA personnalisée (positif ou négatif). Synthèse mensuelle de l'e-réputation</td>
-          <td>Réputation gérée en autopilot</td>
+          <td><strong>Demande d'avis Google après chaque prestation</strong></td>
+          <td>Projet terminé dans le CRM → le client reçoit un SMS avec le lien direct vers vos avis Google</td>
         </tr>
       </tbody>
     </table>
 
-    <p class="note">Ce catalogue n'est pas exhaustif — si vous avez un processus répétitif, on peut probablement l'automatiser. Chaque automation est construite sur-mesure pour votre stack et vos outils existants.</p>
+    <p class="note">Si vous avez un processus que vous répétez chaque jour, on peut probablement l'automatiser.</p>
   </div>
 
   <div class="divider"></div>
@@ -545,16 +403,13 @@
       <div class="pack-card">
         <h3>Essentiel</h3>
         <div class="pack-price">2 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 300€/mois maintenance</div>
-        <div class="pack-desc">Pour les entreprises qui veulent automatiser les fondamentaux</div>
+        <div class="pack-volume">+ 300€/mois</div>
         <ul>
-          <li>Audit de vos processus actuels</li>
-          <li>3 à 5 workflows automatisés</li>
-          <li>Synchronisation CRM</li>
-          <li>1 séquence email (bienvenue ou relance)</li>
-          <li>Prise de rendez-vous automatisée</li>
-          <li>Notifications temps réel (Slack, email, SMS)</li>
-          <li>Dashboard de suivi basique</li>
+          <li>Audit de vos processus</li>
+          <li>3 à 5 automatisations</li>
+          <li>Connexion à vos outils existants</li>
+          <li>Notifications temps réel</li>
+          <li>Dashboard de suivi</li>
           <li>Support technique</li>
         </ul>
       </div>
@@ -563,19 +418,13 @@
         <div class="pack-badge">Populaire</div>
         <h3>Pro</h3>
         <div class="pack-price">5 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 800€/mois maintenance</div>
-        <div class="pack-desc">Automation complète — acquisition, nurturing, CRM, reporting</div>
+        <div class="pack-volume">+ 800€/mois</div>
         <ul>
           <li>Tout le pack Essentiel</li>
-          <li>8 à 15 workflows automatisés</li>
-          <li>Prospection multicanal B2B</li>
-          <li>Lead scoring automatisé</li>
-          <li>3 séquences email (bienvenue, nurturing, post-devis)</li>
-          <li>Relance panier abandonné (e-commerce)</li>
-          <li>Publication réseaux sociaux multi-plateforme</li>
-          <li>Rapport hebdomadaire automatique</li>
-          <li>Dashboard marketing unifié</li>
-          <li>Alertes performance en temps réel</li>
+          <li>8 à 12 automatisations</li>
+          <li>Qualification IA des leads</li>
+          <li>Séquences email automatisées</li>
+          <li>Reporting hebdo automatique</li>
           <li>1 call stratégique/mois</li>
         </ul>
       </div>
@@ -583,20 +432,13 @@
       <div class="pack-card">
         <h3>Scale</h3>
         <div class="pack-price">10 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 1 500€/mois maintenance</div>
-        <div class="pack-desc">Système complet — chaque processus marketing et commercial tourne en automatique</div>
+        <div class="pack-volume">+ 1 500€/mois</div>
         <ul>
           <li>Tout le pack Pro</li>
-          <li>20+ workflows automatisés</li>
-          <li>IA intégrée (qualification, copywriting, analyse)</li>
-          <li>Scraping & enrichissement de leads</li>
-          <li>Veille concurrentielle automatique</li>
-          <li>Recyclage de contenu IA (1 contenu → 10+ formats)</li>
-          <li>Devis & facturation automatique</li>
-          <li>Onboarding client automatisé</li>
-          <li>Pipeline commercial complet</li>
-          <li>Reporting avancé multi-canal</li>
-          <li>2 calls stratégiques/mois</li>
+          <li>15+ automatisations</li>
+          <li>IA intégrée dans les workflows</li>
+          <li>Contenu auto multi-plateforme</li>
+          <li>Veille concurrentielle auto</li>
           <li>Account manager dédié</li>
         </ul>
       </div>
@@ -605,245 +447,40 @@
 
   <div class="divider"></div>
 
-  <!-- SETUP DÉTAILLÉ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Ce qui est livré au setup</div>
-    </div>
-    <div class="section-time">Déploiement en 2 à 4 semaines selon le pack</div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Livrable</th>
-          <th>Détail</th>
-          <th>Mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="3"><div class="category">Audit & Stratégie</div></td></tr>
-        <tr>
-          <td>Audit complet des processus</td>
-          <td>Cartographie de tous les flux manuels : acquisition, vente, admin, support. Identification des quick wins et des gros gains</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Plan d'automation sur-mesure</td>
-          <td>Roadmap priorisée : quels workflows automatiser en premier, dans quel ordre, avec quel impact attendu</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-
-        <tr><td colspan="3"><div class="category">Infrastructure</div></td></tr>
-        <tr>
-          <td>Plateforme d'automation configurée</td>
-          <td>Infrastructure d'orchestration dédiée, hébergée, sécurisée. Pas de licence tierce à payer — tout est inclus</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Connexion à vos outils</td>
-          <td>CRM, email, agenda, facturation, e-commerce, réseaux sociaux — tous vos outils connectés entre eux via API</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Base de données centralisée</td>
-          <td>Toutes vos données leads, clients, interactions au même endroit. Plus de silos, plus de copier-coller entre outils</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-
-        <tr><td colspan="3"><div class="category">Workflows</div></td></tr>
-        <tr>
-          <td>Workflows construits et testés</td>
-          <td>Chaque automation est développée, testée en conditions réelles, puis validée avec vous avant mise en production</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Séquences email rédigées</td>
-          <td>Copywriting professionnel pour chaque séquence : objets optimisés, contenu personnalisé, CTA testés</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Logique conditionnelle</td>
-          <td>Branchements intelligents : si le lead ouvre l'email → chemin A, si non → chemin B. Chaque scénario est couvert</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-
-        <tr><td colspan="3"><div class="category">Reporting & Dashboard</div></td></tr>
-        <tr>
-          <td>Dashboard de pilotage</td>
-          <td>Interface visuelle avec vos KPIs en temps réel : leads générés, emails envoyés, taux de conversion, pipeline, CA</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-        <tr>
-          <td>Rapports automatiques configurés</td>
-          <td>Envoi hebdomadaire ou mensuel par email — format PDF ou dashboard en ligne</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-
-        <tr><td colspan="3"><div class="category">Formation & Passation</div></td></tr>
-        <tr>
-          <td>Formation équipe</td>
-          <td>Session de 1h avec votre équipe : comment lire le dashboard, comprendre les workflows, où intervenir si besoin</td>
-          <td><span class="manuel">Manuel</span></td>
-        </tr>
-        <tr>
-          <td>Documentation technique</td>
-          <td>Document de référence : chaque workflow expliqué, chaque déclencheur détaillé, procédure de modification</td>
-          <td><span class="auto">Auto</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- GESTION MENSUELLE -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Maintenance mensuelle</div>
-    </div>
-    <div class="section-time">Incluse dans chaque pack — vos automations restent performantes dans le temps</div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Détail</th>
-          <th>Fréquence</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Monitoring 24/7</strong></td>
-          <td>Surveillance de tous les workflows en temps réel. Si une automation échoue → alerte immédiate + correction</td>
-          <td>Continu</td>
-        </tr>
-        <tr>
-          <td><strong>Optimisation des workflows</strong></td>
-          <td>Analyse des performances, ajustement des séquences, amélioration des taux de conversion</td>
-          <td>Hebdomadaire</td>
-        </tr>
-        <tr>
-          <td><strong>Mise à jour des connexions</strong></td>
-          <td>Les API évoluent, les outils changent — on maintient toutes les connexions fonctionnelles</td>
-          <td>Continu</td>
-        </tr>
-        <tr>
-          <td><strong>Nouveaux workflows mineurs</strong></td>
-          <td>Ajout de petites automations complémentaires (notifications, conditions supplémentaires, nouveaux déclencheurs)</td>
-          <td>Sur demande</td>
-        </tr>
-        <tr>
-          <td><strong>Rapport de performance</strong></td>
-          <td>Synthèse mensuelle : workflows actifs, exécutions, erreurs, résultats business, recommandations</td>
-          <td>Mensuel</td>
-        </tr>
-        <tr>
-          <td><strong>Call stratégique</strong></td>
-          <td>Bilan des automations, identification de nouvelles opportunités, roadmap du mois suivant</td>
-          <td>1 à 2x/mois selon pack</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- BENCHMARK MARCHÉ -->
+  <!-- BENCHMARK -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Benchmark marché</div>
     </div>
-    <div class="section-time">Ce que facturent les agences de marketing automation en France</div>
 
     <table>
       <thead>
         <tr>
           <th>Prestation</th>
-          <th>Agences classiques (HubSpot, Pardot)</th>
+          <th>Agences classiques</th>
           <th>Prime</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Setup automation (3-5 workflows)</td>
+          <td>Setup 3-5 automatisations</td>
           <td>5 000 — 10 000€</td>
           <td><strong>2 000€</strong></td>
         </tr>
         <tr>
-          <td>Setup complet (8-15 workflows)</td>
+          <td>Setup complet (8-12 workflows)</td>
           <td>10 000 — 25 000€</td>
           <td><strong>5 000€</strong></td>
         </tr>
         <tr>
-          <td>Setup avancé (20+ workflows + IA)</td>
-          <td>20 000 — 50 000€</td>
-          <td><strong>10 000€</strong></td>
-        </tr>
-        <tr>
-          <td>Gestion mensuelle (basique)</td>
-          <td>1 000 — 2 000€/mois</td>
-          <td><strong>300€/mois</strong></td>
-        </tr>
-        <tr>
-          <td>Gestion mensuelle (complète)</td>
-          <td>2 000 — 6 000€/mois</td>
-          <td><strong>800€/mois</strong></td>
+          <td>Maintenance mensuelle</td>
+          <td>1 500 — 6 000€/mois</td>
+          <td><strong>300 — 1 500€/mois</strong></td>
         </tr>
         <tr>
           <td>Licence plateforme (HubSpot Pro)</td>
-          <td>792€/mois facturé en plus au client</td>
-          <td><strong>Inclus dans nos tarifs</strong></td>
-        </tr>
-        <tr>
-          <td>Prospection B2B automatisée</td>
-          <td>890 — 1 690€/mois</td>
-          <td><strong>Inclus dans Pack Pro & Scale</strong></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="note">Les agences classiques imposent des licences logicielles coûteuses (HubSpot Pro : 792€/mois, Enterprise : 3 300€/mois) en plus de leurs frais. Chez Prime, notre infrastructure propriétaire est incluse — pas de licence en supplément, pas de frais cachés.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- EXEMPLES PAR SECTEUR -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">Exemples par secteur</div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Secteur</th>
-          <th>Automations typiques</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>E-commerce</strong></td>
-          <td>Relance panier abandonné, séquence post-achat, alerte réappro, segmentation RFM, cross-sell automatique, gestion des avis produits</td>
-        </tr>
-        <tr>
-          <td><strong>B2B / Services</strong></td>
-          <td>Prospection multicanal, lead scoring, nurturing par segment, pipeline CRM, devis automatique, onboarding client, reporting commercial</td>
-        </tr>
-        <tr>
-          <td><strong>SaaS</strong></td>
-          <td>Onboarding utilisateur, séquence trial-to-paid, détection de churn, upsell automatique, NPS automatisé, product-led growth workflows</td>
-        </tr>
-        <tr>
-          <td><strong>Immobilier</strong></td>
-          <td>Qualification de mandats, matching bien/acheteur, relance automatique, alertes nouveaux biens, suivi visites, pipeline commercial</td>
-        </tr>
-        <tr>
-          <td><strong>Restauration / Commerce local</strong></td>
-          <td>Programme fidélité automatisé, relance SMS jour d'anniversaire, collecte d'avis Google, publication réseaux sociaux, offres flash géolocalisées</td>
-        </tr>
-        <tr>
-          <td><strong>Santé / Bien-être</strong></td>
-          <td>Rappel de rendez-vous, suivi post-consultation, séquence d'éducation patient, gestion des avis, renouvellement automatique</td>
+          <td>792€/mois en supplément</td>
+          <td><strong>Inclus</strong></td>
         </tr>
       </tbody>
     </table>
@@ -851,40 +488,25 @@
 
   <div class="divider"></div>
 
-  <!-- OPTIONS & EXTENSIONS -->
+  <!-- OPTIONS -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Options & Extensions</div>
     </div>
 
     <div class="upsell-box">
-      <h4>Workflow additionnel (hors pack)</h4>
-      <p><strong>500 — 2 000€ par workflow</strong> — Selon la complexité. Workflow simple (1 déclencheur, 2-3 actions) : 500€. Workflow complexe (multi-conditions, IA, multi-outils) : 1 500 — 2 000€. Développé, testé et mis en production sous 3-5 jours.</p>
+      <h4>Automatisation supplémentaire</h4>
+      <p><strong>500 — 2 000€</strong> selon complexité — développée et mise en production sous 3-5 jours.</p>
     </div>
 
     <div class="upsell-box">
-      <h4>Intégration IA avancée</h4>
-      <p><strong>1 500€ setup + 200€/mois</strong> — Ajout d'intelligence artificielle dans vos workflows : qualification de leads par IA, génération de contenu automatique, réponses personnalisées, analyse de sentiment sur les avis, recommandations produit.</p>
+      <h4>WhatsApp Business connecté</h4>
+      <p><strong>800€ setup + 150€/mois</strong> — Relance panier, confirmation RDV, envoi de devis, support client automatisé via WhatsApp.</p>
     </div>
 
     <div class="upsell-box">
-      <h4>WhatsApp Business Automation</h4>
-      <p><strong>800€ setup + 150€/mois</strong> — Canal WhatsApp professionnel connecté à vos automations : relance panier, envoi de devis, confirmation de rendez-vous, support client automatisé, notifications de livraison.</p>
-    </div>
-
-    <div class="upsell-box">
-      <h4>Formation équipe avancée</h4>
-      <p><strong>500€/session</strong> — Formation de 3h pour votre équipe : comment lire les dashboards, modifier les séquences email, ajouter des contacts, comprendre le lead scoring. Documentation vidéo incluse.</p>
-    </div>
-
-    <div class="upsell-box">
-      <h4>Chatbot IA connecté aux automations</h4>
-      <p>Le chatbot qualifie les leads en direct sur votre site → ils entrent automatiquement dans le pipeline commercial avec leur score. <strong>Voir notre offre Chatbot IA.</strong></p>
-    </div>
-
-    <div class="upsell-box">
-      <h4>Campagnes SMS & Email pour alimenter les automations</h4>
-      <p>Vos séquences automatisées ont besoin de leads. On génère le trafic en amont via campagnes email et SMS ciblées. <strong>Voir notre offre SMS & Mailing.</strong></p>
+      <h4>Formation équipe</h4>
+      <p><strong>500€/session</strong> — 3h avec votre équipe : comment lire les dashboards, comprendre les alertes, modifier les séquences.</p>
     </div>
   </div>
 
