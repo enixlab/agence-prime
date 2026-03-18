@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Social Media & Community Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .header { margin-bottom: 60px; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .service-subtitle { font-size: 16px; color: #888; line-height: 1.6; max-width: 750px; margin-top: 16px; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
+  .section-time { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 24px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 32px; position: relative; }
+  .pack-card.featured { border: 2px solid #111; background: #fff; }
+  .pack-badge { position: absolute; top: -12px; right: 24px; background: #111; color: #fff; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; padding: 4px 16px; border-radius: 20px; }
+  .pack-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 8px; }
+  .pack-card .pack-price { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
+  .pack-card .pack-price span { font-size: 14px; font-weight: 400; color: #888; }
+  .pack-card .pack-volume { font-size: 14px; color: #555; font-weight: 600; margin-bottom: 16px; }
+  .pack-card ul { list-style: none; padding: 0; }
+  .pack-card ul li { font-size: 13px; color: #333; padding: 7px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
+  .pack-card ul li:last-child { border-bottom: none; }
+  .pack-card ul li::before { content: '—'; color: #ccc; margin-right: 10px; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 16px; }
+  .upsell-box:first-of-type { margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } .pack-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-link">Génération de Leads</a>
+    <a href="/sites/avis-intelligent.html" class="nav-link">Avis Intelligent</a>
+    <a href="/sites/social-media.html" class="nav-active">Social Media</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Social <em>Media</em></div>
+    <div class="service-subtitle">On gère vos réseaux sociaux. Contenu, publications, interactions — votre audience grandit pendant que vous travaillez.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INSTAGRAM -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Instagram</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Starter</h3>
+        <div class="pack-price">500€ <span>/mois</span></div>
+        <div class="pack-volume">8 publications / mois</div>
+        <ul>
+          <li>2 posts par semaine (feed)</li>
+          <li>Création visuels (Canva / IA)</li>
+          <li>Rédaction des légendes + hashtags</li>
+          <li>Planification et publication</li>
+          <li>Rapport mensuel (abonnés, reach, engagement)</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Growth</h3>
+        <div class="pack-price">900€ <span>/mois</span></div>
+        <div class="pack-volume">16 publications + stories</div>
+        <ul>
+          <li>4 posts par semaine (feed + carrousels)</li>
+          <li>8 stories par mois</li>
+          <li>Création visuels premium</li>
+          <li>Rédaction des légendes + hashtags stratégiques</li>
+          <li>Veille concurrence</li>
+          <li>Modération des commentaires et DM</li>
+          <li>Rapport mensuel détaillé</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Premium</h3>
+        <div class="pack-price">1 500€ <span>/mois</span></div>
+        <div class="pack-volume">24 publications + stories + reels</div>
+        <ul>
+          <li>6 posts par semaine (feed + carrousels + reels)</li>
+          <li>12 stories par mois</li>
+          <li>4 reels par mois (montage inclus)</li>
+          <li>Stratégie éditoriale complète</li>
+          <li>Modération quotidienne (commentaires + DM)</li>
+          <li>Veille tendances + concurrence</li>
+          <li>Rapport hebdomadaire</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Sur mesure</h3>
+        <div class="pack-price">Sur devis</div>
+        <div class="pack-volume">Volume personnalisé</div>
+        <ul>
+          <li>Publication quotidienne</li>
+          <li>Reels + stories illimités</li>
+          <li>Community management complet</li>
+          <li>Stratégie + reporting avancé</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIKTOK -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">TikTok</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Starter</h3>
+        <div class="pack-price">600€ <span>/mois</span></div>
+        <div class="pack-volume">8 vidéos / mois</div>
+        <ul>
+          <li>2 vidéos par semaine</li>
+          <li>Montage court format (CapCut / IA)</li>
+          <li>Copywriting des hooks + légendes</li>
+          <li>Veille tendances et sons</li>
+          <li>Planification et publication</li>
+          <li>Rapport mensuel</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Growth</h3>
+        <div class="pack-price">1 200€ <span>/mois</span></div>
+        <div class="pack-volume">16 vidéos / mois</div>
+        <ul>
+          <li>4 vidéos par semaine</li>
+          <li>Montage dynamique + sous-titres</li>
+          <li>Hooks percutants testés</li>
+          <li>Veille tendances quotidienne</li>
+          <li>Réponse aux commentaires</li>
+          <li>Stratégie de croissance</li>
+          <li>Rapport mensuel détaillé</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Premium</h3>
+        <div class="pack-price">2 000€ <span>/mois</span></div>
+        <div class="pack-volume">24 vidéos + stratégie virale</div>
+        <ul>
+          <li>6 vidéos par semaine</li>
+          <li>Montage premium + effets + transitions</li>
+          <li>Stratégie virale (duos, trends, challenges)</li>
+          <li>Community management complet</li>
+          <li>Cross-post Instagram Reels / YouTube Shorts</li>
+          <li>Rapport hebdomadaire</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Sur mesure</h3>
+        <div class="pack-price">Sur devis</div>
+        <div class="pack-volume">Volume personnalisé</div>
+        <ul>
+          <li>Publication quotidienne</li>
+          <li>Stratégie complète</li>
+          <li>Tournage possible (supplément)</li>
+          <li>Gestion complète du compte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMMUNITY MANAGEMENT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Community Management</div>
+    </div>
+    <div class="section-time">Modération, réponses aux commentaires et DM, interaction avec votre audience — sur tous vos réseaux</div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>1 réseau</h3>
+        <div class="pack-price">300€ <span>/mois</span></div>
+        <div class="pack-volume">Instagram OU TikTok OU Facebook</div>
+        <ul>
+          <li>Modération commentaires quotidienne</li>
+          <li>Réponse aux DM sous 24h</li>
+          <li>Interaction avec la communauté</li>
+          <li>Signalement des messages importants</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Multi-réseaux</h3>
+        <div class="pack-price">600€ <span>/mois</span></div>
+        <div class="pack-volume">Instagram + TikTok + Facebook</div>
+        <ul>
+          <li>Modération sur tous les réseaux</li>
+          <li>Réponse aux DM sous 12h</li>
+          <li>Interaction proactive (likes, commentaires, follows)</li>
+          <li>Veille e-réputation</li>
+          <li>Rapport mensuel engagement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS COMBO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Packs Combo</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Instagram + TikTok Starter</h3>
+        <div class="pack-price">950€ <span>/mois</span></div>
+        <div class="pack-volume">8 posts Insta + 8 vidéos TikTok</div>
+        <ul>
+          <li>Contenu adapté à chaque plateforme</li>
+          <li>Publication et planification</li>
+          <li>Rapport mensuel unifié</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Best value</div>
+        <h3>Instagram + TikTok Growth</h3>
+        <div class="pack-price">1 800€ <span>/mois</span></div>
+        <div class="pack-volume">16 posts Insta + 16 vidéos TikTok + community</div>
+        <ul>
+          <li>Contenu premium sur les 2 plateformes</li>
+          <li>Community management inclus</li>
+          <li>Stratégie éditoriale unifiée</li>
+          <li>Rapport hebdomadaire</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UPSELL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Upsell & Cross-sell</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Campagne Ads sur les réseaux</h4>
+      <p>Le contenu organique ne suffit pas ? On lance des campagnes Meta Ads ou TikTok Ads pour booster la visibilité et générer des followers / leads / ventes.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Création de contenu vidéo pro</h4>
+      <p><strong>À partir de 500€/tournage</strong> — Tournage sur place, montage pro, contenu décliné en posts, reels, stories et TikTok. Un tournage = 1 mois de contenu.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Influence marketing</h4>
+      <p><strong>Sur devis</strong> — On identifie et contacte les influenceurs pertinents pour votre marque. Négociation, brief, suivi de la campagne, rapport de performance.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Gestion d'un réseau supplémentaire</h4>
+      <p>Le client veut ajouter LinkedIn, Pinterest ou YouTube ? On ajoute le réseau au forfait existant à tarif réduit.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+
+</body>
+</html>
