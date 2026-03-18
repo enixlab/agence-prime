@@ -48,195 +48,43 @@
   }
 
   .header { margin-bottom: 60px; }
-  .logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 40px;
-  }
-  .service-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
-    color: #111;
-    line-height: 1.1;
-    margin-bottom: 8px;
-  }
-  .service-title em {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-weight: 400;
-  }
-  .service-subtitle {
-    font-size: 16px;
-    color: #888;
-    line-height: 1.6;
-    max-width: 750px;
-    margin-top: 16px;
-  }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .service-subtitle { font-size: 16px; color: #888; line-height: 1.6; max-width: 750px; margin-top: 16px; }
 
   .section { margin-bottom: 60px; }
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #111;
-  }
-  .section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #111;
-  }
-  .section-price {
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: #111;
-  }
-  .section-time {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 24px;
-    margin-top: -16px;
-  }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
 
   table { width: 100%; border-collapse: collapse; }
-  th {
-    text-align: left;
-    padding: 14px 0;
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #999;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  td {
-    padding: 14px 0;
-    font-size: 14px;
-    color: #333;
-    border-bottom: 1px solid #f0f0f0;
-    vertical-align: top;
-    line-height: 1.5;
-  }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
   tr:hover td { background: #fafafa; }
   td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
-  td:nth-child(3), td:nth-child(4) { padding-left: 20px; font-size: 13px; }
+  td:nth-child(3) { padding-left: 20px; font-size: 13px; }
 
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
 
-  .category {
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #999;
-    padding: 20px 0 8px;
-  }
+  .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
 
-  .pack-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 24px;
-  }
-  .pack-card {
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 32px;
-    position: relative;
-  }
-  .pack-card.featured {
-    border: 2px solid #111;
-    background: #fff;
-  }
-  .pack-badge {
-    position: absolute;
-    top: -12px;
-    right: 24px;
-    background: #111;
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 4px 16px;
-    border-radius: 20px;
-  }
-  .pack-card h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #111;
-    margin-bottom: 8px;
-  }
-  .pack-card .pack-price {
-    font-family: 'Outfit', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 4px;
-  }
-  .pack-card .pack-price span {
-    font-size: 14px;
-    font-weight: 400;
-    color: #888;
-  }
-  .pack-card .pack-volume {
-    font-size: 14px;
-    color: #555;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-  .pack-card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .pack-card ul li {
-    font-size: 13px;
-    color: #333;
-    padding: 7px 0;
-    border-bottom: 1px solid #f0f0f0;
-    line-height: 1.5;
-  }
+  .pack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 32px; position: relative; }
+  .pack-card.featured { border: 2px solid #111; background: #fff; }
+  .pack-badge { position: absolute; top: -12px; right: 24px; background: #111; color: #fff; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; padding: 4px 16px; border-radius: 20px; }
+  .pack-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 8px; }
+  .pack-card .pack-price { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
+  .pack-card .pack-price span { font-size: 14px; font-weight: 400; color: #888; }
+  .pack-card .pack-volume { font-size: 14px; color: #555; font-weight: 600; margin-bottom: 16px; }
+  .pack-card ul { list-style: none; padding: 0; }
+  .pack-card ul li { font-size: 13px; color: #333; padding: 7px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
   .pack-card ul li:last-child { border-bottom: none; }
-  .pack-card ul li::before {
-    content: '—';
-    color: #ccc;
-    margin-right: 10px;
-  }
+  .pack-card ul li::before { content: '—'; color: #ccc; margin-right: 10px; }
 
-  .upsell-box {
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 16px;
-  }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 16px; }
   .upsell-box:first-of-type { margin-top: 24px; }
-  .upsell-box h4 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #111;
-    margin-bottom: 12px;
-  }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
   .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
 
   .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
@@ -245,21 +93,13 @@
   .nav-link:hover { color:#111; border-color:#111; }
   .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
 
-  .footer {
-    text-align: center;
-    padding: 40px 0 20px;
-    font-size: 12px;
-    color: #ccc;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'Outfit', sans-serif;
-  }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
 
   @media (max-width: 768px) {
     .container { padding: 30px 20px; }
     .section-header { flex-direction: column; gap: 4px; }
     td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
-    td:nth-child(3), td:nth-child(4) { padding-left: 10px; }
+    td:nth-child(3) { padding-left: 10px; }
     table { font-size: 13px; }
     .pack-grid { grid-template-columns: 1fr; }
   }
@@ -287,108 +127,152 @@
   <div class="header">
     <div class="logo">Prime Agence</div>
     <div class="service-title"><em>Automatisations</em></div>
-    <div class="service-subtitle">Vos tâches répétitives tournent toutes seules. Vous vous concentrez sur votre business, les machines font le reste.</div>
+    <div class="service-subtitle">On connecte vos outils entre eux pour que tout tourne sans vous. Chaque tâche que vous répétez à la main aujourd'hui peut être automatisée demain.</div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- CE QU'ON AUTOMATISE -->
+  <!-- AUTOMATISATIONS DISPONIBLES -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Ce qu'on automatise</div>
+      <div class="section-title">Nos automatisations</div>
     </div>
 
     <table>
       <thead>
         <tr>
           <th>Automatisation</th>
-          <th>Résultat</th>
+          <th>Ce qui se passe concrètement</th>
+          <th>Prix</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="2"><div class="category">Réponse & Réactivité</div></td></tr>
+
+        <tr><td colspan="3"><div class="category">Prospection & Leads</div></td></tr>
+        <tr>
+          <td><strong>Scraping Google Maps → email automatique</strong></td>
+          <td>On extrait les entreprises sans site web dans votre zone, on récupère leurs coordonnées, et on leur envoie un email commercial personnalisé — tout seul</td>
+          <td><strong>1 500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Prospection LinkedIn automatisée</strong></td>
+          <td>Visite de profils ciblés, demande de connexion, message personnalisé par IA, relance si pas de réponse à J+3 et J+7</td>
+          <td><strong>2 000€</strong></td>
+        </tr>
         <tr>
           <td><strong>Formulaire rempli → WhatsApp en 30 secondes</strong></td>
-          <td>Le prospect reçoit un message personnalisé avant même d'avoir quitté votre site</td>
+          <td>Un prospect remplit votre formulaire → il reçoit un WhatsApp personnalisé avec son prénom et une réponse adaptée à sa demande. Avant même qu'il quitte votre site</td>
+          <td><strong>800€</strong></td>
         </tr>
         <tr>
-          <td><strong>Réponse automatique aux avis Google</strong></td>
-          <td>Chaque avis (positif ou négatif) reçoit une réponse personnalisée en moins d'1 heure, sans intervention</td>
-        </tr>
-        <tr>
-          <td><strong>Chatbot WhatsApp & Instagram 24h/24</strong></td>
-          <td>Vos prospects obtiennent une réponse intelligente même à 3h du matin — tarifs, horaires, disponibilités</td>
+          <td><strong>Séquence cold email IA</strong></td>
+          <td>Email 1 personnalisé par IA → relance J+2 → relance J+5 avec un angle différent → relance J+7 avec prise de RDV. 70% des réponses viennent des follow-ups</td>
+          <td><strong>1 200€</strong></td>
         </tr>
 
-        <tr><td colspan="2"><div class="category">Ventes & Relances</div></td></tr>
+        <tr><td colspan="3"><div class="category">Ventes & Relances</div></td></tr>
         <tr>
-          <td><strong>Relance panier abandonné par WhatsApp</strong></td>
-          <td>Le client reçoit un message avec la photo du produit + un code promo qui expire en 24h. Récupère 5 à 15% de CA</td>
+          <td><strong>Relance panier abandonné (WhatsApp + email)</strong></td>
+          <td>Le client quitte sans payer → il reçoit un WhatsApp avec la photo du produit + un code promo qui expire en 24h. Récupère 5 à 15% de CA perdu</td>
+          <td><strong>1 000€</strong></td>
         </tr>
         <tr>
-          <td><strong>Devis non signé → relance automatique à J+3</strong></td>
-          <td>Email personnalisé qui reprend les points clés du devis et propose un créneau pour en discuter</td>
+          <td><strong>Relance devis non signé (J+3, J+7, J+14)</strong></td>
+          <td>Devis envoyé mais pas de réponse → email personnalisé à J+3, étude de cas similaire à J+7, proposition d'appel à J+14</td>
+          <td><strong>800€</strong></td>
         </tr>
         <tr>
-          <td><strong>Relance factures impayées (J+7, J+15, J+30)</strong></td>
-          <td>Relances progressives automatiques. Réduit les impayés de 30 à 50%</td>
+          <td><strong>Relance factures impayées automatique</strong></td>
+          <td>Facture en retard → rappel courtois à J+7 → relance ferme à J+15 → mise en demeure à J+30. Réduit les impayés de 30 à 50%</td>
+          <td><strong>800€</strong></td>
         </tr>
         <tr>
-          <td><strong>Séquence post-achat</strong></td>
-          <td>Confirmation, suivi livraison, demande d'avis, produit complémentaire — tout part automatiquement</td>
-        </tr>
-
-        <tr><td colspan="2"><div class="category">Leads & CRM</div></td></tr>
-        <tr>
-          <td><strong>Qualification IA des leads en temps réel</strong></td>
-          <td>Chaque lead est scoré automatiquement. Les leads chauds arrivent au commercial avec une alerte SMS</td>
-        </tr>
-        <tr>
-          <td><strong>Nouveau lead → ajout CRM + enrichissement automatique</strong></td>
-          <td>Zéro saisie manuelle. Le contact est créé avec ses données enrichies (entreprise, poste, LinkedIn)</td>
-        </tr>
-        <tr>
-          <td><strong>Séquence de bienvenue (5 emails sur 14 jours)</strong></td>
-          <td>Le prospect se réchauffe tout seul : présentation, valeur, étude de cas, offre</td>
+          <td><strong>Séquence post-achat complète</strong></td>
+          <td>Commande validée → confirmation → suivi livraison → demande d'avis Google → suggestion produit complémentaire → code fidélité à J+30</td>
+          <td><strong>1 000€</strong></td>
         </tr>
 
-        <tr><td colspan="2"><div class="category">Reporting & Pilotage</div></td></tr>
+        <tr><td colspan="3"><div class="category">Réponse & Relation client</div></td></tr>
         <tr>
-          <td><strong>Rapport du lundi matin</strong></td>
-          <td>Chaque lundi à 8h, le patron reçoit un résumé : CA, leads, avis Google, campagnes — sans rien faire</td>
+          <td><strong>Réponse automatique aux avis Google par IA</strong></td>
+          <td>Chaque avis Google reçoit une réponse personnalisée en moins d'1 heure — positif comme négatif. Le ton est adapté, le patron ne touche à rien</td>
+          <td><strong>600€</strong></td>
         </tr>
         <tr>
-          <td><strong>Alerte si un KPI dérape</strong></td>
-          <td>Coût/lead trop élevé, taux de conversion en chute, budget dépassé → notification immédiate</td>
-        </tr>
-
-        <tr><td colspan="2"><div class="category">Contenu & Réseaux sociaux</div></td></tr>
-        <tr>
-          <td><strong>1 contenu → 10 publications</strong></td>
-          <td>Un article → posts LinkedIn + carrousels Instagram + threads Twitter + newsletter. Généré par IA automatiquement</td>
+          <td><strong>Chatbot WhatsApp IA 24h/24</strong></td>
+          <td>Un bot intelligent répond à vos clients sur WhatsApp : tarifs, horaires, disponibilités, prise de RDV. Il connaît votre entreprise par cœur. Même à 3h du matin</td>
+          <td><strong>2 500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Publication multi-plateforme en 1 clic</strong></td>
-          <td>Un seul post → publié partout (Instagram, Facebook, LinkedIn, Google Business) avec le bon format</td>
-        </tr>
-
-        <tr><td colspan="2"><div class="category">Opérationnel</div></td></tr>
-        <tr>
-          <td><strong>Nouveau client → onboarding automatique</strong></td>
-          <td>Contrat signé → email de bienvenue, dossier créé, équipe notifiée, premier point planifié, acompte envoyé. En 10 secondes</td>
-        </tr>
-        <tr>
-          <td><strong>RDV pris → rappels SMS automatiques</strong></td>
-          <td>Confirmation + rappel J-1 + rappel H-1. Divise les no-shows par 3</td>
+          <td><strong>Réceptionniste vocal IA</strong></td>
+          <td>Un agent IA décroche le téléphone, qualifie l'appelant, répond aux questions fréquentes, et prend un RDV dans votre agenda — comme un vrai secrétaire</td>
+          <td><strong>3 000€</strong></td>
         </tr>
         <tr>
           <td><strong>Demande d'avis Google après chaque prestation</strong></td>
-          <td>Projet terminé dans le CRM → le client reçoit un SMS avec le lien direct vers vos avis Google</td>
+          <td>Projet marqué "terminé" dans votre CRM → le client reçoit un SMS avec un lien direct pour laisser un avis 5 étoiles. Multiplie vos avis par 3</td>
+          <td><strong>500€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Contenu & Réseaux sociaux</div></td></tr>
+        <tr>
+          <td><strong>1 contenu → 10 publications</strong></td>
+          <td>Vous écrivez un article ou enregistrez une vidéo → l'IA génère 5 posts LinkedIn, 3 carrousels Instagram, 2 threads Twitter et une newsletter. Automatiquement</td>
+          <td><strong>1 500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Génération vidéo courte IA + publication</strong></td>
+          <td>Vous donnez un sujet → l'IA crée une vidéo courte (voix, images, sous-titres) → publiée automatiquement sur TikTok, YouTube Shorts et Instagram Reels</td>
+          <td><strong>2 000€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Publication multi-plateforme automatique</strong></td>
+          <td>Un post dans un Google Sheet → publié partout (Instagram, Facebook, LinkedIn, Google Business) au bon format, au bon horaire</td>
+          <td><strong>800€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Reporting & Pilotage</div></td></tr>
+        <tr>
+          <td><strong>Rapport du lundi matin</strong></td>
+          <td>Chaque lundi à 8h vous recevez un email avec : CA de la semaine, nombre de leads, avis Google, performances campagnes, comparatif semaine précédente</td>
+          <td><strong>800€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Alertes performance en temps réel</strong></td>
+          <td>Coût par lead trop élevé ? Budget pub dépassé ? Taux de conversion en chute ? Vous recevez une alerte SMS immédiate</td>
+          <td><strong>500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Veille concurrentielle automatique</strong></td>
+          <td>On surveille les sites, prix et réseaux sociaux de vos concurrents. Chaque vendredi vous recevez un résumé des changements</td>
+          <td><strong>1 000€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Opérationnel & Admin</div></td></tr>
+        <tr>
+          <td><strong>Onboarding client automatisé</strong></td>
+          <td>Contrat signé → email de bienvenue, dossier projet créé, équipe notifiée, kick-off planifié, facture d'acompte envoyée. En 10 secondes au lieu de 2 heures</td>
+          <td><strong>1 200€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Devis & factures automatiques</strong></td>
+          <td>Deal validé dans le CRM → devis PDF généré → envoyé au client → signature électronique → facture créée automatiquement à la validation</td>
+          <td><strong>1 500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Rappel RDV automatique (SMS + email)</strong></td>
+          <td>RDV pris → confirmation immédiate + rappel J-1 + rappel H-1. Divise les no-shows par 3</td>
+          <td><strong>500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>CRM auto-sync multi-outils</strong></td>
+          <td>Chaque nouveau contact (formulaire, email, chat, appel) est ajouté automatiquement dans votre CRM avec toutes ses données enrichies. Zéro saisie</td>
+          <td><strong>800€</strong></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="note">Si vous avez un processus que vous répétez chaque jour, on peut probablement l'automatiser.</p>
+    <p class="note">Chaque automatisation est livrée configurée, testée et prête à tourner. Tous les prix incluent la mise en place complète + 30 jours de support.</p>
   </div>
 
   <div class="divider"></div>
@@ -396,53 +280,51 @@
   <!-- PACKS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Formules</div>
+      <div class="section-title">Packs</div>
     </div>
 
     <div class="pack-grid">
       <div class="pack-card">
-        <h3>Essentiel</h3>
-        <div class="pack-price">2 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 300€/mois</div>
+        <h3>Starter</h3>
+        <div class="pack-price">2 500€</div>
+        <div class="pack-volume">+ 200€/mois de maintenance</div>
         <ul>
-          <li>Audit de vos processus</li>
-          <li>3 à 5 automatisations</li>
+          <li>3 automatisations au choix</li>
           <li>Connexion à vos outils existants</li>
-          <li>Notifications temps réel</li>
-          <li>Dashboard de suivi</li>
-          <li>Support technique</li>
+          <li>30 jours de support inclus</li>
+          <li>Monitoring & corrections</li>
         </ul>
       </div>
 
       <div class="pack-card featured">
         <div class="pack-badge">Populaire</div>
-        <h3>Pro</h3>
-        <div class="pack-price">5 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 800€/mois</div>
+        <h3>Business</h3>
+        <div class="pack-price">5 000€</div>
+        <div class="pack-volume">+ 500€/mois de maintenance</div>
         <ul>
-          <li>Tout le pack Essentiel</li>
-          <li>8 à 12 automatisations</li>
-          <li>Qualification IA des leads</li>
-          <li>Séquences email automatisées</li>
-          <li>Reporting hebdo automatique</li>
+          <li>6 automatisations au choix</li>
+          <li>Rapport du lundi matin inclus</li>
+          <li>Alertes performance incluses</li>
           <li>1 call stratégique/mois</li>
+          <li>Optimisation continue</li>
         </ul>
       </div>
 
       <div class="pack-card">
         <h3>Scale</h3>
-        <div class="pack-price">10 000€ <span>setup</span></div>
-        <div class="pack-volume">+ 1 500€/mois</div>
+        <div class="pack-price">10 000€</div>
+        <div class="pack-volume">+ 1 000€/mois de maintenance</div>
         <ul>
-          <li>Tout le pack Pro</li>
-          <li>15+ automatisations</li>
+          <li>12+ automatisations au choix</li>
           <li>IA intégrée dans les workflows</li>
-          <li>Contenu auto multi-plateforme</li>
-          <li>Veille concurrentielle auto</li>
+          <li>Dashboard de pilotage complet</li>
+          <li>2 calls stratégiques/mois</li>
           <li>Account manager dédié</li>
         </ul>
       </div>
     </div>
+
+    <p class="note">Les packs offrent une réduction de 20 à 35% par rapport aux prix unitaires. La maintenance couvre le monitoring 24/7, les corrections, les mises à jour et le support.</p>
   </div>
 
   <div class="divider"></div>
@@ -463,23 +345,33 @@
       </thead>
       <tbody>
         <tr>
-          <td>Setup 3-5 automatisations</td>
+          <td>Pack 3 automatisations</td>
           <td>5 000 — 10 000€</td>
-          <td><strong>2 000€</strong></td>
+          <td><strong>2 500€</strong></td>
         </tr>
         <tr>
-          <td>Setup complet (8-12 workflows)</td>
+          <td>Système complet (6+ workflows)</td>
           <td>10 000 — 25 000€</td>
           <td><strong>5 000€</strong></td>
         </tr>
         <tr>
           <td>Maintenance mensuelle</td>
-          <td>1 500 — 6 000€/mois</td>
-          <td><strong>300 — 1 500€/mois</strong></td>
+          <td>500 — 2 000€/mois</td>
+          <td><strong>200 — 1 000€/mois</strong></td>
         </tr>
         <tr>
-          <td>Licence plateforme (HubSpot Pro)</td>
-          <td>792€/mois en supplément</td>
+          <td>Chatbot IA WhatsApp</td>
+          <td>5 000 — 15 000€</td>
+          <td><strong>2 500€</strong></td>
+        </tr>
+        <tr>
+          <td>Réceptionniste vocal IA</td>
+          <td>5 000 — 15 000€</td>
+          <td><strong>3 000€</strong></td>
+        </tr>
+        <tr>
+          <td>Licence plateforme</td>
+          <td>200 — 800€/mois en plus</td>
           <td><strong>Inclus</strong></td>
         </tr>
       </tbody>
@@ -491,22 +383,17 @@
   <!-- OPTIONS -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Options & Extensions</div>
+      <div class="section-title">Options</div>
     </div>
 
     <div class="upsell-box">
-      <h4>Automatisation supplémentaire</h4>
-      <p><strong>500 — 2 000€</strong> selon complexité — développée et mise en production sous 3-5 jours.</p>
-    </div>
-
-    <div class="upsell-box">
-      <h4>WhatsApp Business connecté</h4>
-      <p><strong>800€ setup + 150€/mois</strong> — Relance panier, confirmation RDV, envoi de devis, support client automatisé via WhatsApp.</p>
+      <h4>Automatisation sur-mesure</h4>
+      <p>Vous avez un processus spécifique à automatiser qui n'est pas dans la liste ? On le construit pour vous. <strong>Sur devis</strong> — livré sous 5 jours.</p>
     </div>
 
     <div class="upsell-box">
       <h4>Formation équipe</h4>
-      <p><strong>500€/session</strong> — 3h avec votre équipe : comment lire les dashboards, comprendre les alertes, modifier les séquences.</p>
+      <p><strong>500€/session de 3h</strong> — Votre équipe apprend à lire les dashboards, comprendre les alertes, et modifier les séquences email.</p>
     </div>
   </div>
 
