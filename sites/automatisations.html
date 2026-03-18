@@ -7,68 +7,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #ffffff;
-    color: #1a1a1a;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image:
-      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    position: relative;
-    z-index: 1;
-  }
-
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
   .header { margin-bottom: 60px; }
   .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
   .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
   .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
   .service-subtitle { font-size: 16px; color: #888; line-height: 1.6; max-width: 750px; margin-top: 16px; }
-
   .section { margin-bottom: 60px; }
   .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
   .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
   .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
-
   table { width: 100%; border-collapse: collapse; }
   th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
   td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
   tr:hover td { background: #fafafa; }
   td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
   td:nth-child(3) { padding-left: 20px; font-size: 13px; }
-
   .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
-
   .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
-
   .pack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
   .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 32px; position: relative; }
   .pack-card.featured { border: 2px solid #111; background: #fff; }
@@ -81,32 +40,26 @@
   .pack-card ul li { font-size: 13px; color: #333; padding: 7px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
   .pack-card ul li:last-child { border-bottom: none; }
   .pack-card ul li::before { content: '—'; color: #ccc; margin-right: 10px; }
-
   .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 16px; }
   .upsell-box:first-of-type { margin-top: 24px; }
   .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
   .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
-
   .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
-
   .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
   .nav-link:hover { color:#111; border-color:#111; }
   .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
-
   .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
-
   @media (max-width: 768px) {
     .container { padding: 30px 20px; }
     .section-header { flex-direction: column; gap: 4px; }
     td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
     td:nth-child(3) { padding-left: 10px; }
     table { font-size: 13px; }
-    .pack-grid { grid-template-columns: 1fr; }
+    .pack-grid { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
 <body>
-
 <div class="container">
 
   <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
@@ -127,152 +80,177 @@
   <div class="header">
     <div class="logo">Prime Agence</div>
     <div class="service-title"><em>Automatisations</em></div>
-    <div class="service-subtitle">On connecte vos outils entre eux pour que tout tourne sans vous. Chaque tâche que vous répétez à la main aujourd'hui peut être automatisée demain.</div>
+    <div class="service-subtitle">Choisissez les automatisations qui correspondent à votre business. Chacune tourne en pilote automatique, 24h/24, sans intervention.</div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- AUTOMATISATIONS DISPONIBLES -->
+  <!-- CATALOGUE -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Nos automatisations</div>
+      <div class="section-title">Catalogue à la carte</div>
     </div>
 
     <table>
       <thead>
         <tr>
           <th>Automatisation</th>
-          <th>Ce qui se passe concrètement</th>
+          <th>Ce que ça fait</th>
           <th>Prix</th>
         </tr>
       </thead>
       <tbody>
 
-        <tr><td colspan="3"><div class="category">Prospection & Leads</div></td></tr>
+        <tr><td colspan="3"><div class="category">Trouver des clients</div></td></tr>
         <tr>
-          <td><strong>Scraping Google Maps → email automatique</strong></td>
-          <td>On extrait les entreprises sans site web dans votre zone, on récupère leurs coordonnées, et on leur envoie un email commercial personnalisé — tout seul</td>
+          <td><strong>Scraping Google Maps + email commercial auto</strong></td>
+          <td>Extraction des entreprises de votre zone (nom, téléphone, email, site, avis) → email de prospection personnalisé envoyé automatiquement</td>
           <td><strong>1 500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Prospection LinkedIn automatisée</strong></td>
-          <td>Visite de profils ciblés, demande de connexion, message personnalisé par IA, relance si pas de réponse à J+3 et J+7</td>
+          <td><strong>Prospection LinkedIn IA</strong></td>
+          <td>Visite de profils ciblés, demande de connexion, message personnalisé par IA, relance J+3 et J+7 si pas de réponse</td>
           <td><strong>2 000€</strong></td>
         </tr>
         <tr>
-          <td><strong>Formulaire rempli → WhatsApp en 30 secondes</strong></td>
-          <td>Un prospect remplit votre formulaire → il reçoit un WhatsApp personnalisé avec son prénom et une réponse adaptée à sa demande. Avant même qu'il quitte votre site</td>
-          <td><strong>800€</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Séquence cold email IA</strong></td>
-          <td>Email 1 personnalisé par IA → relance J+2 → relance J+5 avec un angle différent → relance J+7 avec prise de RDV. 70% des réponses viennent des follow-ups</td>
+          <td><strong>Séquence cold email IA (5 emails)</strong></td>
+          <td>Chaque email est écrit par l'IA en fonction du profil du prospect. Relance automatique avec un angle différent à chaque fois. 70% des réponses viennent des relances</td>
           <td><strong>1 200€</strong></td>
         </tr>
+        <tr>
+          <td><strong>Appel manqué → SMS automatique en 30 secondes</strong></td>
+          <td>62% des appels aux PME ne sont jamais décrochés. Chaque appel manqué déclenche un SMS "Désolé de vous avoir manqué, comment puis-je vous aider?" avec lien de RDV</td>
+          <td><strong>600€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Formulaire rempli → WhatsApp en 30 secondes</strong></td>
+          <td>Un prospect remplit votre formulaire → il reçoit un WhatsApp personnalisé avec réponse adaptée à sa demande. Taux de conversion x3</td>
+          <td><strong>800€</strong></td>
+        </tr>
 
-        <tr><td colspan="3"><div class="category">Ventes & Relances</div></td></tr>
+        <tr><td colspan="3"><div class="category">Vendre plus & relancer</div></td></tr>
         <tr>
           <td><strong>Relance panier abandonné (WhatsApp + email)</strong></td>
-          <td>Le client quitte sans payer → il reçoit un WhatsApp avec la photo du produit + un code promo qui expire en 24h. Récupère 5 à 15% de CA perdu</td>
+          <td>Le client quitte sans payer → WhatsApp avec photo du produit + code promo 24h. Récupère 10 à 15% du CA perdu</td>
           <td><strong>1 000€</strong></td>
         </tr>
         <tr>
           <td><strong>Relance devis non signé (J+3, J+7, J+14)</strong></td>
-          <td>Devis envoyé mais pas de réponse → email personnalisé à J+3, étude de cas similaire à J+7, proposition d'appel à J+14</td>
+          <td>Devis sans réponse → relance email personnalisée J+3, cas client similaire J+7, proposition d'appel J+14. +20-30% de devis signés</td>
           <td><strong>800€</strong></td>
         </tr>
         <tr>
-          <td><strong>Relance factures impayées automatique</strong></td>
-          <td>Facture en retard → rappel courtois à J+7 → relance ferme à J+15 → mise en demeure à J+30. Réduit les impayés de 30 à 50%</td>
+          <td><strong>Relance factures impayées auto</strong></td>
+          <td>Rappel courtois J+7 → relance ferme J+15 → mise en demeure J+30. Réduit les impayés de 30 à 50%</td>
           <td><strong>800€</strong></td>
         </tr>
         <tr>
           <td><strong>Séquence post-achat complète</strong></td>
-          <td>Commande validée → confirmation → suivi livraison → demande d'avis Google → suggestion produit complémentaire → code fidélité à J+30</td>
+          <td>Confirmation → suivi livraison → demande d'avis → produit complémentaire → code fidélité J+30. +25% de réachat</td>
           <td><strong>1 000€</strong></td>
         </tr>
-
-        <tr><td colspan="3"><div class="category">Réponse & Relation client</div></td></tr>
         <tr>
-          <td><strong>Réponse automatique aux avis Google par IA</strong></td>
-          <td>Chaque avis Google reçoit une réponse personnalisée en moins d'1 heure — positif comme négatif. Le ton est adapté, le patron ne touche à rien</td>
+          <td><strong>Réactivation clients dormants</strong></td>
+          <td>Pas de visite/achat depuis 60 jours → message personnalisé avec offre de retour. Récupère 15-25% des clients inactifs</td>
           <td><strong>600€</strong></td>
         </tr>
+
+        <tr><td colspan="3"><div class="category">Réputation & avis Google</div></td></tr>
         <tr>
-          <td><strong>Chatbot WhatsApp IA 24h/24</strong></td>
-          <td>Un bot intelligent répond à vos clients sur WhatsApp : tarifs, horaires, disponibilités, prise de RDV. Il connaît votre entreprise par cœur. Même à 3h du matin</td>
+          <td><strong>Demande d'avis Google automatique post-prestation</strong></td>
+          <td>Prestation terminée → SMS avec lien direct Google Reviews. Multiplie les avis par 3 à 5. Si insatisfait → formulaire privé (pas d'avis négatif public)</td>
+          <td><strong>500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Réponse automatique aux avis Google par IA</strong></td>
+          <td>Chaque avis (positif ou négatif) reçoit une réponse personnalisée en moins de 15 minutes. Le patron ne touche à rien</td>
+          <td><strong>600€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Agents IA (répondent à vos clients 24h/24)</div></td></tr>
+        <tr>
+          <td><strong>Chatbot WhatsApp & Instagram IA</strong></td>
+          <td>Un bot intelligent répond sur WhatsApp et Instagram 24h/24 : tarifs, horaires, disponibilités, prise de RDV. Il connaît votre entreprise par cœur</td>
           <td><strong>2 500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Réceptionniste vocal IA</strong></td>
-          <td>Un agent IA décroche le téléphone, qualifie l'appelant, répond aux questions fréquentes, et prend un RDV dans votre agenda — comme un vrai secrétaire</td>
+          <td><strong>Réceptionniste vocal IA (téléphone)</strong></td>
+          <td>Un agent IA décroche le téléphone, qualifie l'appelant, répond aux questions, prend un RDV dans votre agenda. Comme un vrai secrétaire, 24h/24</td>
           <td><strong>3 000€</strong></td>
         </tr>
         <tr>
-          <td><strong>Demande d'avis Google après chaque prestation</strong></td>
-          <td>Projet marqué "terminé" dans votre CRM → le client reçoit un SMS avec un lien direct pour laisser un avis 5 étoiles. Multiplie vos avis par 3</td>
-          <td><strong>500€</strong></td>
+          <td><strong>Chatbot site web IA (base de connaissances)</strong></td>
+          <td>Un chat sur votre site qui répond à toutes les questions des visiteurs en se basant sur vos documents, FAQ, prix, services. Qualifie les leads et prend les RDV</td>
+          <td><strong>2 000€</strong></td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Contenu & Réseaux sociaux</div></td></tr>
+        <tr><td colspan="3"><div class="category">Devis, factures & admin</div></td></tr>
         <tr>
-          <td><strong>1 contenu → 10 publications</strong></td>
-          <td>Vous écrivez un article ou enregistrez une vidéo → l'IA génère 5 posts LinkedIn, 3 carrousels Instagram, 2 threads Twitter et une newsletter. Automatiquement</td>
+          <td><strong>Génération de devis automatique depuis CRM</strong></td>
+          <td>Deal validé → devis PDF brandé généré → envoyé au client avec signature électronique. Plus de copier-coller, plus d'oubli</td>
           <td><strong>1 500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Génération vidéo courte IA + publication</strong></td>
-          <td>Vous donnez un sujet → l'IA crée une vidéo courte (voix, images, sous-titres) → publiée automatiquement sur TikTok, YouTube Shorts et Instagram Reels</td>
-          <td><strong>2 000€</strong></td>
+          <td><strong>Devis signé → facture + planning auto</strong></td>
+          <td>Le client signe → la facture est créée, l'acompte demandé, le projet ajouté au planning de l'équipe, le client reçoit un email d'onboarding</td>
+          <td><strong>1 500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Publication multi-plateforme automatique</strong></td>
-          <td>Un post dans un Google Sheet → publié partout (Instagram, Facebook, LinkedIn, Google Business) au bon format, au bon horaire</td>
-          <td><strong>800€</strong></td>
+          <td><strong>Onboarding client automatisé</strong></td>
+          <td>Contrat signé → dossier projet créé, équipe notifiée, kick-off planifié, docs envoyés, accès outils configurés. En 10 secondes au lieu de 2 heures</td>
+          <td><strong>1 200€</strong></td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Reporting & Pilotage</div></td></tr>
+        <tr><td colspan="3"><div class="category">Anti no-show & RDV</div></td></tr>
         <tr>
-          <td><strong>Rapport du lundi matin</strong></td>
-          <td>Chaque lundi à 8h vous recevez un email avec : CA de la semaine, nombre de leads, avis Google, performances campagnes, comparatif semaine précédente</td>
-          <td><strong>800€</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Alertes performance en temps réel</strong></td>
-          <td>Coût par lead trop élevé ? Budget pub dépassé ? Taux de conversion en chute ? Vous recevez une alerte SMS immédiate</td>
+          <td><strong>Rappel RDV intelligent (SMS + email)</strong></td>
+          <td>Confirmation immédiate + rappel J-1 + rappel H-2 avec bouton "Confirmer / Reporter". Réduit les no-shows de 40 à 60%</td>
           <td><strong>500€</strong></td>
         </tr>
         <tr>
-          <td><strong>Veille concurrentielle automatique</strong></td>
-          <td>On surveille les sites, prix et réseaux sociaux de vos concurrents. Chaque vendredi vous recevez un résumé des changements</td>
-          <td><strong>1 000€</strong></td>
+          <td><strong>No-show → liste d'attente automatique</strong></td>
+          <td>Client annule → le créneau est proposé automatiquement au premier en liste d'attente par SMS. Zéro créneau perdu</td>
+          <td><strong>600€</strong></td>
         </tr>
 
-        <tr><td colspan="3"><div class="category">Opérationnel & Admin</div></td></tr>
+        <tr><td colspan="3"><div class="category">Contenu & visibilité</div></td></tr>
         <tr>
-          <td><strong>Onboarding client automatisé</strong></td>
-          <td>Contrat signé → email de bienvenue, dossier projet créé, équipe notifiée, kick-off planifié, facture d'acompte envoyée. En 10 secondes au lieu de 2 heures</td>
+          <td><strong>1 contenu → 10 publications IA</strong></td>
+          <td>Un article ou une vidéo → l'IA génère posts LinkedIn, carrousels Instagram, threads Twitter, newsletter. Publié automatiquement partout</td>
+          <td><strong>1 500€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Newsletter automatique IA hebdomadaire</strong></td>
+          <td>L'IA scanne votre secteur, sélectionne les actus pertinentes, rédige la newsletter dans votre ton, et l'envoie chaque semaine</td>
           <td><strong>1 200€</strong></td>
         </tr>
         <tr>
-          <td><strong>Devis & factures automatiques</strong></td>
-          <td>Deal validé dans le CRM → devis PDF généré → envoyé au client → signature électronique → facture créée automatiquement à la validation</td>
-          <td><strong>1 500€</strong></td>
+          <td><strong>Génération vidéo courte IA + publication</strong></td>
+          <td>Vous donnez un sujet → vidéo courte générée (voix, images, sous-titres) → publiée sur TikTok, YouTube Shorts, Instagram Reels</td>
+          <td><strong>2 000€</strong></td>
         </tr>
+
+        <tr><td colspan="3"><div class="category">Reporting & intelligence</div></td></tr>
         <tr>
-          <td><strong>Rappel RDV automatique (SMS + email)</strong></td>
-          <td>RDV pris → confirmation immédiate + rappel J-1 + rappel H-1. Divise les no-shows par 3</td>
-          <td><strong>500€</strong></td>
-        </tr>
-        <tr>
-          <td><strong>CRM auto-sync multi-outils</strong></td>
-          <td>Chaque nouveau contact (formulaire, email, chat, appel) est ajouté automatiquement dans votre CRM avec toutes ses données enrichies. Zéro saisie</td>
+          <td><strong>Rapport du lundi matin</strong></td>
+          <td>Chaque lundi à 8h : CA, leads, avis Google, campagnes pub, comparatif semaine précédente. Par email ou WhatsApp, sans rien faire</td>
           <td><strong>800€</strong></td>
         </tr>
+        <tr>
+          <td><strong>Veille concurrentielle automatique</strong></td>
+          <td>Surveillance des sites, prix, offres et réseaux sociaux de vos concurrents. Résumé IA chaque vendredi des changements détectés</td>
+          <td><strong>1 000€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Alerte pub en temps réel</strong></td>
+          <td>Coût/lead trop élevé, budget dépassé, conversion en chute → alerte SMS immédiate. Peut pauser automatiquement les pubs qui perdent de l'argent</td>
+          <td><strong>600€</strong></td>
+        </tr>
+
       </tbody>
     </table>
 
-    <p class="note">Chaque automatisation est livrée configurée, testée et prête à tourner. Tous les prix incluent la mise en place complète + 30 jours de support.</p>
+    <p class="note">Chaque automatisation est livrée configurée, testée, et prête à tourner. 30 jours de support inclus. Si vous avez un processus spécifique qui n'est pas dans la liste — on le construit sur-mesure.</p>
   </div>
 
   <div class="divider"></div>
@@ -283,16 +261,28 @@
       <div class="section-title">Packs</div>
     </div>
 
-    <div class="pack-grid">
+    <div class="pack-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="pack-card">
+        <h3>Solo</h3>
+        <div class="pack-price">800€</div>
+        <div class="pack-volume">1 automatisation au choix + 100€/mois</div>
+        <ul>
+          <li>1 automatisation du catalogue</li>
+          <li>Connexion à vos outils</li>
+          <li>30 jours de support</li>
+          <li>Monitoring inclus</li>
+        </ul>
+      </div>
+
       <div class="pack-card">
         <h3>Starter</h3>
         <div class="pack-price">2 500€</div>
-        <div class="pack-volume">+ 200€/mois de maintenance</div>
+        <div class="pack-volume">3 automatisations au choix + 200€/mois</div>
         <ul>
-          <li>3 automatisations au choix</li>
+          <li>3 automatisations du catalogue</li>
           <li>Connexion à vos outils existants</li>
-          <li>30 jours de support inclus</li>
-          <li>Monitoring & corrections</li>
+          <li>Monitoring & corrections 24/7</li>
+          <li>Support technique inclus</li>
         </ul>
       </div>
 
@@ -300,9 +290,9 @@
         <div class="pack-badge">Populaire</div>
         <h3>Business</h3>
         <div class="pack-price">5 000€</div>
-        <div class="pack-volume">+ 500€/mois de maintenance</div>
+        <div class="pack-volume">6 automatisations au choix + 500€/mois</div>
         <ul>
-          <li>6 automatisations au choix</li>
+          <li>Choisissez 6 automatisations du catalogue</li>
           <li>Rapport du lundi matin inclus</li>
           <li>Alertes performance incluses</li>
           <li>1 call stratégique/mois</li>
@@ -313,10 +303,10 @@
       <div class="pack-card">
         <h3>Scale</h3>
         <div class="pack-price">10 000€</div>
-        <div class="pack-volume">+ 1 000€/mois de maintenance</div>
+        <div class="pack-volume">12+ automatisations au choix + 1 000€/mois</div>
         <ul>
-          <li>12+ automatisations au choix</li>
-          <li>IA intégrée dans les workflows</li>
+          <li>Toutes les automatisations dont vous avez besoin</li>
+          <li>Agents IA (chatbot + vocal) inclus</li>
           <li>Dashboard de pilotage complet</li>
           <li>2 calls stratégiques/mois</li>
           <li>Account manager dédié</li>
@@ -324,55 +314,64 @@
       </div>
     </div>
 
-    <p class="note">Les packs offrent une réduction de 20 à 35% par rapport aux prix unitaires. La maintenance couvre le monitoring 24/7, les corrections, les mises à jour et le support.</p>
+    <p class="note">Les packs offrent 25 à 40% de réduction par rapport aux prix unitaires. La maintenance mensuelle couvre le monitoring, les corrections, les mises à jour et le support.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- BENCHMARK -->
+  <!-- EXEMPLES PAR SECTEUR -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Benchmark marché</div>
+      <div class="section-title">Exemples par secteur</div>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th>Prestation</th>
-          <th>Agences classiques</th>
-          <th>Prime</th>
+          <th>Secteur</th>
+          <th>Combo d'automatisations recommandé</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Pack 3 automatisations</td>
-          <td>5 000 — 10 000€</td>
-          <td><strong>2 500€</strong></td>
+          <td><strong>Restaurant</strong></td>
+          <td>Rappel RDV anti no-show + Demande d'avis Google + Réponse auto avis + Réactivation clients dormants + Programme fidélité SMS</td>
         </tr>
         <tr>
-          <td>Système complet (6+ workflows)</td>
-          <td>10 000 — 25 000€</td>
-          <td><strong>5 000€</strong></td>
+          <td><strong>Immobilier</strong></td>
+          <td>Formulaire → WhatsApp 30s + Relance devis non signé + Séquence email leads + Rapport du lundi + Veille concurrence</td>
         </tr>
         <tr>
-          <td>Maintenance mensuelle</td>
-          <td>500 — 2 000€/mois</td>
-          <td><strong>200 — 1 000€/mois</strong></td>
+          <td><strong>Dentiste / Médecin</strong></td>
+          <td>Rappel RDV anti no-show + No-show → liste d'attente + Demande d'avis Google + Réceptionniste vocal IA</td>
         </tr>
         <tr>
-          <td>Chatbot IA WhatsApp</td>
-          <td>5 000 — 15 000€</td>
-          <td><strong>2 500€</strong></td>
+          <td><strong>Salon / Coiffeur</strong></td>
+          <td>Chatbot Instagram → booking + Rappel RDV + Demande d'avis Google + Réactivation clients dormants</td>
         </tr>
         <tr>
-          <td>Réceptionniste vocal IA</td>
-          <td>5 000 — 15 000€</td>
-          <td><strong>3 000€</strong></td>
+          <td><strong>E-commerce</strong></td>
+          <td>Relance panier WhatsApp + Séquence post-achat + Réactivation clients + Alerte pub + Rapport lundi</td>
         </tr>
         <tr>
-          <td>Licence plateforme</td>
-          <td>200 — 800€/mois en plus</td>
-          <td><strong>Inclus</strong></td>
+          <td><strong>Artisan / BTP</strong></td>
+          <td>Devis automatique + Relance devis J+3/J+7 + Relance factures impayées + Demande d'avis Google</td>
+        </tr>
+        <tr>
+          <td><strong>Coach / Consultant</strong></td>
+          <td>Formulaire → WhatsApp + Onboarding client auto + Rappel RDV + Séquence cold email IA</td>
+        </tr>
+        <tr>
+          <td><strong>Agence / Freelance</strong></td>
+          <td>Onboarding client + Devis → facture auto + Rapport lundi + Relance factures impayées + 1 contenu → 10 publications</td>
+        </tr>
+        <tr>
+          <td><strong>Salle de sport</strong></td>
+          <td>Rappel RDV cours + Réactivation clients dormants + Demande d'avis Google + Chatbot WhatsApp</td>
+        </tr>
+        <tr>
+          <td><strong>Avocat / Comptable</strong></td>
+          <td>Onboarding client + Collecte documents auto + Relance factures + Rappel deadlines fiscales</td>
         </tr>
       </tbody>
     </table>
@@ -388,17 +387,16 @@
 
     <div class="upsell-box">
       <h4>Automatisation sur-mesure</h4>
-      <p>Vous avez un processus spécifique à automatiser qui n'est pas dans la liste ? On le construit pour vous. <strong>Sur devis</strong> — livré sous 5 jours.</p>
+      <p>Un processus spécifique à votre métier ? On le construit pour vous. <strong>Sur devis</strong> — livré sous 5 jours.</p>
     </div>
 
     <div class="upsell-box">
       <h4>Formation équipe</h4>
-      <p><strong>500€/session de 3h</strong> — Votre équipe apprend à lire les dashboards, comprendre les alertes, et modifier les séquences email.</p>
+      <p><strong>500€/session de 3h</strong> — Votre équipe apprend à lire les dashboards, comprendre les alertes, et gérer les cas exceptionnels.</p>
     </div>
   </div>
 
   <div class="footer">© 2026 Prime Agence</div>
 </div>
-
 </body>
 </html>
