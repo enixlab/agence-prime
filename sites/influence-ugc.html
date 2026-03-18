@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Influence & UGC</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .header { margin-bottom: 60px; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .service-subtitle { font-size: 16px; color: #888; line-height: 1.6; max-width: 750px; margin-top: 16px; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  .section-price { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #111; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3) { padding-left: 20px; font-size: 13px; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .category { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #999; padding: 20px 0 8px; }
+  .pack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 32px; position: relative; }
+  .pack-card.featured { border: 2px solid #111; background: #fff; }
+  .pack-badge { position: absolute; top: -12px; right: 24px; background: #111; color: #fff; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; padding: 4px 16px; border-radius: 20px; }
+  .pack-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 8px; }
+  .pack-card .pack-price { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
+  .pack-card .pack-price span { font-size: 14px; font-weight: 400; color: #888; }
+  .pack-card .pack-volume { font-size: 14px; color: #555; font-weight: 600; margin-bottom: 16px; }
+  .pack-card ul { list-style: none; padding: 0; }
+  .pack-card ul li { font-size: 13px; color: #333; padding: 7px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
+  .pack-card ul li:last-child { border-bottom: none; }
+  .pack-card ul li::before { content: '—'; color: #ccc; margin-right: 10px; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 16px; }
+  .upsell-box:first-of-type { margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    .section-header { flex-direction: column; gap: 4px; }
+    td:nth-child(2) { padding-left: 10px; padding-right: 10px; }
+    td:nth-child(3) { padding-left: 10px; }
+    table { font-size: 13px; }
+    .pack-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-link">Landing & Leads</a>
+    <a href="/sites/avis-intelligent.html" class="nav-link">Avis Intelligent</a>
+    <a href="/sites/influence-ugc.html" class="nav-active">Influence & UGC</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Influence & <em>UGC</em></div>
+    <div class="service-subtitle">On connecte votre marque avec les bons créateurs. Contenu authentique qui convertit, partenariats qui font parler. ROI moyen : 5,78€ pour chaque 1€ investi.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES INFLUENCE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Campagnes Influenceurs</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Prestation</th>
+          <th>Ce qu'on fait</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Stratégie & Casting</div></td></tr>
+        <tr>
+          <td><strong>Stratégie de campagne influence</strong></td>
+          <td>Audit de votre marque, définition des objectifs, sélection des plateformes, calendrier de campagne, KPIs cibles</td>
+          <td><strong>800€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Casting créateurs sur-mesure</strong></td>
+          <td>Recherche et sélection des influenceurs par niche, audience, taux d'engagement, vérification fake followers. Shortlist validée avec vous</td>
+          <td><strong>500€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Campagnes clé en main</div></td></tr>
+        <tr>
+          <td><strong>Campagne nano-influenceurs (1K-10K)</strong></td>
+          <td>10 à 20 créateurs, contenu authentique et ultra-ciblé. Meilleur taux d'engagement (5-8%). Idéal pour le local et les niches</td>
+          <td><strong>2 000€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Campagne micro-influenceurs (10K-100K)</strong></td>
+          <td>5 à 15 créateurs, meilleur rapport qualité/prix du marché. Contenu crédible + vraie portée. Le sweet spot pour les PME</td>
+          <td><strong>4 000€</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Campagne macro/célébrités (100K+)</strong></td>
+          <td>1 à 5 gros créateurs pour une visibilité massive. Idéal pour les lancements produit et les événements</td>
+          <td><strong>Sur devis</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Product seeding / Gifting</strong></td>
+          <td>Envoi de vos produits à 20-50 créateurs ciblés en échange de contenu organique. Packaging premium, brief créatif, suivi des publications</td>
+          <td><strong>1 500€</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Gestion & Suivi</div></td></tr>
+        <tr>
+          <td><strong>Gestion complète de campagne</strong></td>
+          <td>Négociation tarifs, gestion contrats et droits d'image, coordination briefs, validation contenu, suivi calendrier, conformité ARPP</td>
+          <td><strong>20% du budget créateurs</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Amplification paid (Spark Ads / Whitelisting)</strong></td>
+          <td>On booste les meilleurs contenus influenceurs en publicité depuis leur compte. Le contenu apparaît natif, pas comme une pub</td>
+          <td><strong>15% du budget média</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Reporting campagne</strong></td>
+          <td>Reach, impressions, engagement, clics, conversions, coût par engagement, analyse des meilleurs créateurs. Rapport PDF + call de débrief</td>
+          <td><strong>Inclus</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES UGC -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Contenu UGC</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type de contenu</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3"><div class="category">Vidéos UGC</div></td></tr>
+        <tr>
+          <td><strong>Vidéo témoignage face cam (30s)</strong></td>
+          <td>Un créateur parle de votre produit/service devant la caméra. Authentique, naturel, convaincant. Format TikTok/Reels</td>
+          <td><strong>250€/vidéo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vidéo unboxing</strong></td>
+          <td>Le créateur reçoit et ouvre votre produit en caméra. Réaction spontanée, découverte en direct</td>
+          <td><strong>200€/vidéo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vidéo tutoriel / démo produit</strong></td>
+          <td>Utilisation du produit en conditions réelles avec explication. Idéal pour lever les objections et montrer la valeur</td>
+          <td><strong>300€/vidéo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vidéo publicitaire optimisée (15-30s)</strong></td>
+          <td>Vidéo UGC conçue spécifiquement pour les pubs (hook accrocheur, CTA clair, format vertical). Livrée avec 3 variations de hooks pour A/B test</td>
+          <td><strong>450€/vidéo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vidéo before/after</strong></td>
+          <td>Avant/après utilisation de votre produit ou service. Format très viral, taux de conversion élevé</td>
+          <td><strong>300€/vidéo</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Photos UGC</div></td></tr>
+        <tr>
+          <td><strong>Photo lifestyle</strong></td>
+          <td>Mise en situation naturelle du produit dans le quotidien du créateur. 3 photos livrées par shooting</td>
+          <td><strong>150€/lot de 3</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Photo flat lay / produit</strong></td>
+          <td>Composition soignée du produit avec éléments de décor. Idéal pour feed Instagram et fiches produit</td>
+          <td><strong>100€/lot de 3</strong></td>
+        </tr>
+
+        <tr><td colspan="3"><div class="category">Droits d'utilisation</div></td></tr>
+        <tr>
+          <td><strong>Droits publicitaires 3 mois</strong></td>
+          <td>Utilisation du contenu UGC dans vos campagnes pub (Meta, TikTok, Google, YouTube)</td>
+          <td><strong>+30% du prix contenu</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Droits publicitaires 12 mois</strong></td>
+          <td>Utilisation étendue sur toutes vos plateformes pendant 1 an</td>
+          <td><strong>+60% du prix contenu</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Droits perpétuels</strong></td>
+          <td>Le contenu est à vous pour toujours — site web, pubs, réseaux, email, print</td>
+          <td><strong>+100% du prix contenu</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PACKS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Packs</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Starter UGC</h3>
+        <div class="pack-price">1 200€</div>
+        <div class="pack-volume">5 vidéos UGC + droits pub 3 mois</div>
+        <ul>
+          <li>5 vidéos (témoignage, unboxing ou démo)</li>
+          <li>2 créateurs sélectionnés pour votre niche</li>
+          <li>Brief créatif rédigé par nos soins</li>
+          <li>Droits publicitaires 3 mois inclus</li>
+          <li>Livraison sous 10 jours</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Influence + UGC</h3>
+        <div class="pack-price">5 000€</div>
+        <div class="pack-volume">Campagne micro-influenceurs + 10 vidéos UGC</div>
+        <ul>
+          <li>Stratégie de campagne complète</li>
+          <li>Casting et gestion de 5 à 10 micro-influenceurs</li>
+          <li>10 vidéos UGC (mix témoignages, démo, hooks pub)</li>
+          <li>Droits publicitaires 6 mois inclus</li>
+          <li>Amplification paid des meilleurs contenus</li>
+          <li>Reporting complet + call débrief</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Scale</h3>
+        <div class="pack-price">10 000€<span>/mois</span></div>
+        <div class="pack-volume">Programme influence continu + UGC illimité</div>
+        <ul>
+          <li>2 à 4 campagnes/mois</li>
+          <li>15 à 30 créateurs actifs en permanence</li>
+          <li>20+ vidéos UGC/mois</li>
+          <li>Programme ambassadeur long terme</li>
+          <li>Spark Ads / Whitelisting inclus</li>
+          <li>Droits perpétuels sur tout le contenu</li>
+          <li>Account manager dédié</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PAR SECTEUR -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Par secteur</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Secteur</th>
+          <th>Ce qu'on recommande</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>E-commerce / DTC</strong></td>
+          <td>Vidéos UGC pub (hooks + CTA) + campagne micro-influenceurs Instagram & TikTok + product seeding massif. Focus conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Restaurant / Food</strong></td>
+          <td>Nano-influenceurs food locaux + vidéos dégustation + Stories Instagram géolocalisées. Idéal pour le trafic en salle</td>
+        </tr>
+        <tr>
+          <td><strong>Beauté / Cosmétique</strong></td>
+          <td>Tutoriels produit + before/after + micro-influenceurs beauté + UGC pour Meta Ads. Le secteur avec le meilleur ROI influence</td>
+        </tr>
+        <tr>
+          <td><strong>Mode / Fashion</strong></td>
+          <td>Lookbooks UGC + try-on hauls + campagnes saisonnières + programme ambassadeur avec créateurs fidèles</td>
+        </tr>
+        <tr>
+          <td><strong>Fitness / Bien-être</strong></td>
+          <td>Témoignages transformation + vidéos routine + micro-influenceurs fitness + contenu TikTok challenge</td>
+        </tr>
+        <tr>
+          <td><strong>SaaS / B2B</strong></td>
+          <td>Témoignages vidéo clients + LinkedIn KOLs (Key Opinion Leaders) + études de cas vidéo + contenu thought leadership</td>
+        </tr>
+        <tr>
+          <td><strong>Immobilier / Luxe</strong></td>
+          <td>Visites virtuelles par créateurs + lifestyle content + macro-influenceurs pour lancements + contenu premium</td>
+        </tr>
+        <tr>
+          <td><strong>Tourisme / Hôtellerie</strong></td>
+          <td>Séjours sponsorisés + vlogs voyage + Stories en direct + nano-influenceurs voyage + UGC pour Google Ads</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- OPTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Options</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Programme Ambassadeur</h4>
+      <p><strong>Sur devis</strong> — Contrat long terme (6 à 12 mois) avec 3 à 10 créateurs qui intègrent votre marque dans leur quotidien. Coût par acquisition 40 à 60% inférieur aux campagnes ponctuelles.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>UGC pour fiches produit e-commerce</h4>
+      <p><strong>80€/fiche</strong> — Photos et vidéos UGC intégrées directement dans vos fiches produit Shopify/WooCommerce. Augmente le taux de conversion de 15 à 25%.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Affiliation influenceurs</h4>
+      <p><strong>Setup 1 000€ + commission sur ventes</strong> — On met en place un programme d'affiliation : chaque créateur a son lien/code promo unique, vous ne payez que sur les ventes générées.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Event / Lancement produit</h4>
+      <p><strong>Sur devis</strong> — Organisation d'un événement avec 10 à 50 créateurs invités. Couverture live sur tous les réseaux, contenu massif en une soirée.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+</body>
+</html>
