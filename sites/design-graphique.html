@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Prime — Design & Création Graphique</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100vh; position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; position: relative; z-index: 1; }
+  .header { margin-bottom: 60px; }
+  .logo { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 40px; }
+  .service-title { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: #111; line-height: 1.1; margin-bottom: 8px; }
+  .service-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .service-subtitle { font-size: 16px; color: #888; line-height: 1.6; max-width: 750px; margin-top: 16px; }
+  .section { margin-bottom: 60px; }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #111; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 14px 0; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #999; border-bottom: 1px solid #e0e0e0; }
+  td { padding: 14px 0; font-size: 14px; color: #333; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+  tr:hover td { background: #fafafa; }
+  td:nth-child(2) { color: #888; font-size: 13px; padding-left: 20px; padding-right: 20px; }
+  td:nth-child(3) { padding-left: 20px; font-size: 13px; }
+  .divider { height: 1px; background: #e0e0e0; margin: 60px 0; }
+  .pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  .pack-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 32px; position: relative; }
+  .pack-card.featured { border: 2px solid #111; background: #fff; }
+  .pack-badge { position: absolute; top: -12px; right: 24px; background: #111; color: #fff; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; padding: 4px 16px; border-radius: 20px; }
+  .pack-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 8px; }
+  .pack-card .pack-price { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #111; margin-bottom: 4px; }
+  .pack-card .pack-price span { font-size: 14px; font-weight: 400; color: #888; }
+  .pack-card .pack-volume { font-size: 14px; color: #555; font-weight: 600; margin-bottom: 16px; }
+  .pack-card ul { list-style: none; padding: 0; }
+  .pack-card ul li { font-size: 13px; color: #333; padding: 7px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.5; }
+  .pack-card ul li:last-child { border-bottom: none; }
+  .pack-card ul li::before { content: '—'; color: #ccc; margin-right: 10px; }
+  .upsell-box { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 16px; }
+  .upsell-box:first-of-type { margin-top: 24px; }
+  .upsell-box h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #111; margin-bottom: 12px; }
+  .upsell-box p { font-size: 14px; color: #555; line-height: 1.6; }
+  .note { font-size: 13px; color: #888; margin-top: 16px; line-height: 1.6; }
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
+  .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+  @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } .pack-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-link">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-link">Génération de Leads</a>
+    <a href="/sites/avis-intelligent.html" class="nav-link">Avis Intelligent</a>
+    <a href="/sites/influence-ugc.html" class="nav-link">Influence & UGC</a>
+    <a href="/sites/social-media.html" class="nav-link">Social Media</a>
+    <a href="/sites/design-graphique.html" class="nav-active">Design & Graphisme</a>
+  </nav>
+
+  <div class="header">
+    <div class="logo">Prime Agence</div>
+    <div class="service-title">Design & <em>Graphisme</em></div>
+    <div class="service-subtitle">Logo, flyer, bannière, mockup, menu board, devanture. Tous vos supports visuels professionnels livrés en haute définition.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LOGO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Logo & Identité visuelle</div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h3>Logo simple</h3>
+        <div class="pack-price">300€</div>
+        <div class="pack-volume">1 logo + 2 propositions</div>
+        <ul>
+          <li>2 propositions de logo</li>
+          <li>2 retouches incluses</li>
+          <li>Fichiers livrés : PNG, SVG, PDF (HD)</li>
+          <li>Version couleur + noir & blanc</li>
+          <li>Livraison en 5 jours ouvrés</li>
+        </ul>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="pack-badge">Populaire</div>
+        <h3>Logo + Charte graphique</h3>
+        <div class="pack-price">600€</div>
+        <div class="pack-volume">Logo complet + guide de marque</div>
+        <ul>
+          <li>3 propositions de logo</li>
+          <li>3 retouches incluses</li>
+          <li>Charte graphique complète (couleurs, typos, usages)</li>
+          <li>Déclinaisons (favicon, réseaux sociaux, signature email)</li>
+          <li>Tous formats (PNG, SVG, PDF, AI)</li>
+          <li>Livraison en 7 jours ouvrés</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Identité visuelle complète</h3>
+        <div class="pack-price">1 200€</div>
+        <div class="pack-volume">Logo + charte + supports de base</div>
+        <ul>
+          <li>Tout le pack Logo + Charte +</li>
+          <li>Carte de visite recto/verso</li>
+          <li>Papier en-tête</li>
+          <li>Signature email</li>
+          <li>Templates réseaux sociaux (3 formats)</li>
+          <li>Livraison en 10 jours ouvrés</li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h3>Refonte logo</h3>
+        <div class="pack-price">400€</div>
+        <div class="pack-volume">Modernisation de votre logo existant</div>
+        <ul>
+          <li>Analyse du logo actuel</li>
+          <li>2 propositions de refonte</li>
+          <li>2 retouches incluses</li>
+          <li>Tous formats livrés</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FLYER & PRINT -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Flyer & Print</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Support</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Flyer recto</strong></td><td>A5 ou A4, design professionnel, fichier print-ready</td><td><strong>150€</strong></td></tr>
+        <tr><td><strong>Flyer recto/verso</strong></td><td>A5 ou A4, 2 faces, fichier print-ready</td><td><strong>250€</strong></td></tr>
+        <tr><td><strong>Dépliant 3 volets</strong></td><td>Design complet, fichier print-ready</td><td><strong>400€</strong></td></tr>
+        <tr><td><strong>Carte de visite</strong></td><td>Recto/verso, design aligné à votre charte</td><td><strong>100€</strong></td></tr>
+        <tr><td><strong>Affiche A3 / A2</strong></td><td>Design événement, promo, vitrine</td><td><strong>200€</strong></td></tr>
+        <tr><td><strong>Brochure / Catalogue</strong></td><td>Par page (4 pages minimum)</td><td><strong>80€/page</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BANNIÈRES & DIGITAL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Bannières & Digital</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Support</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Bannière web</strong></td><td>Google Ads, site web, blog — toutes tailles</td><td><strong>80€</strong></td></tr>
+        <tr><td><strong>Bannière réseaux sociaux</strong></td><td>Couverture Facebook, LinkedIn, YouTube, Twitter</td><td><strong>100€</strong></td></tr>
+        <tr><td><strong>Kit réseaux sociaux</strong></td><td>Photo de profil + couverture + 3 templates de posts</td><td><strong>300€</strong></td></tr>
+        <tr><td><strong>Visuel publicitaire</strong></td><td>Créatif pour Meta Ads, TikTok Ads, Google Ads</td><td><strong>150€</strong></td></tr>
+        <tr><td><strong>Newsletter / Email</strong></td><td>Design HTML responsive pour campagne email</td><td><strong>200€</strong></td></tr>
+        <tr><td><strong>Signature email</strong></td><td>Design professionnel avec logo et coordonnées</td><td><strong>80€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MOCKUP -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Mockup & Mise en situation</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Mockup produit</strong></td><td>Votre design intégré sur un mockup réaliste (t-shirt, mug, packaging, boîte...)</td><td><strong>50€</strong></td></tr>
+        <tr><td><strong>Mockup digital</strong></td><td>Votre site/app sur écran (iPhone, MacBook, iPad)</td><td><strong>50€</strong></td></tr>
+        <tr><td><strong>Mockup print</strong></td><td>Flyer, carte de visite, brochure en situation</td><td><strong>50€</strong></td></tr>
+        <tr><td><strong>Pack mockups (5)</strong></td><td>5 mockups au choix</td><td><strong>200€</strong></td></tr>
+        <tr><td><strong>Pack mockups (10)</strong></td><td>10 mockups au choix</td><td><strong>350€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MENU BOARD & DEVANTURE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Menu Board & Devanture</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Support</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Menu board restaurant</strong></td><td>Design complet du menu (format tableau, A3, numérique ou print)</td><td><strong>300€</strong></td></tr>
+        <tr><td><strong>Menu carte format A4/A3</strong></td><td>Carte de restaurant imprimable, recto ou recto/verso</td><td><strong>200€</strong></td></tr>
+        <tr><td><strong>Menu numérique (QR)</strong></td><td>Menu consultable en ligne via QR code, responsive mobile</td><td><strong>250€</strong></td></tr>
+        <tr><td><strong>Design devanture</strong></td><td>Visuel complet de la façade (enseigne, vitrine, store) — fichier HD pour impression</td><td><strong>500€</strong></td></tr>
+        <tr><td><strong>Design vitrine</strong></td><td>Stickers, lettrage, visuels vitrine — fichier HD pour impression</td><td><strong>300€</strong></td></tr>
+        <tr><td><strong>Enseigne lumineuse (design)</strong></td><td>Design de l'enseigne — fabrication et pose non incluses</td><td><strong>400€</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">Les prix concernent uniquement le design. L'impression et la fabrication sont à la charge du client ou sur devis séparé.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RETOUCHE PHOTO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Retouche photo & Photoshop</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Prestation</th>
+          <th>Détail</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Retouche simple</strong></td><td>Recadrage, luminosité, couleurs, nettoyage</td><td><strong>20€/photo</strong></td></tr>
+        <tr><td><strong>Retouche avancée</strong></td><td>Détourage, montage, suppression fond, incrustation</td><td><strong>50€/photo</strong></td></tr>
+        <tr><td><strong>Pack 10 retouches simples</strong></td><td>10 photos retouchées</td><td><strong>150€</strong></td></tr>
+        <tr><td><strong>Pack 10 retouches avancées</strong></td><td>10 photos avec montage/détourage</td><td><strong>400€</strong></td></tr>
+        <tr><td><strong>Montage créatif</strong></td><td>Composition Photoshop sur-mesure (visuel pub, affiche, bannière complexe)</td><td><strong>150€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UPSELL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Upsell & Cross-sell</div>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Pack mensuel contenu visuel</h4>
+      <p><strong>500€/mois</strong> — 10 visuels par mois (posts réseaux sociaux, bannières, stories). Idéal en combo avec le service Social Media.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Création site web avec votre nouvelle identité</h4>
+      <p>Le client vient de se faire un logo → on lui propose un site web cohérent. Setup à partir de 800€.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Supports pour campagne Ads</h4>
+      <p>Visuels publicitaires déclinés pour Meta Ads, Google Ads, TikTok Ads. Le client a déjà des Ads → on lui fait les créatifs.</p>
+    </div>
+
+    <div class="upsell-box">
+      <h4>Impression & fabrication</h4>
+      <p><strong>Sur devis</strong> — On gère l'impression des flyers, cartes de visite, affiches, enseignes via nos partenaires imprimeurs. Le client n'a rien à faire.</p>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Prime Agence</div>
+</div>
+
+</body>
+</html>
