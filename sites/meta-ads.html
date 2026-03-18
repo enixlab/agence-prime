@@ -31,25 +31,30 @@
   .note { font-size: 13px; color: #888; margin-top: 12px; line-height: 1.6; }
   .footer { text-align: center; padding: 40px 0 20px; font-size: 12px; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
   @media (max-width: 768px) { .container { padding: 30px 20px; } .section-header { flex-direction: column; gap: 4px; } td:nth-child(2) { padding-left: 10px; padding-right: 10px; } td:nth-child(3), td:nth-child(4) { padding-left: 10px; } }
+
+  .nav-link { text-decoration:none; color:#999; font-family:'Outfit',sans-serif; font-size:13px; font-weight:500; padding:8px 16px; border:1px solid #e0e0e0; border-radius:9999px; transition:all .2s; }
+  .nav-link:hover { color:#111; border-color:#111; }
+  .nav-active { text-decoration:none; color:#111; font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; padding:8px 16px; border:1px solid #111; border-radius:9999px; transition:all .2s; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
-    <a href="/" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Accueil</a>
-    <a href="/sites/google-ads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Google Ads</a>
-    <a href="/sites/site-web.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Site Web</a>
-    <a href="/sites/ecommerce.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">E-commerce</a>
-    <a href="/sites/chatbot-ia.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Chatbot IA</a>
-    <a href="/sites/meta-ads.html" style="text-decoration:none;color:#111;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;padding:8px 16px;border:1px solid #111;border-radius:9999px;transition:all .2s;">Meta Ads</a>
-    <a href="/sites/tiktok-snapchat.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">TikTok & Snapchat</a>
-    <a href="/sites/backing-media.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Backing Media</a>
-    <a href="/sites/automatisations.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Automatisations</a>
-    <a href="/sites/sms-mailing.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">SMS & Mailing</a>
-    <a href="/sites/landing-leads.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Landing & Leads</a>
-    <a href="/sites/avis-intelligent.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Avis Intelligent</a>
-    <a href="/sites/social-media.html" style="text-decoration:none;color:#999;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid #e0e0e0;border-radius:9999px;transition:all .2s;">Social Media</a>
+  <nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="/" class="nav-link">Accueil</a>
+    <a href="/sites/google-ads.html" class="nav-link">Google Ads</a>
+    <a href="/sites/meta-ads.html" class="nav-active">Meta Ads</a>
+    <a href="/sites/tiktok-snapchat.html" class="nav-link">TikTok & Snapchat</a>
+    <a href="/sites/site-web.html" class="nav-link">Site Web</a>
+    <a href="/sites/ecommerce.html" class="nav-link">E-commerce</a>
+    <a href="/sites/chatbot-ia.html" class="nav-link">Chatbot IA</a>
+    <a href="/sites/sms-mailing.html" class="nav-link">SMS & Mailing</a>
+    <a href="/sites/backing-media.html" class="nav-link">Backing Media</a>
+    <a href="/sites/automatisations.html" class="nav-link">Automatisations</a>
+    <a href="/sites/landing-leads.html" class="nav-link">Landing & Leads</a>
+    <a href="/sites/avis-intelligent.html" class="nav-link">Avis Intelligent</a>
+    <a href="/sites/influence-ugc.html" class="nav-link">Influence & UGC</a>
+    <a href="/sites/social-media.html" class="nav-link">Social Media</a>
   </nav>
 
   <div class="header">
